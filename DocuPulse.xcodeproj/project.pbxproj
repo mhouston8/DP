@@ -11,7 +11,6 @@
 		329809A42A64DDF1008736BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A32A64DDF1008736BB /* ContentView.swift */; };
 		329809A62A64DDF3008736BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A52A64DDF3008736BB /* Assets.xcassets */; };
 		329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
-		329809B02A652255008736BB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329809AF2A652255008736BB /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,7 @@
 		329809A32A64DDF1008736BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		329809A52A64DDF3008736BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329809A82A64DDF3008736BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		329809AF2A652255008736BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BBB8EB602A65DC2A00069D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +55,8 @@
 				329809A12A64DDF1008736BB /* DocuPulseApp.swift */,
 				329809A32A64DDF1008736BB /* ContentView.swift */,
 				329809A52A64DDF3008736BB /* Assets.xcassets */,
+				BBB8EB602A65DC2A00069D08 /* Info.plist */,
 				329809A72A64DDF3008736BB /* Preview Content */,
-				329809AF2A652255008736BB /* Launch Screen.storyboard */,
 			);
 			path = DocuPulse;
 			sourceTree = "<group>";
@@ -128,7 +127,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				329809B02A652255008736BB /* Launch Screen.storyboard in Resources */,
 				329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */,
 				329809A62A64DDF3008736BB /* Assets.xcassets in Resources */,
 			);
@@ -274,10 +272,10 @@
 				DEVELOPMENT_TEAM = AZLMR7ABL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DocuPulse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -305,10 +303,10 @@
 				DEVELOPMENT_TEAM = AZLMR7ABL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DocuPulse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
