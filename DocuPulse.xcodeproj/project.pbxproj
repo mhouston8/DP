@@ -11,8 +11,11 @@
 		329809A42A64DDF1008736BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A32A64DDF1008736BB /* ContentView.swift */; };
 		329809A62A64DDF3008736BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A52A64DDF3008736BB /* Assets.xcassets */; };
 		329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
-		329809B42A65EDE5008736BB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809B32A65EDE5008736BB /* OnboardingView.swift */; };
+		329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809B32A65EDE5008736BB /* OnboardingPage.swift */; };
 		329F3AF62A6673CF00AE107D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */; };
+		BB7E4ED52A67139C0087BA91 /* OnboardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPageModel.swift */; };
+		BB7E4EDB2A67254A0087BA91 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageView.swift */; };
+		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +24,12 @@
 		329809A32A64DDF1008736BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		329809A52A64DDF3008736BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329809A82A64DDF3008736BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		329809B32A65EDE5008736BB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		329809B32A65EDE5008736BB /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		329F3AF42A6671B200AE107D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BB7E4ED42A67139C0087BA91 /* OnboardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageModel.swift; sourceTree = "<group>"; };
+		BB7E4EDA2A67254A0087BA91 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,12 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
+				BB7E4ED32A6713390087BA91 /* Global */,
+				BB7E4ED22A6713330087BA91 /* Utilities */,
+				BB7E4ED12A67132C0087BA91 /* View Model */,
+				BB7E4ED02A6713270087BA91 /* Model */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
 				329809B22A65EDCC008736BB /* View */,
-				329809A12A64DDF1008736BB /* DocuPulseApp.swift */,
-				329809A32A64DDF1008736BB /* ContentView.swift */,
 				329809A52A64DDF3008736BB /* Assets.xcassets */,
 				329809A72A64DDF3008736BB /* Preview Content */,
 				329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */,
@@ -78,7 +86,8 @@
 		329809B12A65EDC1008736BB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				329809B32A65EDE5008736BB /* OnboardingView.swift */,
+				BB7E4EDE2A673B400087BA91 /* Components */,
+				BB7E4EDA2A67254A0087BA91 /* OnboardingPageView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -86,9 +95,49 @@
 		329809B22A65EDCC008736BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				329809A32A64DDF1008736BB /* ContentView.swift */,
 				329809B12A65EDC1008736BB /* Onboarding */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BB7E4ED02A6713270087BA91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB7E4ED42A67139C0087BA91 /* OnboardingPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB7E4ED12A67132C0087BA91 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		BB7E4ED22A6713330087BA91 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BB7E4ED32A6713390087BA91 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				329809A12A64DDF1008736BB /* DocuPulseApp.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		BB7E4EDE2A673B400087BA91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				329809B32A65EDE5008736BB /* OnboardingPage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				329809B42A65EDE5008736BB /* OnboardingView.swift in Sources */,
+				BB7E4EDB2A67254A0087BA91 /* OnboardingPageView.swift in Sources */,
+				BB7E4ED52A67139C0087BA91 /* OnboardingPageModel.swift in Sources */,
+				329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */,
 				329809A42A64DDF1008736BB /* ContentView.swift in Sources */,
+				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
 				329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct OnboardingView: View {
+struct OnboardingPage: View {
+    
+    var page: OnboardingPageModel
+    let onboardingPageViewModel = OnboardingPageViewModel()
+    @Binding var pageIndex: Int
     
     var body: some View {
         
@@ -20,7 +24,7 @@ struct OnboardingView: View {
                             .scaledToFit()
                             .padding(.bottom, 50)
                         
-                        Image("Phone Mock")
+                        Image(page.imageTitle)
                             .resizable()
                             .scaledToFit()
                         
@@ -36,21 +40,21 @@ struct OnboardingView: View {
                 }
                 
                 VStack {
-                    Text("Scan all your documents")
+                    Text(page.title1)
                         .font(.system(size: 23, weight: .bold))
                         .bold()
                         .padding(.bottom, 5)
-                    Text("quickly and easily")
+                    Text(page.title2)
                         .font(.system(size: 23, weight: .bold))
                         .bold()
                         .padding(.bottom, 5)
                     
-                    Text("Conveniently scan, save, and share in minutes. Scan anywhere with ease.")
+                    Text(page.description)
                         .font(.system(size: 15, weight: .light))
                     
                     HStack(spacing: 17) {
                         Button {
-                            print("Skip pressed")
+                            pageIndex = 0
                         } label: {
                             Text("Skip")
                                 .padding()
@@ -61,7 +65,10 @@ struct OnboardingView: View {
                         }
                         
                         Button {
-                            print("Next pressed")
+                            if pageIndex == self.onboardingPageViewModel.onBoardingPageCount - 1 {
+                                return
+                            }
+                            pageIndex += 1
                         } label: {
                             Text("Next")
                                 .padding()
@@ -83,6 +90,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingPage(page: MOCK_OnboardingPage, pageIndex: .constant(0))
     }
 }
