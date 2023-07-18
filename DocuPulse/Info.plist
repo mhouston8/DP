@@ -4,14 +4,8 @@
 <dict>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIColorName</key>
-		<string>LaunchScreenBackgroundColor</string>
-		<key>UIImageName</key>
-		<string>Scanner-Transparent</string>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
-		<key>UILaunchScreen</key>
-		<dict/>
+		<key>UILaunchStoryboardName</key>
+		<string>Launch Screen.storyboard</string>
 	</dict>
 </dict>
 </plist>
