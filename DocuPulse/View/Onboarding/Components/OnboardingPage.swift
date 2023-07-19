@@ -65,10 +65,12 @@ struct OnboardingPage: View {
                         }
                         
                         Button {
-                            if pageIndex == self.onboardingPageViewModel.onBoardingPageCount - 1 {
-                                return
-                            }
                             pageIndex += 1
+//                            if pageIndex == self.onboardingPageViewModel.onBoardingPageCount - 1 {
+//                                pag
+//                            } else {
+//                                pageIndex += 1
+//                            }
                         } label: {
                             Text("Next")
                                 .padding()

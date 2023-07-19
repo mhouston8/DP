@@ -12,14 +12,19 @@ struct OnboardingPageView: View {
     private let viewModel = OnboardingPageViewModel()
     
     var body: some View {
-        TabView(selection: $pageIndex) {
-            ForEach(viewModel.getOnboardingPages().indices, id: \.self) { index in
-                OnboardingPage(page: viewModel.getOnboardingPages()[index], pageIndex: $pageIndex)
-                    .tag(index)
+        
+        if pageIndex >= viewModel.onBoardingPageCount {
+            MainTabView()
+        } else {
+            TabView(selection: $pageIndex) {
+                ForEach(viewModel.getOnboardingPages().indices, id: \.self) { index in
+                    OnboardingPage(page: viewModel.getOnboardingPages()[index], pageIndex: $pageIndex)
+                        .tag(index)
+                }
             }
+            .animation(.linear, value: pageIndex)
+            .tabViewStyle(.page)
         }
-        .animation(.linear, value: pageIndex)
-        .tabViewStyle(.page)
     }
 }
 
