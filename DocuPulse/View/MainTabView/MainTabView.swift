@@ -16,9 +16,39 @@ struct MainTabView: View {
             TabView(selection: $selectedIndex) {
                 HomeView()
                     .tabItem {
-                        
+                        Label("Home", systemImage: "house")
+                            .onTapGesture {
+                                selectedIndex = 0
+                            }
                     }
+                    .tag(0)
                 
+                HomeView()
+                    .tabItem {
+                        Label("Files", systemImage: "folder")
+                            .onTapGesture {
+                                selectedIndex = 1
+                            }
+                    }
+                    .tag(1)
+                
+                HomeView()
+                    .tabItem {
+                        Label("Premium", systemImage: "star")
+                            .onTapGesture {
+                                selectedIndex = 2
+                            }
+                    }
+                    .tag(2)
+                
+                HomeView()
+                    .tabItem {
+                        Label("Account", systemImage: "person.crop.circle")
+                            .onTapGesture {
+                                selectedIndex = 3
+                            }
+                    }
+                    .tag(3)
             }
         }
     }

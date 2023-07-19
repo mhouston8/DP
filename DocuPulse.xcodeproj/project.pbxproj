@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				BB7E4ED32A6713390087BA91 /* Global */,
-				BB7E4ED22A6713330087BA91 /* Utilities */,
 				BB7E4ED12A67132C0087BA91 /* View Model */,
 				BB7E4ED02A6713270087BA91 /* Model */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
@@ -120,13 +119,6 @@
 				BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */,
 			);
 			path = "View Model";
-			sourceTree = "<group>";
-		};
-		BB7E4ED22A6713330087BA91 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		BB7E4ED32A6713390087BA91 /* Global */ = {
