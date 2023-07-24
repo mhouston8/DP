@@ -98,8 +98,8 @@
 		329809B22A65EDCC008736BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BB7E4EE12A674E600087BA91 /* MainTabView */,
 				329809A32A64DDF1008736BB /* ContentView.swift */,
+				BB7E4EE12A674E600087BA91 /* MainTabView */,
 				329809B12A65EDC1008736BB /* Onboarding */,
 			);
 			path = View;

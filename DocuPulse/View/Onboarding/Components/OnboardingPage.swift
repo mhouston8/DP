@@ -54,7 +54,7 @@ struct OnboardingPage: View {
                     
                     HStack(spacing: 17) {
                         Button {
-                            pageIndex = 0
+                            pageIndex = onboardingPageViewModel.onBoardingPageCount
                         } label: {
                             Text("Skip")
                                 .padding()
@@ -66,11 +66,6 @@ struct OnboardingPage: View {
                         
                         Button {
                             pageIndex += 1
-//                            if pageIndex == self.onboardingPageViewModel.onBoardingPageCount - 1 {
-//                                pag
-//                            } else {
-//                                pageIndex += 1
-//                            }
                         } label: {
                             Text("Next")
                                 .padding()
