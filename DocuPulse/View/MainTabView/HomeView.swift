@@ -105,7 +105,10 @@ struct HomeView: View {
                             .bold()
                             .font(.system(size: 25))
                         Spacer()
-                        Image(systemName: "arrow.right")
+                        NavigationLink(destination: RecentFilesView()) {
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.black)
+                        }
 
                     }
                     .padding()
@@ -142,6 +145,7 @@ struct HomeView: View {
                                 }
                                 .padding()
                                 .background(Color(.systemGroupedBackground))
+                                .cornerRadius(10.0)
                             }
                         }
                     }
