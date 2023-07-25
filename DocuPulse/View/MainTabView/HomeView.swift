@@ -12,6 +12,15 @@ struct HomeView: View {
         
         NavigationView {
             VStack {
+                
+                
+                HStack {
+                    Text("DocuPulse")
+                        .font(.largeTitle).bold()
+                    Spacer()
+                    Image(systemName: "magnifyingglass")
+                }
+                
                 VStack(alignment: .leading) {
                     HStack(spacing: 40) {
                         VStack {
@@ -85,21 +94,10 @@ struct HomeView: View {
                     }
                     .padding(.top)
                     
-                    .navigationTitle("DocuPulse")
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button {
-                                    print("search")
-                                } label: {
-                                    Image(systemName: "magnifyingglass")
-                                }
-                            }
-                        }
-                    
                     Divider()
                         .padding(.top)
                 }
-                .padding([.top, .leading, .trailing])
+                .padding([.leading, .trailing])
                 
                 
                 //Recent Files
@@ -150,6 +148,18 @@ struct HomeView: View {
                 
                 Spacer()
             }
+            .padding([.top, .leading, .trailing])
+            .navigationBarHidden(true)
+//            .navigationTitle("DocuPulse")
+//                .toolbar {
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        Button {
+//                            print("search")
+//                        } label: {
+//                            Image(systemName: "magnifyingglass")
+//                        }
+//                    }
+//                }
         }
     }
 }
