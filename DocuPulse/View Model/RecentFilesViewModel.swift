@@ -10,7 +10,7 @@ import Foundation
 
 class RecentFilesViewModel: ObservableObject {
     
-    @Published var recentFiles = [File]()
+    @Published var recentFiles = [Document]()
     
     func fetchRecentFiles() {
         

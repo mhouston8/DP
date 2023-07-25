@@ -116,36 +116,7 @@ struct HomeView: View {
                     ScrollView {
                         VStack {
                             ForEach(0..<15) { document in
-                                HStack {
-                                    Image("Document")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 100)
-                                    
-                                    VStack(alignment: .leading, spacing: 10) {
-                                        Text("Job Application")
-                                            .bold()
-                                        Text("Letter")
-                                            .bold()
-                                        Text("10/12/23 12:34pm")
-                                            .font(.system(size: 12, weight: .light))
-                                    }
-                                    .padding()
-                                    
-                                    HStack {
-                                        Image("Share")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 25, height: 25)
-                                        Image("Ellipsis")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 25, height: 25)
-                                    }
-                                }
-                                .padding()
-                                .background(Color(.systemGroupedBackground))
-                                .cornerRadius(10.0)
+                                DocumentCell()
                             }
                         }
                     }

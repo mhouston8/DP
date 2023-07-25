@@ -9,6 +9,13 @@ import SwiftUI
 
 struct MoreOptionsView: View {
     var body: some View {
+        
+        VStack {
+            HStack {
+                
+            }
+        }
+        
         Text("More Options")
     }
 }
