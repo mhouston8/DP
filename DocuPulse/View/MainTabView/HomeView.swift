@@ -112,7 +112,7 @@ struct HomeView: View {
                             .font(.system(size: 25, weight: .bold))
                         Spacer()
                         Image(systemName: "arrow.right")
-                            .foregroundColor(.purple)
+                            //.foregroundColor(.purple)
                     }
                     .padding([.top, .horizontal])
                     
@@ -125,13 +125,23 @@ struct HomeView: View {
                                     Image("Document")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 50, height: 130)
+                                        .frame(width: 100, height: 150)
+                                        .padding()
                                     
                                     VStack {
                                         Text("Job Application")
+                                            .bold()
+                                            .padding(.vertical, 2)
                                         Text("Letter")
-                                        Text("09/23/2021 10:43am")
+                                            .bold()
+                                            .padding(.vertical, 2)
+                                        HStack {
+                                            Text("09/23/2021")
+                                            Text("10:43am")
+                                        }
+                                        .padding(.horizontal)
                                     }
+                                    .padding()
                                     
                                     HStack {
                                         Image("Share")
@@ -143,8 +153,9 @@ struct HomeView: View {
                                             .scaledToFit()
                                             .frame(width: 20, height: 20)
                                     }
+                                    .padding()
                                 }
-                                .frame(width: UIScreen.main.bounds.size.width)
+                                //.frame(height: UIScreen.main.bounds.size.width)
                                 .background(Color(.systemGroupedBackground))
                                 
                             }

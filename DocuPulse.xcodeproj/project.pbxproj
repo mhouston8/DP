@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A12A64DDF1008736BB /* DocuPulseApp.swift */; };
-		329809A42A64DDF1008736BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A32A64DDF1008736BB /* ContentView.swift */; };
 		329809A62A64DDF3008736BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A52A64DDF3008736BB /* Assets.xcassets */; };
 		329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
 		329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809B32A65EDE5008736BB /* OnboardingPage.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		3298099E2A64DDF1008736BB /* DocuPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocuPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329809A12A64DDF1008736BB /* DocuPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocuPulseApp.swift; sourceTree = "<group>"; };
-		329809A32A64DDF1008736BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		329809A52A64DDF3008736BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329809A82A64DDF3008736BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		329809B32A65EDE5008736BB /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		329809B22A65EDCC008736BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				329809A32A64DDF1008736BB /* ContentView.swift */,
 				BB7E4EE12A674E600087BA91 /* MainTabView */,
 				329809B12A65EDC1008736BB /* Onboarding */,
 			);
@@ -220,7 +217,6 @@
 				BB7E4EDB2A67254A0087BA91 /* OnboardingPageView.swift in Sources */,
 				BB7E4ED52A67139C0087BA91 /* OnboardingPageModel.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */,
-				329809A42A64DDF1008736BB /* ContentView.swift in Sources */,
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,

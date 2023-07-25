@@ -39,7 +39,7 @@ struct MainTabView: View {
                                 selectedIndex = 2
                             }
                     }
-                    .tag(2)
+                    .tag(2) 
                 
                 HomeView()
                     .tabItem {
