@@ -10,6 +10,8 @@ import SwiftUI
 struct RecentFilesView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State private var showMoreOptionsSheet = false
+    @State private var showShareSheet = false
     
     var body: some View {
         VStack {
@@ -55,19 +57,35 @@ struct RecentFilesView: View {
                             .padding()
                             
                             HStack {
-                                Image("Share")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25, height: 25)
-                                Image("Ellipsis")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25, height: 25)
+                                Button {
+                                    self.showShareSheet.toggle()
+                                } label: {
+                                    Image("Share")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 25)
+                                }
+                                
+                                Button {
+                                    self.showMoreOptionsSheet.toggle()
+                                } label: {
+                                    Image("Ellipsis")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 25)
+                                }
                             }
                         }
                         .padding()
                         .background(Color(.systemGroupedBackground))
                         .cornerRadius(10.0)
+                        .sheet(isPresented: $showShareSheet, content: {
+                            ShareView()
+                        })
+                        .sheet(isPresented: $showMoreOptionsSheet, content: {
+                            MoreOptionsView()
+                        })
+                        .onTapGesture {}
                     }
                 }
             }
