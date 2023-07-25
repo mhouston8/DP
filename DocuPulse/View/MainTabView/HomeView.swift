@@ -10,12 +10,9 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         
-//        GeometryReader { geometry in
-//        }
-        
         NavigationView {
             VStack {
-                VStack {
+                VStack(alignment: .leading) {
                     HStack(spacing: 40) {
                         VStack {
                             Image("Scan Code")
@@ -26,27 +23,27 @@ struct HomeView: View {
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("Watermark")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("Watermark")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("eSign PDF")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("eSign PDF")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("Split PDF")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("Split PDF")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                     }
@@ -54,35 +51,35 @@ struct HomeView: View {
                     
                     HStack(spacing: 40) {
                         VStack {
-                            Image("Scan Code")
+                            Image("Merge PDF")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("Merge PDF")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("Protect PDF")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("Protect PDF")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("Compress PDF")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("Compress PDF")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                         VStack {
-                            Image("Scan Code")
+                            Image("All Tools")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
-                            Text("Scan Code")
+                            Text("All Tools")
                                 .font(.system(size: 12, weight: .semibold))
                         }
                     }
@@ -102,63 +99,51 @@ struct HomeView: View {
                     Divider()
                         .padding(.top)
                 }
-                .padding(.top)
+                .padding([.top, .leading, .trailing])
                 
                 
                 //Recent Files
-                VStack {
-                    HStack {
-                        Text("Recent Files")
-                            .font(.system(size: 25, weight: .bold))
-                        Spacer()
-                        Image(systemName: "arrow.right")
-                            //.foregroundColor(.purple)
-                    }
-                    .padding([.top, .horizontal])
-                    
-                    
-                    //List
-                    ScrollView {
-                        VStack {
-                            ForEach(0..<15) { row in
+                HStack {
+                    Text("Recent Files")
+                        .bold()
+                        .font(.system(size: 25))
+                    Spacer()
+                    Image(systemName: "arrow.right")
+                }
+                .padding()
+                
+                ScrollView {
+                    VStack {
+                        ForEach(0..<15) { document in
+                            HStack {
+                                Image("Document")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 100)
+                                
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("Job Application")
+                                        .bold()
+                                    Text("Letter")
+                                        .bold()
+                                    Text("10/12/23 12:34pm")
+                                        .font(.system(size: 12, weight: .light))
+                                }
+                                .padding()
+                                
                                 HStack {
-                                    Image("Document")
+                                    Image("Share")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 100, height: 150)
-                                        .padding()
-                                    
-                                    VStack {
-                                        Text("Job Application")
-                                            .bold()
-                                            .padding(.vertical, 2)
-                                        Text("Letter")
-                                            .bold()
-                                            .padding(.vertical, 2)
-                                        HStack {
-                                            Text("09/23/2021")
-                                            Text("10:43am")
-                                        }
-                                        .padding(.horizontal)
-                                    }
-                                    .padding()
-                                    
-                                    HStack {
-                                        Image("Share")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 20, height: 20)
-                                        Image("Ellipsis")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 20, height: 20)
-                                    }
-                                    .padding()
+                                        .frame(width: 25, height: 25)
+                                    Image("Ellipsis")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 25)
                                 }
-                                //.frame(height: UIScreen.main.bounds.size.width)
-                                .background(Color(.systemGroupedBackground))
-                                
                             }
+                            .padding()
+                            .background(Color(.systemGroupedBackground))
                         }
                     }
                 }
