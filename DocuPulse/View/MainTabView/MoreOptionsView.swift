@@ -11,9 +11,14 @@ struct MoreOptionsView: View {
     var body: some View {
         
         VStack {
-            HStack {
-                
-            }
+            DocumentCell()
+                .padding(.top)
+            
+            Divider()
+            
+            
+            
+            Spacer()
         }
         
         Text("More Options")
