@@ -54,6 +54,7 @@ struct DocumentCell: View {
         .cornerRadius(10.0)
         .sheet(isPresented: $showShareSheet, content: {
             ShareView()
+                .presentationDetents([.medium]) //show half modal
         })
         .sheet(isPresented: $showMoreOptionsSheet, content: {
             MoreOptionsView()
