@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
 		329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A12A64DDF1008736BB /* DocuPulseApp.swift */; };
 		329809A62A64DDF3008736BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A52A64DDF3008736BB /* Assets.xcassets */; };
 		329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
 		3298099E2A64DDF1008736BB /* DocuPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocuPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329809A12A64DDF1008736BB /* DocuPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocuPulseApp.swift; sourceTree = "<group>"; };
 		329809A52A64DDF3008736BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				32980A9C2A70406D006F3EAF /* DocumentCell.swift */,
+				3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
+				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
 				32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
