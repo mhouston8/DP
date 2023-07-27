@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
+		3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3782A724CBB0045C857 /* HomeViewCell.swift */; };
+		3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */; };
 		329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329809A12A64DDF1008736BB /* DocuPulseApp.swift */; };
 		329809A62A64DDF3008736BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A52A64DDF3008736BB /* Assets.xcassets */; };
 		329809A92A64DDF3008736BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
+		3263D3782A724CBB0045C857 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
 		3298099E2A64DDF1008736BB /* DocuPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocuPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329809A12A64DDF1008736BB /* DocuPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocuPulseApp.swift; sourceTree = "<group>"; };
 		329809A52A64DDF3008736BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				32980A9B2A70405E006F3EAF /* Components */,
 				BB7E4EE12A674E600087BA91 /* MainTabView */,
 				329809B12A65EDC1008736BB /* Onboarding */,
+				3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				32980A9C2A70406D006F3EAF /* DocumentCell.swift */,
 				3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */,
+				3263D3782A724CBB0045C857 /* HomeViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -245,11 +251,13 @@
 			files = (
 				BB7E4EDB2A67254A0087BA91 /* OnboardingPageView.swift in Sources */,
 				BB7E4ED52A67139C0087BA91 /* OnboardingPageModel.swift in Sources */,
+				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */,
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
+				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
 				32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
@@ -389,6 +397,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DocuPulse/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "DocuPulse is requesting permissino to access camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -420,6 +429,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DocuPulse/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "DocuPulse is requesting permissino to access camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
