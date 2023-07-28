@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0C2A73966B00289ECD /* FilesView.swift */; };
 		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
 		3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3782A724CBB0045C857 /* HomeViewCell.swift */; };
 		3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3212FA0C2A73966B00289ECD /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
 		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
 		3263D3782A724CBB0045C857 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				32FD8D792A6F8130004A1618 /* RecentFilesView.swift */,
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
 				32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */,
+				3212FA0C2A73966B00289ECD /* FilesView.swift */,
 			);
 			path = MainTabView;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				BB7E4EDB2A67254A0087BA91 /* OnboardingPageView.swift in Sources */,
 				BB7E4ED52A67139C0087BA91 /* OnboardingPageModel.swift in Sources */,
+				3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */,
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPage.swift in Sources */,
