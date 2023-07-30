@@ -8,26 +8,54 @@
 import SwiftUI
 
 struct SubscriptionCard: View {
+
+    
     var body: some View {
         VStack {
             HStack {
                 Text("$4.99")
-                    .font(.title)
+                    .font(.largeTitle)
                     .bold()
-                Text("/1 month")
+                Text("/ 1 month")
                     .font(.subheadline)
+                    .fontWeight(.semibold)
             }
             .padding()
             .foregroundColor(.white)
             
             HStack {
                 Text("Go Premium and enjoy the benefits")
+                    .fontWeight(.semibold)
             }
             .foregroundColor(.white)
             
             Divider()
                 .overlay(.white)
                 .padding(.horizontal)
+            
+            Spacer()
+            
+            //Featured items
+            HStack(spacing: 15) {
+                VStack(alignment: .leading, spacing: 25) {
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Unlimited Documents")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Remove Ads")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Remove Watermark")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Export to Word, Excel, JPEG, PNG")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "HD Resolution")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Collage")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Translation")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Recognize Text (OCR)")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Remove Ads")
+                    SubscriptionFeatureItem(imageTitle: "Subscription Card Checkmark", feature: "Remove Ads")
+                
+                }
+                .padding(.bottom)
+                Spacer()
+            }
+            .padding()
+            .padding(.trailing, -20)
+            
             
             Spacer()
             
@@ -43,9 +71,10 @@ struct SubscriptionCard: View {
                     .cornerRadius(25.0)
                     .padding()
             }
+            .padding(.bottom)
 
         }
-        .background(Color(red: 245 / 255, green: 72 / 255, blue: 74 / 255))
+        .background(LinearGradient(colors: [Color(red: 245 / 255, green: 72 / 255, blue: 74 / 255)], startPoint: .leading, endPoint: .trailing) )
         .cornerRadius(25)
         .padding()
     }

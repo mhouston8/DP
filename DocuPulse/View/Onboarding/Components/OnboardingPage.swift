@@ -52,7 +52,7 @@ struct OnboardingPage: View {
                     Text(page.description)
                         .font(.system(size: 15, weight: .light))
                     
-                    HStack(spacing: 17) {
+                    HStack(spacing: 30) {
                         Button {
                             pageIndex = onboardingPageViewModel.onBoardingPageCount
                         } label: {
@@ -77,6 +77,7 @@ struct OnboardingPage: View {
 
                     }
                     .padding()
+                    .padding(.top, 10)
                 }
                 .padding()
                 Spacer()

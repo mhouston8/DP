@@ -10,7 +10,17 @@ import SwiftUI
 struct PremiumView: View {
     var body: some View {
         VStack {
-            SubscriptionCard()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(0..<3) { card in
+                        SubscriptionCard()
+                            .frame(width: UIScreen.main.bounds.width)
+                    }
+                }
+            }
+            //.padding(.leading, 15)
+            .padding(.trailing, -15)
         }
     }
 }

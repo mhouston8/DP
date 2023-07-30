@@ -10,6 +10,7 @@
 		3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0C2A73966B00289ECD /* FilesView.swift */; };
 		3212FA0F2A739EE500289ECD /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0E2A739EE500289ECD /* PremiumView.swift */; };
 		3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA102A739F6200289ECD /* SubscriptionCard.swift */; };
+		3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */; };
 		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
 		3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3782A724CBB0045C857 /* HomeViewCell.swift */; };
 		3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */; };
@@ -35,6 +36,7 @@
 		3212FA0C2A73966B00289ECD /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
 		3212FA0E2A739EE500289ECD /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		3212FA102A739F6200289ECD /* SubscriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCard.swift; sourceTree = "<group>"; };
+		3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFeatureItem.swift; sourceTree = "<group>"; };
 		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
 		3263D3782A724CBB0045C857 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */,
 				3263D3782A724CBB0045C857 /* HomeViewCell.swift */,
 				3212FA102A739F6200289ECD /* SubscriptionCard.swift */,
+				3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
+				3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */,
 				32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
