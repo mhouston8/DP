@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct OnboardingPage: View {
+struct OnboardingPageView: View {
     
-    var page: OnboardingPageModel
+    var page: OnboardingPage
     let onboardingPageViewModel = OnboardingPageViewModel()
     @Binding var pageIndex: Int
     
@@ -88,6 +88,6 @@ struct OnboardingPage: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingPage(page: MOCK_OnboardingPage, pageIndex: .constant(0))
+        OnboardingPageView(page: MOCK_OnboardingPage, pageIndex: .constant(0))
     }
 }

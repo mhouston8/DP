@@ -11,11 +11,11 @@ import Foundation
 struct OnboardingPageViewModel {
     
     var onBoardingPageCount: Int {
-        return OnboardingPageModel.getOnboardingPages().count
+        return OnboardingPage.getOnboardingPages().count
     }
     
-    func getOnboardingPages() -> [OnboardingPageModel] {
-        return OnboardingPageModel.getOnboardingPages()
+    func getOnboardingPages() -> [OnboardingPage] {
+        return OnboardingPage.getOnboardingPages()
     }
     
 }

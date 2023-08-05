@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubscriptionCard: View {
 
+    //var subscriptionCardViewModel: SubscriptionCardViewModel
     
     var body: some View {
         VStack {
@@ -77,11 +78,12 @@ struct SubscriptionCard: View {
         .background(LinearGradient(colors: [Color(red: 245 / 255, green: 72 / 255, blue: 74 / 255)], startPoint: .leading, endPoint: .trailing) )
         .cornerRadius(25)
         .padding()
+        
     }
 }
 
-struct SubscriptionCard_Previews: PreviewProvider {
-    static var previews: some View {
-        SubscriptionCard()
-    }
-}
+//struct SubscriptionCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SubscriptionCard()
+//    }
+//}

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingPageView: View {
+struct OnboardingPageViewController: View {
     @State private var pageIndex = 0
     private let viewModel = OnboardingPageViewModel()
     
@@ -18,7 +18,7 @@ struct OnboardingPageView: View {
         } else {
             TabView(selection: $pageIndex) {
                 ForEach(viewModel.getOnboardingPages().indices, id: \.self) { index in
-                    OnboardingPage(page: viewModel.getOnboardingPages()[index], pageIndex: $pageIndex)
+                    OnboardingPageView(page: viewModel.getOnboardingPages()[index], pageIndex: $pageIndex)
                         .tag(index)
                 }
             }
@@ -30,6 +30,6 @@ struct OnboardingPageView: View {
 
 struct OnboardingPageView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingPageView()
+        OnboardingPageViewController()
     }
 }

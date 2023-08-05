@@ -31,7 +31,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            PremiumView()
+            SubscriptionsView()
                 .tabItem {
                     Label("Premium", systemImage: "star")
                         .onTapGesture {

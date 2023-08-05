@@ -11,7 +11,7 @@ import SwiftUI
 struct DocuPulseApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingPageView()
+            OnboardingPageViewController()
                 .preferredColorScheme(.light)
         }
     }
