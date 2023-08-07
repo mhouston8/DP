@@ -33,6 +33,7 @@
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
 		BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */; };
 		BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EE42A674FB80087BA91 /* HomeView.swift */; };
+		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				329809B32A65EDE5008736BB /* OnboardingPageView.swift */,
 				BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */,
 				32FD8D792A6F8130004A1618 /* RecentFilesView.swift */,
+				BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */,
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
 				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
 				32980A9B2A70405E006F3EAF /* Components */,
@@ -256,6 +259,7 @@
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
+				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,

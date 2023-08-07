@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SubscriptionCard: View {
 
-    //var subscriptionCardViewModel: SubscriptionCardViewModel
+    var subscriptionCardViewModel = SubscriptionCardViewModel()
+    @Binding var showSelectPaymentMethodsView: Bool
     
     var body: some View {
         VStack {
@@ -61,7 +62,7 @@ struct SubscriptionCard: View {
             Spacer()
             
             Button {
-                
+                self.showSelectPaymentMethodsView.toggle()
             } label: {
                 Text("Select Plan")
                     .frame(maxWidth: .infinity)

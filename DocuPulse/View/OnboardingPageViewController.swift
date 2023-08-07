@@ -17,8 +17,8 @@ struct OnboardingPageViewController: View {
             MainTabView()
         } else {
             TabView(selection: $pageIndex) {
-                ForEach(viewModel.getOnboardingPages().indices, id: \.self) { index in
-                    OnboardingPageView(page: viewModel.getOnboardingPages()[index], pageIndex: $pageIndex)
+                ForEach(viewModel.onBoardingPages.indices, id: \.self) { index in
+                    OnboardingPageView(page: viewModel.onBoardingPages[index], pageIndex: $pageIndex)
                         .tag(index)
                 }
             }
