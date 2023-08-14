@@ -12,15 +12,17 @@ struct SubscriptionsView: View {
     @State private var selectedDescription = 0
     @State var showSelectPaymentMethodsView = false
     
+    @ObservedObject var subscriptionCardViewModel = SubscriptionCardViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
                 NavigationLink("", destination: SelectPaymentMethodView(), isActive: $showSelectPaymentMethodsView)
                 TabView(selection: $selectedDescription) {
-                    ForEach(0..<3, id: \.self) { index in
-                        SubscriptionCard(showSelectPaymentMethodsView: $showSelectPaymentMethodsView)
-                            .padding(.vertical, 75)
+                    ForEach(subscriptionCardViewModel.subscriptions.enumerated(), id: \.id) { subscription in
+                        SubscriptionCard(selectedSubscription: subscription, showSelectPaymentMethodsView: $showSelectPaymentMethodsView)
                             .frame(width: UIScreen.main.bounds.width)
+                            .scaleEffect(0.94)
                             .tag(index)
                     }
                 }
@@ -28,6 +30,7 @@ struct SubscriptionsView: View {
                 .animation(.linear, value: selectedDescription)
             }
             .navigationTitle("Premium")
+            .navigationBarTitleDisplayMode(.inline)
             //.navigationBarHidden(true)
         }
     }

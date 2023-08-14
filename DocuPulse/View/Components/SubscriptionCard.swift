@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SubscriptionCard: View {
 
-    var subscriptionCardViewModel = SubscriptionCardViewModel()
+    var selectedSubscription: Subscription
     @Binding var showSelectPaymentMethodsView: Bool
     
     var body: some View {

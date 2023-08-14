@@ -20,6 +20,6 @@ class Subscription: Identifiable {
         self.subscriptionDuration = subscriptionDuration
         self.backgroundColor = backgroundColor
     }
-    
-    let MOCK_SUBSCRIPTION = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.redGradient())
 }
+
+let MOCK_SUBSCRIPTION = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.redGradient())

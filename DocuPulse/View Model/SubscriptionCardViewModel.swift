@@ -8,19 +8,23 @@
 import Foundation
 import SwiftUI
 
-class SubscriptionCardViewModel {
+class SubscriptionCardViewModel: ObservableObject {
     
-    var subscriptions = [Subscription]()
+    @Published var subscriptions = [Subscription]()
     
     init() {
-        
+        self.subscriptions = self.fetchPremiumPages()
+        //self.subscriptions.append(contentsOf: self.fetchPremiumPages())
+        //self.subscriptions += self.fetchPremiumPages()
     }
     
     func fetchPremiumPages() -> [Subscription] {
-        let subscription = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.blueGradient())
-        let subscription2 = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.yellowGradient())
+        let subscription1 = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.redGradient())
+        let subscription2 = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.blueGradient())
+        let subscription3 = Subscription(price: "$4.99", subscriptionDuration: "1 /Month", backgroundColor: Colors.yellowGradient())
         
-        return [subscription, subscription2]
+        
+        return [subscription1, subscription2, subscription3]
     }
     
 }
