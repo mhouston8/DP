@@ -19,7 +19,7 @@ struct SubscriptionsView: View {
             VStack {
                 NavigationLink("", destination: SelectPaymentMethodView(), isActive: $showSelectPaymentMethodsView)
                 TabView(selection: $selectedDescription) {
-                    ForEach(subscriptionCardViewModel.subscriptions.enumerated(), id: \.id) { subscription in
+                    ForEach(Array(subscriptionCardViewModel.subscriptions.enumerated()), id: \.element.id) { index, subscription in
                         SubscriptionCard(selectedSubscription: subscription, showSelectPaymentMethodsView: $showSelectPaymentMethodsView)
                             .frame(width: UIScreen.main.bounds.width)
                             .scaleEffect(0.94)
@@ -31,7 +31,7 @@ struct SubscriptionsView: View {
             }
             .navigationTitle("Premium")
             .navigationBarTitleDisplayMode(.inline)
-            //.navigationBarHidden(true)
+            .navigationBarHidden(true)
         }
     }
 }

@@ -15,10 +15,10 @@ struct SubscriptionCard: View {
     var body: some View {
         VStack {
             HStack {
-                Text("$4.99")
+                Text(selectedSubscription.price)
                     .font(.largeTitle)
                     .bold()
-                Text("/ 1 month")
+                Text("/ " + selectedSubscription.subscriptionDuration)
                     .font(.subheadline)
                     .fontWeight(.semibold)
             }
@@ -76,7 +76,7 @@ struct SubscriptionCard: View {
             .padding(.bottom)
 
         }
-        .background(LinearGradient(colors: [Color(red: 245 / 255, green: 72 / 255, blue: 74 / 255)], startPoint: .leading, endPoint: .trailing) )
+        .background(selectedSubscription.backgroundColor)
         .cornerRadius(25)
         .padding()
         

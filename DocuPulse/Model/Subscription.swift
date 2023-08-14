@@ -10,7 +10,6 @@ import SwiftUI
 
 class Subscription: Identifiable {
     let id = UUID()
-    
     let price: String
     let subscriptionDuration: String
     let backgroundColor: LinearGradient
