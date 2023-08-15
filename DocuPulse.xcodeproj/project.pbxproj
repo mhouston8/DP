@@ -34,6 +34,7 @@
 		BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */; };
 		BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EE42A674FB80087BA91 /* HomeView.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
+		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
+		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */,
 				32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */,
 				3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */,
+				BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
+				BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,

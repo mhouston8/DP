@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SelectPaymentMethodView: View {
+    
+    let selectPaymentMethodViewModel = SelectPaymentMethodViewModel()
+    
     var body: some View {
         VStack {
             List(0..<3) { index in
@@ -15,12 +18,13 @@ struct SelectPaymentMethodView: View {
                     Image("Paypal Payment")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 50, height: 50)
                     
                     Text("PayPal")
                     Spacer()
                     Image(systemName: "chevron.right")
                 }
+                .padding(3)
             }
         }
     }
