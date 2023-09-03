@@ -17,6 +17,7 @@
 		3212FA172A76F98600289ECD /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA162A76F98600289ECD /* Subscription.swift */; };
 		3245C72D2AA401F600479CD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3245C72C2AA401F600479CD8 /* GoogleService-Info.plist */; };
 		3245C7302AA4038F00479CD8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */; };
+		3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C7312AA4579700479CD8 /* AdBannerView.swift */; };
 		3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
 		325D8E422A7EB8010048C867 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D8E412A7EB8010048C867 /* Colors.swift */; };
 		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
@@ -51,6 +52,7 @@
 		3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCardViewModel.swift; sourceTree = "<group>"; };
 		3212FA162A76F98600289ECD /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		3245C72C2AA401F600479CD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3245C7312AA4579700479CD8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		325D8E412A7EB8010048C867 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
 		3263D3782A724CBB0045C857 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
 				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
 				32980A9B2A70405E006F3EAF /* Components */,
+				3245C7312AA4579700479CD8 /* AdBannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,7 +172,6 @@
 				CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */,
 				22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -342,6 +344,7 @@
 				3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */,
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
+				3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPageView.swift in Sources */,
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
