@@ -16,6 +16,7 @@ struct HomeView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
+                    Banner(bannerID: "", width: UIScreen.main.bounds.width)
                     HStack {
                         Text("DocuPulse")
                             .font(.largeTitle).bold()
