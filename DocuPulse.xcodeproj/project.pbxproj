@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165EF5637B26B1BFD3E94464 /* Pods_DocuPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */; };
+		3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211211B2A8D279000320669 /* PaymentMethod.swift */; };
 		3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0C2A73966B00289ECD /* FilesView.swift */; };
 		3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */; };
 		3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA102A739F6200289ECD /* SubscriptionCard.swift */; };
 		3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */; };
 		3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */; };
 		3212FA172A76F98600289ECD /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA162A76F98600289ECD /* Subscription.swift */; };
+		3245C72D2AA401F600479CD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3245C72C2AA401F600479CD8 /* GoogleService-Info.plist */; };
+		3245C7302AA4038F00479CD8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */; };
 		3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
 		325D8E422A7EB8010048C867 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D8E412A7EB8010048C867 /* Colors.swift */; };
 		3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */; };
@@ -38,12 +42,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.release.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.release.xcconfig"; sourceTree = "<group>"; };
+		3211211B2A8D279000320669 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		3212FA0C2A73966B00289ECD /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
 		3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
 		3212FA102A739F6200289ECD /* SubscriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCard.swift; sourceTree = "<group>"; };
 		3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFeatureItem.swift; sourceTree = "<group>"; };
 		3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCardViewModel.swift; sourceTree = "<group>"; };
 		3212FA162A76F98600289ECD /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		3245C72C2AA401F600479CD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		325D8E412A7EB8010048C867 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3263D3762A70E3360045C857 /* DocumentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentOptionsCell.swift; sourceTree = "<group>"; };
 		3263D3782A724CBB0045C857 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -61,6 +68,7 @@
 		32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFilesViewModel.swift; sourceTree = "<group>"; };
 		32FD8D7F2A6F894E004A1618 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
+		4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocuPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3245C7302AA4038F00479CD8 /* FirebaseAnalytics in Frameworks */,
+				165EF5637B26B1BFD3E94464 /* Pods_DocuPulse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +97,8 @@
 			children = (
 				329809A02A64DDF1008736BB /* DocuPulse */,
 				3298099F2A64DDF1008736BB /* Products */,
+				5EE84E95D9746F00423B8E59 /* Pods */,
+				B55A08EB08B20A68681FA979 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				329F3AF42A6671B200AE107D /* Info.plist */,
+				3245C72C2AA401F600479CD8 /* GoogleService-Info.plist */,
 				BB7E4ED02A6713270087BA91 /* Model */,
 				BB7E4ED12A67132C0087BA91 /* View Model */,
 				329809B22A65EDCC008736BB /* View */,
@@ -149,12 +163,31 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5EE84E95D9746F00423B8E59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */,
+				22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B55A08EB08B20A68681FA979 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB7E4ED02A6713270087BA91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				32980A9E2A704122006F3EAF /* Document.swift */,
 				BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */,
 				3212FA162A76F98600289ECD /* Subscription.swift */,
+				3211211B2A8D279000320669 /* PaymentMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,15 +221,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 329809AC2A64DDF3008736BB /* Build configuration list for PBXNativeTarget "DocuPulse" */;
 			buildPhases = (
+				22B79019F3DD82F443D4A3E9 /* [CP] Check Pods Manifest.lock */,
 				3298099A2A64DDF1008736BB /* Sources */,
 				3298099B2A64DDF1008736BB /* Frameworks */,
 				3298099C2A64DDF1008736BB /* Resources */,
+				ACEAF1ABDC06319ADC457D88 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DocuPulse;
+			packageProductDependencies = (
+				3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */,
+			);
 			productName = DocuPulse;
 			productReference = 3298099E2A64DDF1008736BB /* DocuPulse.app */;
 			productType = "com.apple.product-type.application";
@@ -225,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 329809952A64DDF1008736BB;
+			packageReferences = (
+				3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3298099F2A64DDF1008736BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,12 +281,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */,
+				3245C72D2AA401F600479CD8 /* GoogleService-Info.plist in Resources */,
 				329F3AF62A6673CF00AE107D /* Launch Screen.storyboard in Resources */,
 				329809A62A64DDF3008736BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22B79019F3DD82F443D4A3E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocuPulse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEAF1ABDC06319ADC457D88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocuPulse/Pods-DocuPulse-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocuPulse/Pods-DocuPulse-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocuPulse/Pods-DocuPulse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3298099A2A64DDF1008736BB /* Sources */ = {
@@ -277,6 +361,7 @@
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
+				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +484,7 @@
 		};
 		329809AD2A64DDF3008736BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,7 +507,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oakmontblue.docupulse.DocuPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oakmontblue.docupulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -431,6 +517,7 @@
 		};
 		329809AE2A64DDF3008736BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,7 +540,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oakmontblue.docupulse.DocuPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oakmontblue.docupulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -483,6 +570,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 329809962A64DDF1008736BB /* Project object */;
 }

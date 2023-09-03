@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectPaymentMethodView: View {
     
-    let selectPaymentMethodViewModel = SelectPaymentMethodViewModel()
+    @ObservedObject var selectPaymentMethodViewModel = SelectPaymentMethodViewModel()
     
     var body: some View {
         VStack {

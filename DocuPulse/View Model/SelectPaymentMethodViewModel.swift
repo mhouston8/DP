@@ -8,16 +8,10 @@
 import Foundation
 
 
-class SelectPaymentMethodViewModel {
+class SelectPaymentMethodViewModel: ObservableObject {
     
-    let paymentImageName: String
-    let paymentMethodName: String
-    let paymentMethodNumber: String
+    @Published var paymentMethods = [PaymentMethod]()
     
-    
-    init() {
-        
-    }
     
     func fetchPaymentMethods() {
         
