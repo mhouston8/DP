@@ -10,13 +10,14 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var openDocumentScanner = false
+    private let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private let adCoordinator = AdCoordinator()
     
     var body: some View {
         
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                VStack {
-                    Banner(bannerID: "", width: UIScreen.main.bounds.width)
+                VStack {                    
                     HStack {
                         Text("DocuPulse")
                             .font(.largeTitle).bold()
@@ -26,7 +27,10 @@ struct HomeView: View {
                 
                     VStack(alignment: .leading) {
                         HStack(spacing: 40) {
-                            HomeViewCell(imageName: "Scan Code", title: "Scan Document") {openDocumentScanner.toggle()}
+                            HomeViewCell(imageName: "Scan Code", title: "Scan Document") {
+                                adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+                                //openDocumentScanner.toggle()
+                            }
                             HomeViewCell(imageName: "Watermark", title: "Watermark") {}
                             HomeViewCell(imageName: "eSign PDF", title: "eSign PDF") {}
                             HomeViewCell(imageName: "Split PDF", title: "Split PDF") {}
@@ -69,6 +73,8 @@ struct HomeView: View {
                         }
                     }
                     
+                    Banner(bannerID: "", width: UIScreen.main.bounds.width)
+                    
                     Spacer()
                 }
                 .padding([.top, .leading, .trailing])
@@ -91,10 +97,19 @@ struct HomeView: View {
                 .padding(30)
             }
         }
+        .onAppear() {
+            adCoordinator.loadAd()
+        }
         .fullScreenCover(isPresented: $openDocumentScanner, content: {
             DocumentScannerView()
                 .edgesIgnoringSafeArea(.all)
         })
+        .background {
+            // Add the adViewControllerRepresentable to the background so it
+            // doesn't influence the placement of other views in the view hierarchy.
+            adViewControllerRepresentable
+              .frame(width: .zero, height: .zero)
+        }
     }
 }
 
