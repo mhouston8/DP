@@ -14,6 +14,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start()
         
+        Purchases.default.initialize()
+        
         return true
     }
 }

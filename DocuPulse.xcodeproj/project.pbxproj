@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		165EF5637B26B1BFD3E94464 /* Pods_DocuPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */; };
+		32045C8D2AA9902500C433DF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32045C8C2AA9902500C433DF /* FirebaseAnalytics */; };
+		32045C8F2AA9902500C433DF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32045C8E2AA9902500C433DF /* FirebaseCrashlytics */; };
+		32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32045C912AAE3D0B00C433DF /* Purchases.swift */; };
 		3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211211B2A8D279000320669 /* PaymentMethod.swift */; };
 		3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0C2A73966B00289ECD /* FilesView.swift */; };
 		3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */; };
@@ -15,7 +18,6 @@
 		3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */; };
 		3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */; };
 		3212FA172A76F98600289ECD /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA162A76F98600289ECD /* Subscription.swift */; };
-		3245C7302AA4038F00479CD8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */; };
 		3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C7312AA4579700479CD8 /* AdBannerView.swift */; };
 		3245C7342AA59ACB00479CD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3245C7332AA59ACB00479CD8 /* GoogleService-Info.plist */; };
 		3245C7382AA646B800479CD8 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C7372AA646B800479CD8 /* FileManager.swift */; };
@@ -46,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.release.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.release.xcconfig"; sourceTree = "<group>"; };
+		32045C912AAE3D0B00C433DF /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
 		3211211B2A8D279000320669 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		3212FA0C2A73966B00289ECD /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
 		3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
@@ -90,7 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3245C7302AA4038F00479CD8 /* FirebaseAnalytics in Frameworks */,
+				32045C8F2AA9902500C433DF /* FirebaseCrashlytics in Frameworks */,
+				32045C8D2AA9902500C433DF /* FirebaseAnalytics in Frameworks */,
 				165EF5637B26B1BFD3E94464 /* Pods_DocuPulse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32045C902AAE3CEE00C433DF /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				32045C912AAE3D0B00C433DF /* Purchases.swift */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
 		3245C7352AA6468500479CD8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +155,7 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
+				32045C902AAE3CEE00C433DF /* Money */,
 				3245C7332AA59ACB00479CD8 /* GoogleService-Info.plist */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
 				3245C7362AA6469E00479CD8 /* FileManager */,
@@ -258,6 +271,7 @@
 				3298099B2A64DDF1008736BB /* Frameworks */,
 				3298099C2A64DDF1008736BB /* Resources */,
 				ACEAF1ABDC06319ADC457D88 /* [CP] Embed Pods Frameworks */,
+				32045C8A2AA863DD00C433DF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -265,7 +279,8 @@
 			);
 			name = DocuPulse;
 			packageProductDependencies = (
-				3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */,
+				32045C8C2AA9902500C433DF /* FirebaseAnalytics */,
+				32045C8E2AA9902500C433DF /* FirebaseCrashlytics */,
 			);
 			productName = DocuPulse;
 			productReference = 3298099E2A64DDF1008736BB /* DocuPulse.app */;
@@ -296,7 +311,7 @@
 			);
 			mainGroup = 329809952A64DDF1008736BB;
 			packageReferences = (
-				3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				32045C8B2AA9902500C433DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 3298099F2A64DDF1008736BB /* Products */;
 			projectDirPath = "";
@@ -343,6 +358,29 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		32045C8A2AA863DD00C433DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/newInputFile",
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		ACEAF1ABDC06319ADC457D88 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -394,6 +432,7 @@
 				329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */,
 				3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */,
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
+				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
@@ -525,6 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"DocuPulse/Preview Content\"";
 				DEVELOPMENT_TEAM = AZLMR7ABL4;
 				ENABLE_PREVIEWS = YES;
@@ -607,7 +647,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		32045C8B2AA9902500C433DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -618,10 +658,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3245C72F2AA4038F00479CD8 /* FirebaseAnalytics */ = {
+		32045C8C2AA9902500C433DF /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3245C72E2AA4038F00479CD8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 32045C8B2AA9902500C433DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		32045C8E2AA9902500C433DF /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32045C8B2AA9902500C433DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

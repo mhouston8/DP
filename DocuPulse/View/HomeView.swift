@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State private var openDocumentScanner = false
-    private let adViewControllerRepresentable = AdViewControllerRepresentable()
-    private let adCoordinator = AdCoordinator()
+
+    private let adViewControllerRepresentable = FullScreenAdViewControllerRepresentable()
+    @ObservedObject private var adCoordinator = AdCoordinator()
     
     var body: some View {
         
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                VStack {                    
+                VStack {
                     HStack {
                         Text("DocuPulse")
                             .font(.largeTitle).bold()
                         Spacer()
                         Image(systemName: "magnifyingglass")
                     }
+                    .padding(.horizontal)
                 
                     VStack(alignment: .leading) {
                         HStack(spacing: 40) {
                             HomeViewCell(imageName: "Scan Code", title: "Scan Document") {
                                 adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
-                                //openDocumentScanner.toggle()
                             }
                             HomeViewCell(imageName: "Watermark", title: "Watermark") {}
                             HomeViewCell(imageName: "eSign PDF", title: "eSign PDF") {}
@@ -100,7 +99,7 @@ struct HomeView: View {
         .onAppear() {
             adCoordinator.loadAd()
         }
-        .fullScreenCover(isPresented: $openDocumentScanner, content: {
+        .fullScreenCover(isPresented: $adCoordinator.openDocumentScanner, content: {
             DocumentScannerView()
                 .edgesIgnoringSafeArea(.all)
         })
