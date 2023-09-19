@@ -36,4 +36,8 @@ struct Colors {
         return LinearGradient(colors: [Color(red: 75 / 255, green: 104 / 255, blue: 74 / 255)], startPoint: .leading, endPoint: .trailing)
     }
     
+    static func premiumPurpleColor() -> Color {
+        return Color(red: 201 / 255, green: 25 / 255, blue: 228 / 255)
+    }
+    
 }

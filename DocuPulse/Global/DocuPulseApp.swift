@@ -14,7 +14,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start()
         
-        Purchases.default.initialize()
+        Purchases.default.initialize { result in}
         
         return true
     }
@@ -27,8 +27,9 @@ struct DocuPulseApp: App {
 
     var body: some Scene {
         WindowGroup {
-            OnboardingPageViewController()
-                .preferredColorScheme(.light)
+            PayWallView()
+            //OnboardingPageViewController()
+                  .preferredColorScheme(.light)
         }
     }
 }

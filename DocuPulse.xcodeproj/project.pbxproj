@@ -11,6 +11,9 @@
 		32045C8D2AA9902500C433DF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32045C8C2AA9902500C433DF /* FirebaseAnalytics */; };
 		32045C8F2AA9902500C433DF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 32045C8E2AA9902500C433DF /* FirebaseCrashlytics */; };
 		32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32045C912AAE3D0B00C433DF /* Purchases.swift */; };
+		32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32045C932AAEBB0600C433DF /* PayWallView.swift */; };
+		32045C962AAEDE1300C433DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32045C952AAEDE1300C433DF /* Main.storyboard */; };
+		32045C992AAEDEC400C433DF /* PremiumPayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32045C982AAEDEC400C433DF /* PremiumPayWallViewController.swift */; };
 		3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211211B2A8D279000320669 /* PaymentMethod.swift */; };
 		3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0C2A73966B00289ECD /* FilesView.swift */; };
 		3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */; };
@@ -33,6 +36,7 @@
 		32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32980A9C2A70406D006F3EAF /* DocumentCell.swift */; };
 		32980A9F2A704122006F3EAF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32980A9E2A704122006F3EAF /* Document.swift */; };
 		329F3AF62A6673CF00AE107D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */; };
+		32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EC0C612AB65BD100BCBE6F /* PurchasesViewModel.swift */; };
 		32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D792A6F8130004A1618 /* RecentFilesView.swift */; };
 		32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */; };
 		32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D7F2A6F894E004A1618 /* ShareView.swift */; };
@@ -49,6 +53,9 @@
 /* Begin PBXFileReference section */
 		22E128841AC9552DFA533A72 /* Pods-DocuPulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.release.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.release.xcconfig"; sourceTree = "<group>"; };
 		32045C912AAE3D0B00C433DF /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
+		32045C932AAEBB0600C433DF /* PayWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallView.swift; sourceTree = "<group>"; };
+		32045C952AAEDE1300C433DF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		32045C982AAEDEC400C433DF /* PremiumPayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPayWallViewController.swift; sourceTree = "<group>"; };
 		3211211B2A8D279000320669 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		3212FA0C2A73966B00289ECD /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
 		3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		32980A9E2A704122006F3EAF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		329F3AF42A6671B200AE107D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		32EC0C612AB65BD100BCBE6F /* PurchasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewModel.swift; sourceTree = "<group>"; };
 		32FD8D792A6F8130004A1618 /* RecentFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFilesView.swift; sourceTree = "<group>"; };
 		32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFilesViewModel.swift; sourceTree = "<group>"; };
 		32FD8D7F2A6F894E004A1618 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,14 @@
 				32045C912AAE3D0B00C433DF /* Purchases.swift */,
 			);
 			path = Money;
+			sourceTree = "<group>";
+		};
+		32045C972AAEDE8700C433DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32045C982AAEDEC400C433DF /* PremiumPayWallViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		3245C7352AA6468500479CD8 /* Utilities */ = {
@@ -160,6 +176,7 @@
 				329F3AF42A6671B200AE107D /* Info.plist */,
 				3245C7362AA6469E00479CD8 /* FileManager */,
 				BB7E4ED02A6713270087BA91 /* Model */,
+				32045C972AAEDE8700C433DF /* Controller */,
 				BB7E4ED12A67132C0087BA91 /* View Model */,
 				329809B22A65EDCC008736BB /* View */,
 				3245C7352AA6468500479CD8 /* Utilities */,
@@ -188,11 +205,13 @@
 				32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */,
 				329809B32A65EDE5008736BB /* OnboardingPageView.swift */,
 				BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */,
+				32045C932AAEBB0600C433DF /* PayWallView.swift */,
 				32FD8D792A6F8130004A1618 /* RecentFilesView.swift */,
 				BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */,
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
 				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
 				32980A9B2A70405E006F3EAF /* Components */,
+				32045C952AAEDE1300C433DF /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +263,7 @@
 				32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */,
 				3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */,
 				BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */,
+				32EC0C612AB65BD100BCBE6F /* PurchasesViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -328,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */,
+				32045C962AAEDE1300C433DF /* Main.storyboard in Resources */,
 				3245C7342AA59ACB00479CD8 /* GoogleService-Info.plist in Resources */,
 				329F3AF62A6673CF00AE107D /* Launch Screen.storyboard in Resources */,
 				329809A62A64DDF3008736BB /* Assets.xcassets in Resources */,
@@ -415,6 +436,7 @@
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
 				3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */,
+				32045C992AAEDEC400C433DF /* PremiumPayWallViewController.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPageView.swift in Sources */,
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
@@ -435,6 +457,8 @@
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
+				32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */,
+				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
