@@ -10,7 +10,7 @@ import StoreKit
 
 
 
-class Purchases: NSObject {
+class Purchases: NSObject, ObservableObject {
     
     typealias RequestProductsResult = Result<[SKProduct], Error>
     typealias PurchaseProductResult = Result<Bool, Error>
@@ -25,7 +25,7 @@ class Purchases: NSObject {
     private let productIdentifiers = Set(arrayLiteral: "barcode_year_subscription", "barcode_monthly_subscription")
     
     var products: [String: SKProduct]?
-    var purchasedProducts = [SKProduct]()
+    @Published var purchasedProducts = [SKProduct]()
     private var productRequest: SKProductsRequest?
     
     func initialize(completion: @escaping RequestProductsCompletion) {
@@ -53,6 +53,9 @@ class Purchases: NSObject {
 
 extension Purchases: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        
+        self.purchasedProducts = response.products
+        
         guard !response.products.isEmpty else {
             print("Found 0 products")
             //invoke all callbacks and clear them
@@ -66,8 +69,6 @@ extension Purchases: SKProductsRequestDelegate {
             print("Found product: \(skProduct.productIdentifier)")
             products[skProduct.productIdentifier] = skProduct
         }
-        
-        self.products = products
         
         //invoke all callbacks and clear them
         productRequestsCallbacks.forEach({$0(.success(response.products))})

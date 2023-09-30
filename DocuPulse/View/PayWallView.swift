@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct PayWallView: View {
+    
+    @ObservedObject var purchasesViewModel = PurchasesViewModel()
+    private var products = [SKProduct]()
     
     var body: some View {
         VStack {
