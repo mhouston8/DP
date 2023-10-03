@@ -12,6 +12,8 @@ struct PayWallView: View {
     
     @ObservedObject var purchasesViewModel = PurchasesViewModel()
     @State private var products = [SKProduct]()
+    @AppStorage("isPremiumSubscriber") var isPremiumSubsciber: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -75,6 +77,12 @@ struct PayWallView: View {
             purchasesViewModel.requestProducts()
             self.products = purchasesViewModel.products
         }
+        .onChange(of: isPremiumSubsciber) { newValue in
+            if newValue == true {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+        
     }
 }
 

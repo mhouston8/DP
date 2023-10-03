@@ -14,9 +14,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start()
         
-        //DispatchQueue.main.async {
+        DispatchQueue.global().async {
             Purchases.default.initialize { result in }
-        //}
+        }
         
         return true
     }

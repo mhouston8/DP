@@ -12,7 +12,7 @@ struct HomeView: View {
     private let adViewControllerRepresentable = FullScreenAdViewControllerRepresentable()
     @ObservedObject private var adCoordinator = AdCoordinator()
     @AppStorage("isPremiumSubscriber") var isPremiumSubsciber: Bool = false
-    @State private var showPremiumSubscriptionAlert: Bool = false
+    @State private var showPremiumSubscriptionView: Bool = false
     
     var body: some View {
         
@@ -35,7 +35,7 @@ struct HomeView: View {
                                 }
                             } else {
                                 HomeViewCell(imageName: "Scan Code", title: "Purchase Subsciption to access") {
-                                    //show alert instead
+                                    self.showPremiumSubscriptionView.toggle()
                                 }
                             }
                             HomeViewCell(imageName: "Watermark", title: "Watermark") {}
@@ -103,6 +103,7 @@ struct HomeView: View {
                 }
                 .padding(30)
             }
+            .sheet(isPresented: $showPremiumSubscriptionView) {PayWallView()}
         }
         .onAppear() {
             adCoordinator.loadAd()
