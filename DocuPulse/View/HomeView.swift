@@ -11,6 +11,8 @@ struct HomeView: View {
 
     private let adViewControllerRepresentable = FullScreenAdViewControllerRepresentable()
     @ObservedObject private var adCoordinator = AdCoordinator()
+    @AppStorage("isPremiumSubscriber") var isPremiumSubsciber: Bool = false
+    @State private var showPremiumSubscriptionAlert: Bool = false
     
     var body: some View {
         
@@ -27,8 +29,14 @@ struct HomeView: View {
                 
                     VStack(alignment: .leading) {
                         HStack(spacing: 40) {
-                            HomeViewCell(imageName: "Scan Code", title: "Scan Document") {
-                                adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+                            if isPremiumSubsciber {
+                                HomeViewCell(imageName: "Scan Code", title: "Scan Document") {
+                                    adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+                                }
+                            } else {
+                                HomeViewCell(imageName: "Scan Code", title: "Purchase Subsciption to access") {
+                                    //show alert instead
+                                }
                             }
                             HomeViewCell(imageName: "Watermark", title: "Watermark") {}
                             HomeViewCell(imageName: "eSign PDF", title: "eSign PDF") {}

@@ -92,7 +92,7 @@ extension SKProduct {
 
     var title: String? {
         switch productIdentifier {
-        case "barcode_month_subscription":
+        case "barcode_monthly_subscription":
             return "Yerp Monthly Subscription"
         case "barcode_year_subscription":
             return "Yerp Annual Subscription"

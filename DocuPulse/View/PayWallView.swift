@@ -11,7 +11,7 @@ import StoreKit
 struct PayWallView: View {
     
     @ObservedObject var purchasesViewModel = PurchasesViewModel()
-    private var products = [SKProduct]()
+    @State private var products = [SKProduct]()
     
     var body: some View {
         VStack {
@@ -34,9 +34,11 @@ struct PayWallView: View {
             Spacer()
             
             Button {
-                print("")
+                self.purchasesViewModel.purchaseProduct(product: self.products[0])
             } label: {
-                Text("Monthly subscription for $29.99")
+                if self.products.count > 0 {
+                    Text("\(self.products[0].title ?? "nil")")
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()
@@ -47,9 +49,11 @@ struct PayWallView: View {
             .padding(.horizontal)
             
             Button {
-                print("")
+                self.purchasesViewModel.purchaseProduct(product: self.products[1])
             } label: {
-                Text("Yearly subscription for $99.99")
+                if self.products.count > 0 {
+                    Text("\(self.products[1].title ?? "nil")")
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()
@@ -66,6 +70,10 @@ struct PayWallView: View {
             }
             .padding(.bottom)
 
+        }
+        .onAppear {
+            purchasesViewModel.requestProducts()
+            self.products = purchasesViewModel.products
         }
     }
 }

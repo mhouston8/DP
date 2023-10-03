@@ -22,7 +22,6 @@
 		3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */; };
 		3212FA172A76F98600289ECD /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212FA162A76F98600289ECD /* Subscription.swift */; };
 		3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C7312AA4579700479CD8 /* AdBannerView.swift */; };
-		3245C7342AA59ACB00479CD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3245C7332AA59ACB00479CD8 /* GoogleService-Info.plist */; };
 		3245C7382AA646B800479CD8 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C7372AA646B800479CD8 /* FileManager.swift */; };
 		3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245C73A2AA658EB00479CD8 /* FullScreenAd.swift */; };
 		3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329809A82A64DDF3008736BB /* Preview Assets.xcassets */; };
@@ -41,6 +40,9 @@
 		32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */; };
 		32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D7F2A6F894E004A1618 /* ShareView.swift */; };
 		32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */; };
+		BB0CE4112AC8A019002CE6E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0CE4102AC8A019002CE6E6 /* GoogleService-Info.plist */; };
+		BB0CE4132ACA3EB6002CE6E6 /* DocuPulse.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */; };
+		BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
@@ -64,7 +66,6 @@
 		3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCardViewModel.swift; sourceTree = "<group>"; };
 		3212FA162A76F98600289ECD /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		3245C7312AA4579700479CD8 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
-		3245C7332AA59ACB00479CD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3245C7372AA646B800479CD8 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		3245C73A2AA658EB00479CD8 /* FullScreenAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenAd.swift; sourceTree = "<group>"; };
 		325D8E412A7EB8010048C867 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -86,6 +87,9 @@
 		32FD8D7F2A6F894E004A1618 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
 		4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocuPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0CE4102AC8A019002CE6E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DocuPulse.storekit; sourceTree = "<group>"; };
+		BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -172,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				32045C902AAE3CEE00C433DF /* Money */,
-				3245C7332AA59ACB00479CD8 /* GoogleService-Info.plist */,
+				BB0CE4102AC8A019002CE6E6 /* GoogleService-Info.plist */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
 				3245C7362AA6469E00479CD8 /* FileManager */,
 				BB7E4ED02A6713270087BA91 /* Model */,
@@ -182,6 +186,8 @@
 				3245C7352AA6468500479CD8 /* Utilities */,
 				BB7E4ED32A6713390087BA91 /* Global */,
 				329809A72A64DDF3008736BB /* Preview Content */,
+				BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */,
+				BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */,
 			);
 			path = DocuPulse;
 			sourceTree = "<group>";
@@ -349,7 +355,8 @@
 			files = (
 				3257021F2A7EC37D00DD742F /* Preview Assets.xcassets in Resources */,
 				32045C962AAEDE1300C433DF /* Main.storyboard in Resources */,
-				3245C7342AA59ACB00479CD8 /* GoogleService-Info.plist in Resources */,
+				BB0CE4112AC8A019002CE6E6 /* GoogleService-Info.plist in Resources */,
+				BB0CE4132ACA3EB6002CE6E6 /* DocuPulse.storekit in Resources */,
 				329F3AF62A6673CF00AE107D /* Launch Screen.storyboard in Resources */,
 				329809A62A64DDF3008736BB /* Assets.xcassets in Resources */,
 			);
@@ -429,6 +436,7 @@
 			files = (
 				BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */,
 				BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */,
+				BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */,
 				3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */,
 				3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */,
 				3245C7382AA646B800479CD8 /* FileManager.swift in Sources */,
