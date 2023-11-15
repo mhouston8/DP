@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import FirebaseCore
 import GoogleMobileAds
+import FirebaseCore
 import FirebaseFirestore
 
 class AppDelegate: NSObject, UIApplicationDelegate {

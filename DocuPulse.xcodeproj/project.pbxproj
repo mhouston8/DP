@@ -74,6 +74,10 @@
 		BBCA3C4B2B01A14C00044F95 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C4A2B01A14C00044F95 /* FirebaseRemoteConfigSwift */; };
 		BBCA3C4D2B01A14C00044F95 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C4C2B01A14C00044F95 /* FirebaseStorage */; };
 		BBCA3C4F2B01A14C00044F95 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C4E2B01A14C00044F95 /* FirebaseStorageCombine-Community */; };
+		BBCA3C522B058B1900044F95 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C512B058B1900044F95 /* Realm */; };
+		BBCA3C542B058B1900044F95 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C532B058B1900044F95 /* RealmSwift */; };
+		BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */; };
+		BBCA3C592B058F3D00044F95 /* FirestoreDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +126,8 @@
 		BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBCA3C172B019F0700044F95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWrapper.swift; sourceTree = "<group>"; };
+		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 				BBCA3C352B01A14C00044F95 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				BBCA3C1F2B01A14C00044F95 /* FirebaseAnalyticsSwift in Frameworks */,
 				BBCA3C432B01A14C00044F95 /* FirebaseMLModelDownloader in Frameworks */,
+				BBCA3C522B058B1900044F95 /* Realm in Frameworks */,
 				BBCA3C212B01A14C00044F95 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				BBCA3C1B2B01A14C00044F95 /* FirebaseAnalytics in Frameworks */,
 				BBCA3C372B01A14C00044F95 /* FirebaseFirestoreSwift in Frameworks */,
@@ -149,6 +156,7 @@
 				BBCA3C472B01A14C00044F95 /* FirebasePerformance in Frameworks */,
 				BBCA3C3D2B01A14C00044F95 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				BBCA3C3B2B01A14C00044F95 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				BBCA3C542B058B1900044F95 /* RealmSwift in Frameworks */,
 				BBCA3C2B2B01A14C00044F95 /* FirebaseCrashlytics in Frameworks */,
 				BBCA3C412B01A14C00044F95 /* FirebaseInstallations in Frameworks */,
 				BBCA3C492B01A14C00044F95 /* FirebaseRemoteConfig in Frameworks */,
@@ -227,6 +235,7 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
+				BBCA3C552B058EB700044F95 /* Database */,
 				BBCA3C172B019F0700044F95 /* GoogleService-Info.plist */,
 				32045C902AAE3CEE00C433DF /* Money */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
@@ -338,6 +347,15 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		BBCA3C552B058EB700044F95 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */,
+				BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +403,8 @@
 				BBCA3C4A2B01A14C00044F95 /* FirebaseRemoteConfigSwift */,
 				BBCA3C4C2B01A14C00044F95 /* FirebaseStorage */,
 				BBCA3C4E2B01A14C00044F95 /* FirebaseStorageCombine-Community */,
+				BBCA3C512B058B1900044F95 /* Realm */,
+				BBCA3C532B058B1900044F95 /* RealmSwift */,
 			);
 			productName = DocuPulse;
 			productReference = 3298099E2A64DDF1008736BB /* DocuPulse.app */;
@@ -416,6 +436,7 @@
 			mainGroup = 329809952A64DDF1008736BB;
 			packageReferences = (
 				BBCA3C192B01A14B00044F95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BBCA3C502B058B1900044F95 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 3298099F2A64DDF1008736BB /* Products */;
 			projectDirPath = "";
@@ -516,6 +537,7 @@
 				329EA5FA2AEAAEE40030F628 /* DocumentScannerViewModel.swift in Sources */,
 				BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */,
 				BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */,
+				BBCA3C592B058F3D00044F95 /* FirestoreDBWrapper.swift in Sources */,
 				3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */,
 				3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */,
 				3245C7382AA646B800479CD8 /* DocumentSaver.swift in Sources */,
@@ -531,6 +553,7 @@
 				BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
+				BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
 				325D8E422A7EB8010048C867 /* Colors.swift in Sources */,
@@ -766,6 +789,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		BBCA3C502B058B1900044F95 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -903,6 +934,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBCA3C192B01A14B00044F95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		BBCA3C512B058B1900044F95 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBCA3C502B058B1900044F95 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BBCA3C532B058B1900044F95 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBCA3C502B058B1900044F95 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
