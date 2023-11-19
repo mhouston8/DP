@@ -12,13 +12,15 @@ import SwiftUI
 class DocumentScannerViewModel: ObservableObject {
     
     private var fileManager = DocumentSaver()
+    private var firebaseDBWrapper = FirebaseDBWrapper()
     
     init() {
         
     }
     
     func saveScannedDocument(document: UIImage) {
-        self.fileManager.saveScannedDocument(image: document)
+        self.firebaseDBWrapper.saveDocument(document: document)
+        //self.fileManager.saveScannedDocument(image: document)
     }
     
 }
