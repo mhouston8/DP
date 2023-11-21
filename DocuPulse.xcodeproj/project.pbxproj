@@ -78,6 +78,9 @@
 		BBCA3C542B058B1900044F95 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C532B058B1900044F95 /* RealmSwift */; };
 		BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */; };
 		BBCA3C592B058F3D00044F95 /* FirestoreDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */; };
+		BBCA3C5D2B0AD51C00044F95 /* FirebaseStorageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */; };
+		BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */; };
+		BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +131,9 @@
 		BBCA3C172B019F0700044F95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
+		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
+		BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,7 +241,7 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
-				BBCA3C552B058EB700044F95 /* Database */,
+				BBCA3C5A2B0AD4F500044F95 /* Persistence */,
 				BBCA3C172B019F0700044F95 /* GoogleService-Info.plist */,
 				32045C902AAE3CEE00C433DF /* Money */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
@@ -279,6 +285,7 @@
 				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
 				32980A9B2A70405E006F3EAF /* Components */,
 				32045C952AAEDE1300C433DF /* Main.storyboard */,
+				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +298,7 @@
 				3263D3782A724CBB0045C857 /* HomeViewCell.swift */,
 				3212FA102A739F6200289ECD /* SubscriptionCard.swift */,
 				3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */,
+				BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +362,23 @@
 				BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		BBCA3C5A2B0AD4F500044F95 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				BBCA3C5B2B0AD50B00044F95 /* Storage */,
+				BBCA3C552B058EB700044F95 /* Database */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		BBCA3C5B2B0AD50B00044F95 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +570,7 @@
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
 				3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */,
+				BBCA3C5D2B0AD51C00044F95 /* FirebaseStorageWrapper.swift in Sources */,
 				32045C992AAEDEC400C433DF /* PremiumPayWallViewController.swift in Sources */,
 				329809B42A65EDE5008736BB /* OnboardingPageView.swift in Sources */,
 				BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */,
@@ -553,6 +579,7 @@
 				BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
+				BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */,
 				BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
@@ -566,6 +593,7 @@
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
+				BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
 				32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */,
 				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,

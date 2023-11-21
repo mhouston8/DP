@@ -22,7 +22,7 @@ class FirebaseDBWrapper {
         let date = Date()
         let dateFormatter = DateFormatter()
         let currentDateString = dateFormatter.string(from: date)
-        let documentsStoragePathReference = self.storageReference.child("documents/\(currentDateString).pdf")
+        let documentsStoragePathReference = self.storageReference.child("documents/\(currentDateString)")
         
         
         documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in

@@ -30,7 +30,8 @@ struct DocuPulseApp: App {
     var body: some Scene {
         WindowGroup {
             //PayWallView()
-            OnboardingPageViewController()
+            SignUpView()
+            //OnboardingPageViewController()
                   .preferredColorScheme(.light)
         }
     }
