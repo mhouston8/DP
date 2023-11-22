@@ -81,6 +81,7 @@
 		BBCA3C5D2B0AD51C00044F95 /* FirebaseStorageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */; };
 		BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */; };
 		BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */; };
+		BBCA3C652B0E9ECF00044F95 /* SignUpUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C642B0E9ECF00044F95 /* SignUpUserViewModel.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,7 @@
 		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextView.swift; sourceTree = "<group>"; };
+		BBCA3C642B0E9ECF00044F95 /* SignUpUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewModel.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,10 +243,11 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
-				BBCA3C5A2B0AD4F500044F95 /* Persistence */,
+				BBCA3C632B0E9EB300044F95 /* Authentication */,
 				BBCA3C172B019F0700044F95 /* GoogleService-Info.plist */,
-				32045C902AAE3CEE00C433DF /* Money */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
+				BBCA3C5A2B0AD4F500044F95 /* Persistence */,
+				32045C902AAE3CEE00C433DF /* Money */,
 				3245C7362AA6469E00479CD8 /* FileManager */,
 				BB7E4ED02A6713270087BA91 /* Model */,
 				32045C972AAEDE8700C433DF /* Controller */,
@@ -254,7 +257,6 @@
 				BB7E4ED32A6713390087BA91 /* Global */,
 				329809A72A64DDF3008736BB /* Preview Content */,
 				BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */,
-				BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */,
 			);
 			path = DocuPulse;
 			sourceTree = "<group>";
@@ -367,6 +369,7 @@
 		BBCA3C5A2B0AD4F500044F95 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				BBCA3C622B0D477B00044F95 /* User Defaults */,
 				BBCA3C5B2B0AD50B00044F95 /* Storage */,
 				BBCA3C552B058EB700044F95 /* Database */,
 			);
@@ -379,6 +382,22 @@
 				BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		BBCA3C622B0D477B00044F95 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		BBCA3C632B0E9EB300044F95 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BBCA3C642B0E9ECF00044F95 /* SignUpUserViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,6 +596,7 @@
 				BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */,
 				32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */,
 				BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */,
+				BBCA3C652B0E9ECF00044F95 /* SignUpUserViewModel.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
 				BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */,
