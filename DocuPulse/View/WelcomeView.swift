@@ -16,11 +16,11 @@ struct WelcomeView: View {
             Text("Let's you in")
                 .font(.largeTitle)
             
-            AuthenticationThirdPartyButton()
+            AuthenticationThirdPartyButton(logo: Image("Google Icon"), text: "Continue with Google")
                 .padding(.bottom)
-            AuthenticationThirdPartyButton()
+            AuthenticationThirdPartyButton(logo: Image("Facebook Icon"), text: "Continue with Facebook")
                 .padding(.bottom)
-            AuthenticationThirdPartyButton()
+            AuthenticationThirdPartyButton(logo: Image("Apple Icon"), text: "Continue with Apple")
                 .padding(.bottom)
             
             HStack {
