@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lets_you_in_picture.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

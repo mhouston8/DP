@@ -50,6 +50,17 @@ struct SignUpView: View {
                         .cornerRadius(10)
                 }
                 .padding(.bottom, 20)
+                
+                Button {
+                    
+                } label: {
+                    Text("")
+                        .padding()
+                        .frame(width: 300)
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
 
             }
             .padding(.top, 50)
