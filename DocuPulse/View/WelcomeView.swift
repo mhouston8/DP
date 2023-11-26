@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State var showSignInView = false
+    @State var showSignUpView = false
+    
     var body: some View {
         VStack() {
+            
             Spacer()
             Image("lets_you_in_picture")
                 .padding(.bottom)
@@ -39,7 +44,7 @@ struct WelcomeView: View {
             Spacer()
             
             Button {
-               //go to login screen
+                self.showSignInView.toggle()
             } label: {
                 Text("Sign in with Email")
                     .padding()
@@ -49,16 +54,22 @@ struct WelcomeView: View {
                     .cornerRadius(10)
             }
             .padding(.bottom)
+            .fullScreenCover(isPresented: $showSignInView, content: {
+                SignInView()
+            })
             
             HStack {
                 Text("Don't have an account?")
                 Button {
-                   
+                    self.showSignUpView.toggle()
                 } label: {
                     Text("Sign up")
                         .foregroundColor(Color.blue)
                 }
             }
+            .fullScreenCover(isPresented: $showSignUpView, content: {
+                SignUpView()
+            })
             Spacer()
         }
     }

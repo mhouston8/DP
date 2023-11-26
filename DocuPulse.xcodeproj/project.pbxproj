@@ -85,6 +85,7 @@
 		BBCA3C652B0E9ECF00044F95 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C642B0E9ECF00044F95 /* AuthenticationViewModel.swift */; };
 		BBCA3C672B129A3000044F95 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C662B129A2F00044F95 /* WelcomeView.swift */; };
 		BBCA3C692B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */; };
+		BBCA3C6D2B12F76A00044F95 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C6C2B12F76900044F95 /* SignInView.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -142,6 +143,7 @@
 		BBCA3C642B0E9ECF00044F95 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		BBCA3C662B129A2F00044F95 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationThirdPartyButton.swift; sourceTree = "<group>"; };
+		BBCA3C6C2B12F76900044F95 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				32045C952AAEDE1300C433DF /* Main.storyboard */,
 				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
 				BBCA3C662B129A2F00044F95 /* WelcomeView.swift */,
+				BBCA3C6C2B12F76900044F95 /* SignInView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				BBCA3C692B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift in Sources */,
 				3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */,
 				3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */,
+				BBCA3C6D2B12F76A00044F95 /* SignInView.swift in Sources */,
 				3245C7382AA646B800479CD8 /* DocumentSaver.swift in Sources */,
 				3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */,
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,

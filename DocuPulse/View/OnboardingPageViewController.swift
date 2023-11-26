@@ -14,7 +14,7 @@ struct OnboardingPageViewController: View {
     var body: some View {
         
         if pageIndex >= viewModel.onBoardingPageCount {
-            MainTabView()
+            WelcomeView()
         } else {
             TabView(selection: $pageIndex) {
                 ForEach(viewModel.onBoardingPages.indices, id: \.self) { index in
