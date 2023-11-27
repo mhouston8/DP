@@ -12,7 +12,6 @@ struct OnboardingPageViewController: View {
     private let viewModel = OnboardingPageViewModel()
     
     var body: some View {
-        
         if pageIndex >= viewModel.onBoardingPageCount {
             WelcomeView()
         } else {

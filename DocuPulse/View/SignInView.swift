@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     
+    
     @State var emailText = ""
     @State var passwordText = ""
     @ObservedObject var authenticationViewModel = AuthenticationViewModel()
@@ -19,39 +20,48 @@ struct SignInView: View {
         if authenticationViewModel.isAuthenticated {
             MainTabView()
         } else {
-            VStack {
-                HStack {
-                    Image(systemName: "arrow.left")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .padding(.leading)
-                        .onTapGesture {
-                            presentationMode.wrappedValue.dismiss()
-                        }
+            if authenticationViewModel.isLoggingIn {
+                VStack {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                    Text("Logging In...")
+                        .foregroundStyle(.secondary)
+                }
+            } else {
+                VStack {
+                    HStack {
+                        Image(systemName: "arrow.left")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .padding(.leading)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        Spacer()
+                    }
+                    .padding(.bottom)
+                    
+                    UnderlinedTextField(text: $emailText, placeholder: "Email")
+                        .padding()
+                    UnderlinedTextField(text: $passwordText, placeholder: "Password")
+                        .padding()
+                    
+                    CustomRoundButton(text: "Login") {
+                        self.authenticationViewModel.loginUser(email: emailText, password: passwordText)
+                    }.padding(.top)
+                    
                     Spacer()
                 }
-                .padding(.bottom)
-                
-                UnderlinedTextField(text: $emailText, placeholder: "Email")
-                    .padding()
-                UnderlinedTextField(text: $passwordText, placeholder: "Password")
-                    .padding()
-                
-                CustomRoundButton(text: "Login") {
-                    self.authenticationViewModel.loginUser(email: emailText, password: passwordText)
-                }.padding(.top)
-                
-                Spacer()
+                .alert(isPresented: $authenticationViewModel.showErrorAuthenticatingAlert) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text("There was an error logging in."),
+                        dismissButton: .default(Text("Ok"))
+                    )
+                }
+                .environment(\.colorScheme, .light)
             }
-            .alert(isPresented: $authenticationViewModel.showErrorAuthenticatingAlert) {
-                Alert(
-                    title: Text("Error"),
-                    message: Text("There was an error logging in."),
-                    dismissButton: .default(Text("Ok"))
-                )
-            }
-            .environment(\.colorScheme, .light)
         }
     }
 }
