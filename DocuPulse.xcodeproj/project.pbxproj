@@ -48,6 +48,7 @@
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
 		BB7E4EE02A674CA40087BA91 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */; };
 		BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EE42A674FB80087BA91 /* HomeView.swift */; };
+		BB7E76A72B140AAA00344190 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76A62B140AAA00344190 /* AccountView.swift */; };
 		BBCA3C1B2B01A14C00044F95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1A2B01A14C00044F95 /* FirebaseAnalytics */; };
 		BBCA3C1D2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1C2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion */; };
 		BBCA3C1F2B01A14C00044F95 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1E2B01A14C00044F95 /* FirebaseAnalyticsSwift */; };
@@ -135,6 +136,7 @@
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BB7E76A62B140AAA00344190 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
 				BBCA3C662B129A2F00044F95 /* WelcomeView.swift */,
 				BBCA3C6C2B12F76900044F95 /* SignInView.swift */,
+				BB7E76A62B140AAA00344190 /* AccountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				BBCA3C592B058F3D00044F95 /* FirestoreDBWrapper.swift in Sources */,
 				BBCA3C692B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift in Sources */,
 				3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */,
+				BB7E76A72B140AAA00344190 /* AccountView.swift in Sources */,
 				3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */,
 				BBCA3C6D2B12F76A00044F95 /* SignInView.swift in Sources */,
 				3245C7382AA646B800479CD8 /* DocumentSaver.swift in Sources */,

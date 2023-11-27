@@ -70,4 +70,13 @@ class AuthenticationViewModel: ObservableObject {
             }
         }
     }
+    
+    func logOutCurrentUser() {
+        do {
+            try Auth.auth().signOut()
+            self.isAuthenticated = false
+        } catch {
+            print("There was an error logging off the user")
+        }
+    }
 }

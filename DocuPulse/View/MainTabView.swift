@@ -40,14 +40,14 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-//            HomeView()
-//                .tabItem {
-//                    Label("Account", systemImage: "person.crop.circle")
-//                        .onTapGesture {
-//                            selectedIndex = 3
-//                        }
-//                }
-//                .tag(3)
+            AccountView()
+                .tabItem {
+                    Label("Account", systemImage: "person.crop.circle")
+                        .onTapGesture {
+                            selectedIndex = 3
+                        }
+                }
+                .tag(3)
             }
         }
 }
