@@ -35,7 +35,8 @@ struct DocuPulseApp: App {
             //WelcomeView()
             //PayWallView()
             //SignUpView()
-            OnboardingPageViewController()
+            //OnboardingPageViewController()
+            MainView()
                   .preferredColorScheme(.light)
         }
     }

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct OnboardingPageViewController: View {
     @State private var pageIndex = 0
     private let viewModel = OnboardingPageViewModel()
+    let authenticationViewModel = AuthenticationViewModel()
     
     var body: some View {
+        
         if pageIndex >= viewModel.onBoardingPageCount {
             WelcomeView()
         } else {

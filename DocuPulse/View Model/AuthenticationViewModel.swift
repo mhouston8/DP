@@ -23,6 +23,10 @@ class AuthenticationViewModel: ObservableObject {
     @Published var showErrorAuthenticatingAlert = false
     @Published var isLoggingIn = false
     @Published var userLoggedOff = false
+    
+    init() {
+        isUserLoggedIn()
+    }
 
     func signUpUser(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
@@ -86,6 +90,12 @@ class AuthenticationViewModel: ObservableObject {
             self.userLoggedOff = true
         } catch {
             print("There was an error logging off the user")
+        }
+    }
+    
+    func isUserLoggedIn () {
+        if let user = Auth.auth().currentUser {
+            self.isAuthenticated = true
         }
     }
 }
