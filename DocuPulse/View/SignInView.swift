@@ -12,6 +12,7 @@ struct SignInView: View {
     
     @State var emailText = ""
     @State var passwordText = ""
+    @State var rememberMeChecked = false
     @ObservedObject var authenticationViewModel = AuthenticationViewModel()
     @Environment(\.presentationMode) var presentationMode
     
@@ -42,16 +43,64 @@ struct SignInView: View {
                     }
                     .padding(.bottom)
                     
-                    UnderlinedTextField(text: $emailText, placeholder: "Email")
-                        .padding()
-                    UnderlinedTextField(text: $passwordText, placeholder: "Password")
-                        .padding()
+                    HStack {
+                        Text("Hello there")
+                            .font(.system(size: 35))
+                            .bold()
+                            .padding(.leading)
+                        Image(systemName: "hand.wave.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.yellow)
+                        Spacer()
+                    }
+                    .padding()
                     
-                    CustomRoundButton(text: "Login") {
+                    Text("Please enter your email & password to sign in.")
+                        .fontWeight(.light)
+                        .padding(.bottom)
+                    
+                    VStack {
+                        HStack {
+                            Text("Email")
+                                .font(.system(size: 15))
+                                .bold()
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        UnderlinedTextField(text: $emailText, placeholder: "Email")
+                            .padding(.bottom)
+                    }
+                    
+                    VStack {
+                        HStack {
+                            Text("Password")
+                                .font(.system(size: 15))
+                                .bold()
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        UnderlinedTextField(text: $passwordText, placeholder: "Password")
+                            .padding(.bottom)
+                    }
+                    
+                    //Remember Me
+                    HStack {
+                        Toggle(isOn: $rememberMeChecked) {
+                            Text("Remember Me")
+                        }
+                        .toggleStyle(CheckboxStyle())
+                        Spacer()
+                    }
+                    .padding(.leading)
+                    
+                    Spacer()
+                    
+                    CustomRoundButton(text: "Sign In") {
                         self.authenticationViewModel.loginUser(email: emailText, password: passwordText)
                     }.padding(.top)
                     
-                    Spacer()
                 }
                 .alert(isPresented: $authenticationViewModel.showErrorAuthenticatingAlert) {
                     Alert(
@@ -81,6 +130,18 @@ struct CustomRoundButton: View {
                 .foregroundColor(.white)
                 .background(Color.blue)
                 .cornerRadius(10)
+        }
+    }
+}
+
+struct CheckboxStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        return HStack {
+            Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+                .onTapGesture {
+                    configuration.isOn.toggle()
+                }
+            configuration.label
         }
     }
 }
