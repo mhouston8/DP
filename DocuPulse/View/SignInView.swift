@@ -34,7 +34,7 @@ struct SignInView: View {
                         Image(systemName: "arrow.left")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
+                            .frame(width: 22, height: 22)
                             .padding(.leading)
                             .onTapGesture {
                                 presentationMode.wrappedValue.dismiss()
@@ -47,7 +47,7 @@ struct SignInView: View {
                         Text("Hello there")
                             .font(.system(size: 35))
                             .bold()
-                            .padding(.leading)
+                            
                         Image(systemName: "hand.wave.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -57,11 +57,15 @@ struct SignInView: View {
                     }
                     .padding()
                     
-                    Text("Please enter your email & password to sign in.")
-                        .fontWeight(.light)
-                        .padding(.bottom)
+                    HStack {
+                        Text("Please enter your email & password to sign in.")
+                            .fontWeight(.light)
+                            .padding([.leading, .bottom])
+                        Spacer()
+                    }
                     
                     VStack {
+                        
                         HStack {
                             Text("Email")
                                 .font(.system(size: 15))
@@ -81,7 +85,7 @@ struct SignInView: View {
                             Spacer()
                         }
                         .padding(.leading)
-                        UnderlinedTextField(text: $passwordText, placeholder: "Password")
+                        SecureUnderlinedTextField(text: $passwordText, placeholder: "Password")
                             .padding(.bottom)
                     }
                     
@@ -93,7 +97,16 @@ struct SignInView: View {
                         .toggleStyle(CheckboxStyle())
                         Spacer()
                     }
-                    .padding(.leading)
+                    .padding([.leading, .bottom])
+                    
+                    HStack {
+                        Button {
+                            //
+                        } label: {
+                            Text("Forgot Password")
+                        }
+
+                    }
                     
                     Spacer()
                     
