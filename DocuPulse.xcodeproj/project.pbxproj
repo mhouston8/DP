@@ -50,6 +50,7 @@
 		BB7E4EE52A674FB80087BA91 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EE42A674FB80087BA91 /* HomeView.swift */; };
 		BB7E76A72B140AAA00344190 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76A62B140AAA00344190 /* AccountView.swift */; };
 		BB7E76A92B1682CD00344190 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76A82B1682CD00344190 /* MainView.swift */; };
+		BB7E76AB2B1A9A1800344190 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */; };
 		BBCA3C1B2B01A14C00044F95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1A2B01A14C00044F95 /* FirebaseAnalytics */; };
 		BBCA3C1D2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1C2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion */; };
 		BBCA3C1F2B01A14C00044F95 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1E2B01A14C00044F95 /* FirebaseAnalyticsSwift */; };
@@ -139,6 +140,7 @@
 		BB7E4EE42A674FB80087BA91 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BB7E76A62B140AAA00344190 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BB7E76A82B1682CD00344190 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
@@ -283,11 +285,13 @@
 		329809B22A65EDCC008736BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3245C7392AA658B100479CD8 /* AdMob */,
+				BB7E76A62B140AAA00344190 /* AccountView.swift */,
 				3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */,
 				3212FA0C2A73966B00289ECD /* FilesView.swift */,
+				BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */,
 				BB7E4EE42A674FB80087BA91 /* HomeView.swift */,
 				BB7E4EDF2A674CA40087BA91 /* MainTabView.swift */,
+				BB7E76A82B1682CD00344190 /* MainView.swift */,
 				32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */,
 				329809B32A65EDE5008736BB /* OnboardingPageView.swift */,
 				BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */,
@@ -295,14 +299,13 @@
 				32FD8D792A6F8130004A1618 /* RecentFilesView.swift */,
 				BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */,
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
-				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
-				32980A9B2A70405E006F3EAF /* Components */,
-				32045C952AAEDE1300C433DF /* Main.storyboard */,
-				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
-				BBCA3C662B129A2F00044F95 /* WelcomeView.swift */,
 				BBCA3C6C2B12F76900044F95 /* SignInView.swift */,
-				BB7E76A62B140AAA00344190 /* AccountView.swift */,
-				BB7E76A82B1682CD00344190 /* MainView.swift */,
+				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
+				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
+				BBCA3C662B129A2F00044F95 /* WelcomeView.swift */,
+				3245C7392AA658B100479CD8 /* AdMob */,
+				32980A9B2A70405E006F3EAF /* Components */,
+				BB7E76AC2B1A9A3D00344190 /* Storyboards */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,14 @@
 				329F3AF52A6673CF00AE107D /* Launch Screen.storyboard */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		BB7E76AC2B1A9A3D00344190 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				32045C952AAEDE1300C433DF /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BBCA3C552B058EB700044F95 /* Database */ = {
@@ -629,6 +640,7 @@
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
 				325D8E422A7EB8010048C867 /* Colors.swift in Sources */,
 				3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */,
+				BB7E76AB2B1A9A1800344190 /* ForgotPasswordView.swift in Sources */,
 				32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
