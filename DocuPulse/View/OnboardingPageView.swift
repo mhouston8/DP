@@ -82,6 +82,9 @@ struct OnboardingPageView: View {
                 .padding()
                 Spacer()
             }
+            .onAppear {
+                UserDefaultsManager.shared.set(value: true, forKey: UserDefaultKeys.onboardingScreenSeen)
+            }
         }
     }
 }

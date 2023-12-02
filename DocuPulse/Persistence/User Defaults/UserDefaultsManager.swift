@@ -20,5 +20,8 @@ class UserDefaultsManager {
     func getValue(forKey key: String) -> Any? {
         return UserDefaults.standard.value(forKey: key)
     }
-    
+}
+
+struct UserDefaultKeys {
+    static var onboardingScreenSeen = "onboardingScreenSeen"
 }

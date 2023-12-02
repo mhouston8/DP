@@ -15,7 +15,11 @@ struct MainView: View {
         if authenticationViewModel.isAuthenticated {
             MainTabView()
         } else {
-            OnboardingPageViewController()
+            if let _ = UserDefaultsManager.shared.getValue(forKey: UserDefaultKeys.onboardingScreenSeen) {
+                SignInView()
+            } else {
+                OnboardingPageViewController()
+            }
         }
     }
 }
