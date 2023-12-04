@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import Firebase
 
-struct User {
+struct CurrentUser {
     var id: String
     var email: String?
     

@@ -10,19 +10,19 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class FirebaseDBWrapper {
     let databaseReference = Firestore.firestore()
     let storageReference = Storage.storage().reference()
     
     func saveDocument(document: UIImage) {
-        let deviceID = UIDevice.current.identifierForVendor?.uuidString
         guard let imageData = document.jpegData(compressionQuality: 1.00) else { return }
 
         let date = Date()
         let dateFormatter = DateFormatter()
         let currentDateString = dateFormatter.string(from: date)
-        let documentsStoragePathReference = self.storageReference.child("documents/\(currentDateString)")
+        let documentsStoragePathReference = self.storageReference.child("documents/\(Auth.auth().currentUser?.uid ?? "")/\(currentDateString)")
         
         
         documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in
@@ -41,8 +41,8 @@ class FirebaseDBWrapper {
                 
                 
                 //save file path in database
-                let documentData: [String: Any] = ["document": downloadURL.absoluteString]
-                let userDocumentsPathRef = self.databaseReference.collection("users").document(deviceID!).collection("documents").document()
+                let documentData: [String: Any] = ["pathToFile": downloadURL.absoluteString]
+                let userDocumentsPathRef = self.databaseReference.collection("users").document(Auth.auth().currentUser!.uid).collection("documents").document()
                 userDocumentsPathRef.setData(documentData) { error in
                     if let error = error {
                         print("Error writing document path to database: \(error)")
@@ -54,6 +54,16 @@ class FirebaseDBWrapper {
         }
     }
     
+    func saveUser(user: User) {
+        let data = ["documents": []]
+        databaseReference.collection("users").document(user.uid).setData(data) { error in
+            if let error = error {
+                print("There was an error adding user to the database.")
+            }
+            
+            print("Successfully saved user to the database.")
+        }
+    }
     
     func readDocument() {
         

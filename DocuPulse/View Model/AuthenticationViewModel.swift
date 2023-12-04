@@ -23,6 +23,7 @@ class AuthenticationViewModel: ObservableObject {
     @Published var showErrorAuthenticatingAlert = false
     @Published var isLoggingIn = false
     @Published var userLoggedOff = false
+    let firebaseDBWrapper = FirebaseDBWrapper()
     
     init() {
         isUserLoggedIn()
@@ -39,7 +40,7 @@ class AuthenticationViewModel: ObservableObject {
             
             if let result = authResult {
                 let signedInUser = result.user
-                let user = User(firebaseUser: signedInUser)
+                self?.firebaseDBWrapper.saveUser(user: signedInUser)
                 strongSelf.isAuthenticated = true
             }
         }
