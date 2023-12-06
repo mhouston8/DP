@@ -12,6 +12,7 @@ struct SignUpView: View {
     @State private var emailText = ""
     @State private var passwordText = ""
     @State private var confirmPasswordText = ""
+    @State private var showSignInView = false
     @State var isAuthenticationErrorAlertPresented = false
     @Environment(\.presentationMode) var presentationMode
     
@@ -21,21 +22,10 @@ struct SignUpView: View {
         
         if authenticationViewModel.isAuthenticated {
             MainTabView()
+        } else if self.showSignInView{
+            SignInView()
         } else {
             VStack {
-                
-                HStack {
-                    Image(systemName: "arrow.left")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .padding(.leading)
-                        .onTapGesture {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    Spacer()
-                }
-                
                 Text("Create New Account")
                     .font(.largeTitle)
                     .padding(.bottom)
@@ -69,14 +59,16 @@ struct SignUpView: View {
                 HStack {
                     Text("Already have an account?")
                     Button {
-                        
+                        self.showSignInView.toggle()
                     } label: {
                         Text("Sign In")
                             .foregroundStyle(Color.blue)
                     }
                 }
+                .padding()
 
             }
+            .padding(.top)
             .alert(isPresented: $authenticationViewModel.showErrorAuthenticatingAlert) {
                 Alert(
                     title: Text("Error"),

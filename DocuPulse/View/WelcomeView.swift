@@ -55,7 +55,7 @@ struct WelcomeView: View {
             }
             .padding(.bottom)
             .fullScreenCover(isPresented: $showSignInView, content: {
-                SignInView()
+                SignInView(sourceController: "Welcome")
             })
             
             HStack {

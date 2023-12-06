@@ -95,8 +95,16 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     func isUserLoggedIn () {
-        if let user = Auth.auth().currentUser {
-            self.isAuthenticated = true
-        }
+        Auth.auth().currentUser?.getIDToken(completion: { token, error in
+            if let error = error {
+                self.isAuthenticated = false
+                return
+            }
+            
+            //refresh token success, grab the user
+            if let user = Auth.auth().currentUser {
+                self.isAuthenticated = true
+            }
+        })
     }
 }

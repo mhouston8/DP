@@ -13,13 +13,21 @@ struct SignInView: View {
     @State var emailText = ""
     @State var passwordText = ""
     @State var rememberMeChecked = false
+    @State var showSignUpView = false
     @ObservedObject var authenticationViewModel = AuthenticationViewModel()
     @Environment(\.presentationMode) var presentationMode
+    var sourceController = ""
+    
+    init(sourceController: String = "") {
+        self.sourceController = sourceController
+    }
     
     var body: some View {
         
         if authenticationViewModel.isAuthenticated {
             MainTabView()
+        } else if showSignUpView {
+            SignUpView()
         } else {
             if authenticationViewModel.isLoggingIn {
                 VStack {
@@ -31,15 +39,17 @@ struct SignInView: View {
             } else {
                 VStack {
                     HStack {
-                        Image(systemName: "arrow.left")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 22, height: 22)
-                            .padding(.leading)
-                            .onTapGesture {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        Spacer()
+                        if sourceController == "Welcome" {
+                            Image(systemName: "arrow.left")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 22, height: 22)
+                                .padding(.leading)
+                                .onTapGesture {
+                                    presentationMode.wrappedValue.dismiss()
+                                }
+                            Spacer()
+                        }
                     }
                     .padding(.bottom)
                     
@@ -101,11 +111,10 @@ struct SignInView: View {
                     
                     HStack {
                         Button {
-                            //
+                            
                         } label: {
                             Text("Forgot Password")
                         }
-
                     }
                     
                     Spacer()
@@ -114,6 +123,16 @@ struct SignInView: View {
                         self.authenticationViewModel.loginUser(email: emailText, password: passwordText)
                     }.padding(.top)
                     
+                    HStack {
+                        Text("Don't have an account?")
+                        Button {
+                            self.showSignUpView.toggle()
+                        } label: {
+                            Text("Sign Up")
+                        }
+                    }
+                    .padding()
+
                 }
                 .alert(isPresented: $authenticationViewModel.showErrorAuthenticatingAlert) {
                     Alert(
@@ -157,8 +176,4 @@ struct CheckboxStyle: ToggleStyle {
             configuration.label
         }
     }
-}
-
-#Preview {
-    SignInView()
 }

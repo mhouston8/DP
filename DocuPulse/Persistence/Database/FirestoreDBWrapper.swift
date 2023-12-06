@@ -20,9 +20,8 @@ class FirebaseDBWrapper {
         guard let imageData = document.jpegData(compressionQuality: 1.00) else { return }
 
         let date = Date()
-        let dateFormatter = DateFormatter()
-        let currentDateString = dateFormatter.string(from: date)
-        let documentsStoragePathReference = self.storageReference.child("documents/\(Auth.auth().currentUser?.uid ?? "")/\(currentDateString)")
+        let currentDateInMilliSeconds = Int64(date.timeIntervalSince1970 * 1000)
+        let documentsStoragePathReference = self.storageReference.child("documents/\(currentDateInMilliSeconds)")
         
         
         documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in
@@ -55,13 +54,12 @@ class FirebaseDBWrapper {
     }
     
     func saveUser(user: User) {
-        let data = ["documents": []]
-        databaseReference.collection("users").document(user.uid).setData(data) { error in
+        databaseReference.collection("users").document(Auth.auth().currentUser!.uid).setData([:]) { error in
             if let error = error {
-                print("There was an error adding user to the database.")
+                print("")
+            } else {
+                print("")
             }
-            
-            print("Successfully saved user to the database.")
         }
     }
     

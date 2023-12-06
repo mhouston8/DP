@@ -14,6 +14,9 @@ struct MainView: View {
     var body: some View {
         if authenticationViewModel.isAuthenticated {
             MainTabView()
+                .onAppear {
+                    print("")
+                }
         } else {
             if let _ = UserDefaultsManager.shared.getValue(forKey: UserDefaultKeys.onboardingScreenSeen) {
                 SignInView()
