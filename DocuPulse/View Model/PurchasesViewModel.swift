@@ -50,9 +50,7 @@ extension PurchasesViewModel: SKPaymentTransactionObserver {
 }
 
 enum PurchaseError {
-    
     case productNotFound
     case failedPayment
     case unknown
-    
 }

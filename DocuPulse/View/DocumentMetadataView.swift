@@ -42,7 +42,7 @@ struct DocumentMetadataView: View {
                 .pickerStyle(.wheel)
                 
                 CustomRoundButton(text: "Save Document") {
-                    self.documentMetadataViewModel.saveCurrentUserDocument(document: document)
+                    self.documentMetadataViewModel.saveCurrentUserDocument(document: document, title: documentTitle, mimeType: documentPickerSelection)
                 }
             }
             .padding()

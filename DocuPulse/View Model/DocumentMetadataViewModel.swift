@@ -18,8 +18,8 @@ class DocumentMetadataViewModel: ObservableObject {
     var storage = FirebaseStorageWrapper()
     @Published var didSaveDocument = false
     
-    func saveCurrentUserDocument(document: UIImage) {
-        self.storage.saveCurrentUserDocument(document: document, completion: { result in
+    func saveCurrentUserDocument(document: UIImage, title: String, mimeType: String) {
+        self.storage.saveCurrentUserDocument(document: document, title: title, mimeType: mimeType, completion: { result in
             switch result {
             case .success():
                 print("Successfully saved user document to storage")

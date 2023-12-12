@@ -17,11 +17,10 @@ enum DocumentError : Error {
 class FirebaseStorageWrapper {
     
     typealias StorageCompletionHandler = (Result<Void, Error>) -> Void
-    
     var firebaseDBWrapper = FirebaseDBWrapper()
     let storageReference = Storage.storage().reference()
     
-    func saveCurrentUserDocument(document: UIImage, completion: @escaping StorageCompletionHandler) {
+    func saveCurrentUserDocument(document: UIImage, title: String, mimeType: String, completion: @escaping StorageCompletionHandler) {
         guard let currentUser = Auth.auth().currentUser else { return }
         
         guard let imageData = document.jpegData(compressionQuality: 1.00) else {
@@ -50,8 +49,18 @@ class FirebaseStorageWrapper {
                     return
                 }
                 
+                let currentDate = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss"
+                let dateString = dateFormatter.string(from: currentDate)
+                
                 //save file path in database
-                let documentData: [String: Any] = ["pathToFile": downloadURL.absoluteString]
+                let documentData: [String: Any] = [
+                    "pathToFile": downloadURL.absoluteString,
+                    "timestamp": dateString,
+                    "title": "title",
+                    "mimeType": "jpeg"
+                ]
                 let userDocumentsPathRef = self.firebaseDBWrapper.databaseReference.collection("users").document(Auth.auth().currentUser!.uid).collection("documents").document()
                 userDocumentsPathRef.setData(documentData) { error in
                     if let error = error {
