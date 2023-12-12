@@ -31,6 +31,7 @@ struct DocuPulseApp: App {
 
     var body: some Scene {
         WindowGroup {
+            //DocumentMetadataView()
             //ForgotPasswordView()
             //SignInView()
             //WelcomeView()

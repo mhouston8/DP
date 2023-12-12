@@ -14,7 +14,7 @@ struct DocumentScannerView: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         var parent: DocumentScannerView
-        @ObservedObject var documentScannerViewModel = DocumentScannerViewModel()
+        @ObservedObject var documentScannerViewModel = DocumentScannerViewModel.shared
         
         init(_ parent: DocumentScannerView) {
             self.parent = parent
@@ -26,12 +26,15 @@ struct DocumentScannerView: UIViewControllerRepresentable {
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             
+            var scannedImage = UIImage()
+            
             //grab the documents
             for pageIndex in 0..<scan.pageCount {
                 let image = scan.imageOfPage(at: pageIndex)
-                documentScannerViewModel.saveScannedDocument(document: image)
+                scannedImage = image
             }
-        
+            
+            self.documentScannerViewModel.updateScannedDocument(document: scannedImage)
             parent.presentationMode.wrappedValue.dismiss()
         }
         

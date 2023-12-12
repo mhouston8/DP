@@ -11,16 +11,16 @@ import SwiftUI
 
 class DocumentScannerViewModel: ObservableObject {
     
+    static let shared = DocumentScannerViewModel()
+    private init() {}
+    
     private var fileManager = DocumentSaver()
     private var firebaseDBWrapper = FirebaseDBWrapper()
+    @Published var documentScannerViewDismissed = false
+    @Published var scannedDocument = UIImage()
     
-    init() {
-        
-    }
-    
-    func saveScannedDocument(document: UIImage) {
-        self.firebaseDBWrapper.saveDocument(document: document)
-        //self.fileManager.saveScannedDocument(image: document)
+    func updateScannedDocument(document: UIImage) {
+        self.scannedDocument = document
     }
     
 }

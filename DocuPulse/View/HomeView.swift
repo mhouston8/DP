@@ -9,10 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
 
+    @ObservedObject var documentScannerViewModel = DocumentScannerViewModel.shared
     private let adViewControllerRepresentable = FullScreenAdViewControllerRepresentable()
     @ObservedObject private var adCoordinator = AdCoordinator()
     @AppStorage("isPremiumSubscriber") var isPremiumSubsciber: Bool = false
+    
     @State private var showPremiumSubscriptionView: Bool = false
+    @State var showDocumentMetatDataView = false
     
     var body: some View {
         
@@ -111,6 +114,12 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $adCoordinator.openDocumentScanner, content: {
             DocumentScannerView()
                 .edgesIgnoringSafeArea(.all)
+                .onDisappear {
+                    self.showDocumentMetatDataView = true
+                }
+        })
+        .fullScreenCover(isPresented: $showDocumentMetatDataView, content: {
+            DocumentMetadataView(document: self.documentScannerViewModel.scannedDocument)
         })
         .background {
             // Add the adViewControllerRepresentable to the background so it
