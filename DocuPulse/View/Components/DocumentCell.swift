@@ -21,7 +21,7 @@ struct DocumentCell: View {
                 .frame(height: 100)
             
             VStack(alignment: .leading, spacing: 10) {
-                Text(document.title)
+                Text("Job")
                     .bold()
                 Text("Letter")
                     .bold()
@@ -51,6 +51,7 @@ struct DocumentCell: View {
             }
         }
         .padding()
+        .frame(maxWidth: .infinity)
         .background(Color(.systemGroupedBackground))
         .cornerRadius(10.0)
         .sheet(isPresented: $showShareSheet, content: {

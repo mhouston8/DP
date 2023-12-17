@@ -52,7 +52,7 @@ struct FilesView: View {
                 ScrollView {
                     VStack {
                         ForEach(0..<15) { document in
-                            DocumentCell(document: Document(documentID: "", title: "", imageURL: "", mimeType: "", date: ""))
+                            DocumentCell(document: Document(documentID: "", title: "", imageURL: "", mimeType: "", dateString: ""))
                         }
                     }
                 }

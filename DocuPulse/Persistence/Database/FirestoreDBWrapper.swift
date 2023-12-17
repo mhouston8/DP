@@ -42,19 +42,23 @@ class FirebaseDBWrapper {
             
             
             if snapshot!.documents.count > 0 {
-                let document = snapshot!.documents[0]
-                let dataDictionaryRepresentation = self.prepareDataForDecoding(document: document)
-                guard let dataJSONRepresentation = try? JSONSerialization.data(withJSONObject: dataDictionaryRepresentation) else {
-                    return
+                var docs = [Document]()
+                for document in snapshot!.documents {
+                    let dataDictionaryRepresentation = self.prepareDataForDecoding(document: document)
+                    guard let dataJSONRepresentation = try? JSONSerialization.data(withJSONObject: dataDictionaryRepresentation) else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    do {
+                        let doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
+                        docs.append(doc)
+                    } catch let jsonError {
+                        print(jsonError)
+                    }
                 }
                 
-                let decoder = JSONDecoder()
-                do {
-                    let doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
-                    completion([doc])
-                } catch let jsonError {
-                    print(jsonError)
-                }
+                completion(docs)
             }
         }
     }
@@ -72,15 +76,15 @@ class FirebaseDBWrapper {
         return data
     }
     
-    func readDocument() {
+    func readDocument(documentID: String) {
         
     }
     
-    func editDocument() {
+    func editDocument(documentID: String) {
         
     }
     
-    func deleteDocument() {
+    func deleteDocument(documentID: String) {
         
     }
     

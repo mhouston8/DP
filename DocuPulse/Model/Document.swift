@@ -19,13 +19,20 @@ struct Document: Codable, Identifiable {
     var title: String
     var imageURL: String
     var mimeType: String
-    var date: String
+    var dateString: String
+    
+    //convert to date property from string on demand
+    var date: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+        return dateFormatter.date(from: dateString)
+    }
     
     enum CodingKeys: String, CodingKey {
         case title
         case imageURL = "fileURL"
-        case date
-        case mimeType = "mimeType"
+        case mimeType
+        case dateString = "date"
     }
     
     //decodable init

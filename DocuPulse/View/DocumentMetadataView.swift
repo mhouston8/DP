@@ -20,7 +20,7 @@ struct DocumentMetadataView: View {
 
     var body: some View {
         if documentMetadataViewModel.didSaveDocument {
-            HomeView()
+            MainTabView()
         } else {
             VStack {
                 Spacer()
