@@ -10,24 +10,40 @@ import UIKit
 import RealmSwift
 
 
-struct Document {
-    let id = UUID()
-    let title: String
-    let type: String
-    let thumbnail: UIImage
-    let date: Date
-}
-
-class RealmDocument: Object {
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var title: String = ""
-    @Persisted var date: Date = Date()
+struct Document: Codable, Identifiable {
     
-    convenience init(title: String, date: Date) {
-        self.init()
-        self.title = title
-        self.date = date
+    var id: String { //computed property
+        documentID
+    }
+    var documentID: String = ""
+    var title: String
+    var imageURL: String
+    var mimeType: String
+    var date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageURL = "fileURL"
+        case date
+        case mimeType = "mimeType"
     }
     
-    //@Persisted var thumbnail: UIImage
+    //decodable init
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.title = try container.decode(String.self, forKey: .title)
+//        self.imageURL = try container.decode(String.self, forKey: .imageURL)
+//        self.mimeType = try container.decode(String.self, forKey: .mimeType)
+//        
+//        
+//        //convert this string date to a date
+//        var dateString = try container.decode(String.self, forKey: .date)
+//        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        guard let date = formatter.date(from: dateString) else {
+//            throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription:"Date string does not match format.")
+//            }
+//        self.date = date
+//    }
 }

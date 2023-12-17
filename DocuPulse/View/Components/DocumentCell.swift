@@ -11,6 +11,7 @@ struct DocumentCell: View {
     
     @State private var showMoreOptionsSheet = false
     @State private var showShareSheet = false
+    var document: Document
     
     var body: some View {
         HStack {
@@ -20,7 +21,7 @@ struct DocumentCell: View {
                 .frame(height: 100)
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("Job Application")
+                Text(document.title)
                     .bold()
                 Text("Letter")
                     .bold()
@@ -60,10 +61,5 @@ struct DocumentCell: View {
             MoreOptionsView()
         })
         .onTapGesture {}
-    }
-}
-struct DocumentCell_Previews: PreviewProvider {
-    static var previews: some View {
-        DocumentCell()
     }
 }

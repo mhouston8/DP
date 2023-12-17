@@ -43,6 +43,7 @@
 		32FD8D822A6F8960004A1618 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD8D812A6F8960004A1618 /* MoreOptionsView.swift */; };
 		BB0CE4132ACA3EB6002CE6E6 /* DocuPulse.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */; };
 		BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */; };
+		BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4866B32B2A820400FFE121 /* HomeViewModel.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
@@ -135,6 +136,7 @@
 		4892F0C4D9885958D24EED1E /* Pods_DocuPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocuPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DocuPulse.storekit; sourceTree = "<group>"; };
 		BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		BB4866B32B2A820400FFE121 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				32EC0C612AB65BD100BCBE6F /* PurchasesViewModel.swift */,
 				329EA5F92AEAAEE40030F628 /* DocumentScannerViewModel.swift */,
 				BB7E76AF2B2143C300344190 /* DocumentMetadataViewModel.swift */,
+				BB4866B32B2A820400FFE121 /* HomeViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
+				BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */,
 				325D8E422A7EB8010048C867 /* Colors.swift in Sources */,
 				3212FA132A758B1500289ECD /* SubscriptionFeatureItem.swift in Sources */,
 				BB7E76AB2B1A9A1800344190 /* ForgotPasswordView.swift in Sources */,

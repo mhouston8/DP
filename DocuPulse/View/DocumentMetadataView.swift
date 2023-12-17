@@ -14,11 +14,10 @@ struct DocumentMetadataView: View {
     @ObservedObject var documentMetadataViewModel = DocumentMetadataViewModel()
     var document: UIImage
     
-    init(document: UIImage){
+    init(document: UIImage) {
         self.document = document
     }
 
-    
     var body: some View {
         if documentMetadataViewModel.didSaveDocument {
             HomeView()

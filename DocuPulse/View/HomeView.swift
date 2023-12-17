@@ -13,6 +13,7 @@ struct HomeView: View {
     private let adViewControllerRepresentable = FullScreenAdViewControllerRepresentable()
     @ObservedObject private var adCoordinator = AdCoordinator()
     @AppStorage("isPremiumSubscriber") var isPremiumSubsciber: Bool = false
+    @ObservedObject var homeViewModel = HomeViewModel()
     
     @State private var showPremiumSubscriptionView: Bool = false
     @State var showDocumentMetatDataView = false
@@ -77,8 +78,8 @@ struct HomeView: View {
                     
                     ScrollView {
                         VStack {
-                            ForEach(0..<15) { document in
-                                DocumentCell()
+                            ForEach(self.homeViewModel.documents) { document in
+                                DocumentCell(document: document)
                             }
                         }
                     }
@@ -106,10 +107,11 @@ struct HomeView: View {
                 }
                 .padding(30)
             }
+            .onAppear(perform: {
+                adCoordinator.loadAd()
+                self.homeViewModel.readAllDocuments()
+            })
             .sheet(isPresented: $showPremiumSubscriptionView) {PayWallView()}
-        }
-        .onAppear() {
-            adCoordinator.loadAd()
         }
         .fullScreenCover(isPresented: $adCoordinator.openDocumentScanner, content: {
             DocumentScannerView()

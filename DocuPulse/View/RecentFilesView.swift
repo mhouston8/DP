@@ -38,7 +38,7 @@ struct RecentFilesView: View {
             ScrollView {
                 VStack {
                     ForEach(0..<30) { recentFile in
-                        DocumentCell()
+                        //DocumentCell()
                     }
                 }
             }

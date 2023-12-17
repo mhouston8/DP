@@ -56,8 +56,8 @@ class FirebaseStorageWrapper {
                 
                 //save file path in database
                 let documentData: [String: Any] = [
-                    "pathToFile": downloadURL.absoluteString,
-                    "timestamp": dateString,
+                    "fileURL": downloadURL.absoluteString,
+                    "date": dateString,
                     "title": "title",
                     "mimeType": "jpeg"
                 ]
@@ -73,5 +73,9 @@ class FirebaseStorageWrapper {
                 }
             }
         }
+    }
+    
+    func editDocument(documentPath: String) {
+        
     }
 }
