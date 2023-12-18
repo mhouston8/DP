@@ -21,7 +21,7 @@ struct DocumentCell: View {
                 .frame(height: 100)
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("Job")
+                Text(document.title)
                     .bold()
                 Text("Letter")
                     .bold()
@@ -59,7 +59,7 @@ struct DocumentCell: View {
                 .presentationDetents([.medium]) //show half modal
         })
         .sheet(isPresented: $showMoreOptionsSheet, content: {
-            MoreOptionsView()
+            MoreOptionsView(document: document)
         })
         .onTapGesture {}
     }

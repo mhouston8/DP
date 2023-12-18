@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct MoreOptionsView: View {
+    
+    @State var showWatermarkScreen = false
+    
+    var document: Document
+    
     var body: some View {
         
         ScrollView {
@@ -19,40 +24,40 @@ struct MoreOptionsView: View {
                     .padding(.top)
                 
                 VStack(spacing: 20) {
-                    DocumentOptionsCell(imageName: "Save to Device", title: "Save to Device", includeChevron: true)
-                    DocumentOptionsCell(imageName: "Export To", title: "Export To ...", includeChevron: true)
+                    DocumentOptionsCell(imageName: "Save to Device", title: "Save to Device", includeChevron: true, buttonAction: {})
+                    DocumentOptionsCell(imageName: "Export To", title: "Export To ...", includeChevron: true, buttonAction: {})
                     Divider()
                 }
                 .padding()
                 
                 VStack(spacing: 20) {
-                    DocumentOptionsCell(imageName: "Add Watermark", title: "Add Watermark")
-                    DocumentOptionsCell(imageName: "Add Digital Signature", title: "Add Digital Signature")
-                    DocumentOptionsCell(imageName: "Split PDF Black", title: "Split PDF")
-                    DocumentOptionsCell(imageName: "Merge PDF Black", title: "Merge PDF")
-                    DocumentOptionsCell(imageName: "Protect PDF Black", title: "Protect PDF")
-                    DocumentOptionsCell(imageName: "Compress PDF Black", title: "Compress PDF")
+                    DocumentOptionsCell(imageName: "Add Watermark", title: "Add Watermark", buttonAction: {
+                        self.showWatermarkScreen = true
+                    })
+                    DocumentOptionsCell(imageName: "Add Digital Signature", title: "Add Digital Signature", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Split PDF Black", title: "Split PDF", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Merge PDF Black", title: "Merge PDF", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Protect PDF Black", title: "Protect PDF", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Compress PDF Black", title: "Compress PDF", buttonAction: {})
                     Divider()
                 }
                 .padding()
                 
                 VStack(spacing: 20) {
-                    DocumentOptionsCell(imageName: "Rename", title: "Rename")
-                    DocumentOptionsCell(imageName: "Move to Folder", title: "Move to Folder")
-                    DocumentOptionsCell(imageName: "Print", title: "Print")
-                    DocumentOptionsCell(imageName: "Delete", title: "Delete")
+                    DocumentOptionsCell(imageName: "Rename", title: "Rename", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Move to Folder", title: "Move to Folder", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Print", title: "Print", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Delete", title: "Delete", buttonAction: {})
                     Divider()
                 }
                 .padding()
                 
                 Spacer()
             }
+            .fullScreenCover(isPresented: $showWatermarkScreen) {
+                WatermarkDocumentView(document: document)
+            }
         }
     }
 }
 
-struct MoreOptionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MoreOptionsView()
-    }
-}

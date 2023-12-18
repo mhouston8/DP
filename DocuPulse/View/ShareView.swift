@@ -34,11 +34,11 @@ struct ShareView: View {
                 .padding(.vertical)
             
             VStack(spacing: 20) {
-                DocumentOptionsCell(imageName: "Share Link", title: "Share Link")
-                DocumentOptionsCell(imageName: "Share PDF", title: "Share PDF")
-                DocumentOptionsCell(imageName: "Share Word", title: "Share Word")
-                DocumentOptionsCell(imageName: "Share JPEG", title: "Share JPEG")
-                DocumentOptionsCell(imageName: "Share PNG", title: "Share PNG")
+                DocumentOptionsCell(imageName: "Share Link", title: "Share Link", buttonAction: {})
+                DocumentOptionsCell(imageName: "Share PDF", title: "Share PDF", buttonAction: {})
+                DocumentOptionsCell(imageName: "Share Word", title: "Share Word", buttonAction: {})
+                DocumentOptionsCell(imageName: "Share JPEG", title: "Share JPEG", buttonAction: {})
+                DocumentOptionsCell(imageName: "Share PNG", title: "Share PNG", buttonAction: {})
             }
             .padding()
             

@@ -94,6 +94,7 @@
 		BBCA3C6D2B12F76A00044F95 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C6C2B12F76900044F95 /* SignInView.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
+		BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		BBCA3C6C2B12F76900044F95 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkDocumentView.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,6 +315,7 @@
 				3245C7392AA658B100479CD8 /* AdMob */,
 				32980A9B2A70405E006F3EAF /* Components */,
 				BB7E76AC2B1A9A3D00344190 /* Storyboards */,
+				BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
 				329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */,
+				BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */,
 				3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */,
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,

@@ -12,29 +12,29 @@ struct DocumentOptionsCell: View {
     var imageName: String
     var title: String
     var includeChevron = false
+    var buttonAction: () -> Void
     
     var body: some View {
         HStack {
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 25, height: 25)
-            Text(title)
-            
-            Spacer()
-            
-            if includeChevron {
-                Image(systemName: "chevron.right")
+            Button {
+                buttonAction()
+            } label: {
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 15, height: 15)
+                    .frame(width: 25, height: 25)
+                Text(title)
+                    .foregroundStyle(.black)
+                
+                Spacer()
+                
+                if includeChevron {
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 15, height: 15)
+                }
             }
         }
-    }
-}
-
-struct DocumentOptionsCell_Previews: PreviewProvider {
-    static var previews: some View {
-        DocumentOptionsCell(imageName: "", title: "")
     }
 }
