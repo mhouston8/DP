@@ -90,7 +90,17 @@ struct WatermarkDocumentView: View {
 //                let x = (image.size.width) / 2
 //                let y = (image.size.height) / 2
                 
-                string.draw(at: CGPoint(x: 50, y: 50))
+//                var x = 0
+//                var y = 0
+//                
+//                while x < 60 {
+//                    x += 10
+//                    y += 30
+//                    
+//                    string.draw(at: CGPoint(x: x, y: y))
+//                }
+                
+                string.draw(at: CGPoint(x: 20, y: 20))
             }
             
             self.watermarkedUIImage = watermarkedImage

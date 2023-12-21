@@ -18,7 +18,7 @@ class HomeViewModel: ObservableObject {
     @Published var documents = [Document]()
     
     func readAllDocuments() {
-        self.storage.firebaseDBWrapper.readAllDocuments { documents in
+        self.database.readAllDocuments { documents in
             self.documents = documents
             print("Documents = \(documents)")
         }

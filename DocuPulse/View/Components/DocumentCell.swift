@@ -15,20 +15,32 @@ struct DocumentCell: View {
     
     var body: some View {
         HStack {
-            Image("Document")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 100)
+            
+            AsyncImage(url: URL(string: document.imageURL), content: { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 80)
+            }, placeholder: {
+                ProgressView()
+            })
+            Spacer()
+            
             
             VStack(alignment: .leading, spacing: 10) {
                 Text(document.title)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .bold()
                 Text("Letter")
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .bold()
                 Text("10/12/23 12:34pm")
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 12, weight: .light))
             }
             .padding()
+            .padding(.leading)
+            Spacer()
             
             HStack {
                 Button {

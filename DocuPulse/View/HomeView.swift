@@ -76,10 +76,17 @@ struct HomeView: View {
                     }
                     .padding()
                     
+                    
                     ScrollView {
                         VStack {
-                            ForEach(self.homeViewModel.documents) { document in
-                                DocumentCell(document: document)
+                            if self.homeViewModel.documents.isEmpty {
+                                Text("No documents found")
+                                    .bold()
+                                    .padding(.top, 100)
+                            } else {
+                                ForEach(self.homeViewModel.documents) { document in
+                                    DocumentCell(document: document)
+                                }
                             }
                         }
                     }

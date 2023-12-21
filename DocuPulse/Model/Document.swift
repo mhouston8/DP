@@ -8,14 +8,13 @@
 import Foundation 
 import UIKit
 import RealmSwift
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 struct Document: Codable, Identifiable {
     
-    var id: String { //computed property
-        documentID
-    }
-    var documentID: String = ""
+    var id: String = ""
     var title: String
     var imageURL: String
     var mimeType: String
@@ -29,6 +28,7 @@ struct Document: Codable, Identifiable {
     }
     
     enum CodingKeys: String, CodingKey {
+        case id
         case title
         case imageURL = "fileURL"
         case mimeType

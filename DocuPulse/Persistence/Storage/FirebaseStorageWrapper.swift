@@ -56,6 +56,7 @@ class FirebaseStorageWrapper {
                 
                 //save file path in database
                 let documentData: [String: Any] = [
+                    "id": UUID().uuidString,
                     "fileURL": downloadURL.absoluteString,
                     "date": dateString,
                     "title": title,
