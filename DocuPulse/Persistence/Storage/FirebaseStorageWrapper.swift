@@ -17,10 +17,12 @@ enum DocumentError : Error {
 class FirebaseStorageWrapper {
     
     typealias StorageCompletionHandler = (Result<Void, Error>) -> Void
+    
     var firebaseDBWrapper = FirebaseDBWrapper()
     let storageReference = Storage.storage().reference()
     
     func saveCurrentUserDocument(document: UIImage, title: String, mimeType: String, completion: @escaping StorageCompletionHandler) {
+        
         guard let currentUser = Auth.auth().currentUser else { return }
         
         guard let imageData = document.jpegData(compressionQuality: 1.00) else {
@@ -34,8 +36,7 @@ class FirebaseStorageWrapper {
         
         
         documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in
-            guard let metadata = metadata else {
-                // Handle any errors
+            guard let _ = metadata else {
                 completion(.failure(error!))
                 return
             }
@@ -44,7 +45,6 @@ class FirebaseStorageWrapper {
             // Document uploaded successfully
             documentsStoragePathReference.downloadURL { (url, error) in
                 guard let downloadURL = url else {
-                    // Handle error
                     completion(.failure(error!))
                     return
                 }
@@ -58,10 +58,11 @@ class FirebaseStorageWrapper {
                 let documentData: [String: Any] = [
                     "fileURL": downloadURL.absoluteString,
                     "date": dateString,
-                    "title": "title",
+                    "title": title,
                     "mimeType": "jpeg"
                 ]
-                let userDocumentsPathRef = self.firebaseDBWrapper.databaseReference.collection("users").document(Auth.auth().currentUser!.uid).collection("documents").document()
+                
+                let userDocumentsPathRef = self.firebaseDBWrapper.databaseReference.collection("users").document(currentUser.uid).collection("documents").document()
                 userDocumentsPathRef.setData(documentData) { error in
                     if let error = error {
                         print("Error writing document path to database: \(error)")
@@ -75,7 +76,27 @@ class FirebaseStorageWrapper {
         }
     }
     
-    func editDocument(documentPath: String) {
+    func updateDocument(document: Document, with image: UIImage, completion: @escaping (Bool) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(false)
+            return
+        }
         
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+            completion(false)
+            return
+        }
+        
+        let storageReference = self.storageReference.storage.reference(forURL: document.imageURL)
+        
+        storageReference.putData(imageData) { metadata, error in
+            if let error = error {
+                print("Error updating document")
+                completion(false)
+            }
+            
+            print("Document was updated successfully")
+            completion(true)
+        }
     }
 }

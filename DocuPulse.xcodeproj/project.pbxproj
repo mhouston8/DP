@@ -95,6 +95,7 @@
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
 		BBD5AA152A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */; };
 		BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */; };
+		BBE7FC6D2B3228A700893FFC /* WatermarkDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7FC6C2B3228A700893FFC /* WatermarkDocumentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
 		BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkDocumentView.swift; sourceTree = "<group>"; };
+		BBE7FC6C2B3228A700893FFC /* WatermarkDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkDocumentViewModel.swift; sourceTree = "<group>"; };
 		CD586C17CB657515B1C87934 /* Pods-DocuPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocuPulse.debug.xcconfig"; path = "Target Support Files/Pods-DocuPulse/Pods-DocuPulse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,6 +267,7 @@
 		329809A02A64DDF1008736BB /* DocuPulse */ = {
 			isa = PBXGroup;
 			children = (
+				BBE7FC6E2B336E5700893FFC /* Networking */,
 				BBCA3C632B0E9EB300044F95 /* Authentication */,
 				329F3AF42A6671B200AE107D /* Info.plist */,
 				BBCA3C5A2B0AD4F500044F95 /* Persistence */,
@@ -375,6 +378,7 @@
 				329EA5F92AEAAEE40030F628 /* DocumentScannerViewModel.swift */,
 				BB7E76AF2B2143C300344190 /* DocumentMetadataViewModel.swift */,
 				BB4866B32B2A820400FFE121 /* HomeViewModel.swift */,
+				BBE7FC6C2B3228A700893FFC /* WatermarkDocumentViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -439,6 +443,13 @@
 				324E84732B1016BC00F365C6 /* GoogleService-Info.plist */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BBE7FC6E2B336E5700893FFC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,6 +674,7 @@
 				BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */,
 				3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */,
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
+				BBE7FC6D2B3228A700893FFC /* WatermarkDocumentViewModel.swift in Sources */,
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */,

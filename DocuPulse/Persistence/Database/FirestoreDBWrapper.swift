@@ -80,7 +80,7 @@ class FirebaseDBWrapper {
         
     }
     
-    func editDocument(documentID: String) {
+    func updateDocument(documentID: String, with image: UIImage) {
         
     }
     
