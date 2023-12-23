@@ -59,13 +59,15 @@ class FirebaseDBWrapper {
                 }
                 
                 completion(docs)
+            } else {
+                completion([])
             }
         }
     }
     
     func prepareDataForDecoding(document: QueryDocumentSnapshot) -> [String: Any] {
         var data = document.data() //turns document into dictionary
-        data["documentID"] = document.documentID
+        data["id"] = document.documentID
         print(document.documentID)
         
         //convert firestore timestamp to date
@@ -84,8 +86,21 @@ class FirebaseDBWrapper {
         
     }
     
-    func deleteDocument(documentID: String) {
+    func deleteDocument(document: Document, completion: @escaping (Bool) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(false)
+            return
+        }
         
+        let documentReference  = self.databaseReference.collection("users").document(currentUser.uid).collection("documents").document(document.id!)
+        
+        documentReference.delete { error in
+            if let error = error {
+                print("error")
+                completion(false)
+            } else {
+                completion(true)
+            }
+        } 
     }
-    
 }

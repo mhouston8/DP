@@ -14,26 +14,26 @@ import FirebaseFirestoreSwift
 
 struct Document: Codable, Identifiable {
     
-    var id: String = ""
+    var id: String?
     var title: String
-    var imageURL: String
+    var fileURL: String
     var mimeType: String
-    var dateString: String
+    var date: String
     
     //convert to date property from string on demand
-    var date: Date? {
+    var dateString: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
-        return dateFormatter.date(from: dateString)
+        return dateFormatter.date(from: date)
     }
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case imageURL = "fileURL"
+        case fileURL
         case mimeType
-        case dateString = "date"
-    }
+        case date
+    } 
     
     //decodable init
 //    init(from decoder: Decoder) throws {

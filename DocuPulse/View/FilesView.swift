@@ -41,7 +41,7 @@ struct FilesView: View {
                 .padding(.trailing)
                 
                 HStack {
-                    Text("Total: 125 files")
+                    Text("Total: \(self.filesViewModel.documents.count) files")
                         .bold()
                     Spacer()
                     Image(systemName: "arrow.up.arrow.down")

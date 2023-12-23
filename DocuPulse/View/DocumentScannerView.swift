@@ -12,6 +12,8 @@ struct DocumentScannerView: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Binding var showDocumentMetadataView: Bool
+    
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         var parent: DocumentScannerView
         @ObservedObject var documentScannerViewModel = DocumentScannerViewModel.shared
@@ -36,6 +38,7 @@ struct DocumentScannerView: UIViewControllerRepresentable {
             
             self.documentScannerViewModel.updateScannedDocument(document: scannedImage)
             parent.presentationMode.wrappedValue.dismiss()
+            self.parent.showDocumentMetadataView = true
         }
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
@@ -54,11 +57,5 @@ struct DocumentScannerView: UIViewControllerRepresentable {
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
-    }
-}
-
-struct DocumentScannerView_Previews: PreviewProvider {
-    static var previews: some View {
-           DocumentScannerView()
     }
 }

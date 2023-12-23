@@ -121,11 +121,8 @@ struct HomeView: View {
             .sheet(isPresented: $showPremiumSubscriptionView) {PayWallView()}
         }
         .fullScreenCover(isPresented: $adCoordinator.openDocumentScanner, content: {
-            DocumentScannerView()
+            DocumentScannerView(showDocumentMetadataView: $showDocumentMetatDataView)
                 .edgesIgnoringSafeArea(.all)
-                .onDisappear {
-                    self.showDocumentMetatDataView = true
-                }
         })
         .fullScreenCover(isPresented: $showDocumentMetatDataView, content: {
             DocumentMetadataView(document: self.documentScannerViewModel.scannedDocument)

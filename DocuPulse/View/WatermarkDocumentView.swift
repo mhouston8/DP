@@ -40,7 +40,7 @@ struct WatermarkDocumentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350, height: 500)
             } else {
-                AsyncImage(url: URL(string: document.imageURL)) { image in
+                AsyncImage(url: URL(string: document.fileURL)) { image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()
@@ -64,7 +64,7 @@ struct WatermarkDocumentView: View {
             }
         }
         .onAppear {
-            self.watermarkDocumentViewModel.fetchImage(from: URL(string:document.imageURL)!)
+            self.watermarkDocumentViewModel.fetchImage(from: URL(string:document.fileURL)!)
         }
     }
     

@@ -17,7 +17,7 @@ struct DocumentCell: View {
     var body: some View {
         HStack {
             
-            AsyncImage(url: URL(string: document.imageURL), content: { image in
+            AsyncImage(url: URL(string: document.fileURL), content: { image in
                 image
                     .resizable()
                     .scaledToFit()

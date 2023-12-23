@@ -56,7 +56,7 @@ class FirebaseStorageWrapper {
                 
                 //save file path in database
                 let documentData: [String: Any] = [
-                    "id": UUID().uuidString,
+//                    "id": UUID().uuidString,
                     "fileURL": downloadURL.absoluteString,
                     "date": dateString,
                     "title": title,
@@ -88,7 +88,7 @@ class FirebaseStorageWrapper {
             return
         }
         
-        let storageReference = self.storageReference.storage.reference(forURL: document.imageURL)
+        let storageReference = self.storageReference.storage.reference(forURL: document.fileURL)
         
         storageReference.putData(imageData) { metadata, error in
             if let error = error {
@@ -98,6 +98,17 @@ class FirebaseStorageWrapper {
             
             print("Document was updated successfully")
             completion(true)
+        }
+    }
+    
+    func deleteDocument(document: Document, completion: @escaping (Bool) -> Void) {
+        let documentStorageReference = self.storageReference.storage.reference(forURL: document.fileURL)
+        documentStorageReference.delete { error in
+            if let error = error {
+                completion(false)
+            } else {
+                completion(true)
+            }
         }
     }
 }

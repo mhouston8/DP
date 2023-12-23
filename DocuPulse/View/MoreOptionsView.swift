@@ -10,6 +10,7 @@ import SwiftUI
 struct MoreOptionsView: View {
     
     @State var showWatermarkScreen = false
+    @ObservedObject var moreOptionsViewModel = MoreOptionsViewModel()
     
     var document: Document
     
@@ -47,7 +48,9 @@ struct MoreOptionsView: View {
                     DocumentOptionsCell(imageName: "Rename", title: "Rename", buttonAction: {})
                     DocumentOptionsCell(imageName: "Move to Folder", title: "Move to Folder", buttonAction: {})
                     DocumentOptionsCell(imageName: "Print", title: "Print", buttonAction: {})
-                    DocumentOptionsCell(imageName: "Delete", title: "Delete", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Delete", title: "Delete", buttonAction: {
+                        self.moreOptionsViewModel.deleteDocument(document: document)
+                    })
                     Divider()
                 }
                 .padding()
