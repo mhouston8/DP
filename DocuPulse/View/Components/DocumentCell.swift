@@ -12,6 +12,7 @@ struct DocumentCell: View {
     @State private var showMoreOptionsSheet = false
     @State private var showShareSheet = false
     var document: Document
+    var showAccessories = false
     
     var body: some View {
         HStack {
@@ -42,23 +43,25 @@ struct DocumentCell: View {
             .padding(.leading)
             Spacer()
             
-            HStack {
-                Button {
-                    self.showShareSheet.toggle()
-                } label: {
-                    Image("Share")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25, height: 25)
-                }
-                
-                Button {
-                    self.showMoreOptionsSheet.toggle()
-                } label: {
-                    Image("Ellipsis")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25, height: 25)
+            if showAccessories {
+                HStack {
+                    Button {
+                        self.showShareSheet.toggle()
+                    } label: {
+                        Image("Share")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }
+                    
+                    Button {
+                        self.showMoreOptionsSheet.toggle()
+                    } label: {
+                        Image("Ellipsis")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }
                 }
             }
         }

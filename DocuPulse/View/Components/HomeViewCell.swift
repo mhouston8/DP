@@ -29,6 +29,7 @@ struct HomeViewCell: View {
                     Text(title)
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
                 }
             }
         }

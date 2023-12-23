@@ -17,7 +17,7 @@ struct MoreOptionsView: View {
         
         ScrollView {
             VStack {
-                DocumentCell(document: Document(title: "", imageURL: "", mimeType: "", dateString: ""))
+                DocumentCell(document: document, showAccessories: false)
                     .padding(.top)
                 
                 Divider()

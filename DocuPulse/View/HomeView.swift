@@ -85,7 +85,7 @@ struct HomeView: View {
                                     .padding(.top, 100)
                             } else {
                                 ForEach(self.homeViewModel.documents) { document in
-                                    DocumentCell(document: document)
+                                    DocumentCell(document: document, showAccessories: true)
                                 }
                             }
                         }

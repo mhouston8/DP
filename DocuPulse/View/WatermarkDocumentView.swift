@@ -87,20 +87,8 @@ struct WatermarkDocumentView: View {
                 context.translateBy(x: 0, y: image.size.height)
                 context.rotate(by: -CGFloat.pi / 4) // Rotate context for diagonal text
                 
-//                let x = (image.size.width) / 2
-//                let y = (image.size.height) / 2
-                
-//                var x = 0
-//                var y = 0
-//                
-//                while x < 60 {
-//                    x += 10
-//                    y += 30
-//                    
-//                    string.draw(at: CGPoint(x: x, y: y))
-//                }
-                
-                string.draw(at: CGPoint(x: 20, y: 20))
+                string.draw(at: CGPoint(x: -200, y: -500))
+                //string.draw(in: CGRect(x: 0, y: 0, width: 350, height: 500))
             }
             
             self.watermarkedUIImage = watermarkedImage

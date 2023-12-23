@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct FilesView: View {
+    
+    @ObservedObject var filesViewModel = FilesViewModel()
+    
     var body: some View {
-        
         NavigationView {
             VStack {
                 //Nav bar
@@ -51,15 +53,17 @@ struct FilesView: View {
                 
                 ScrollView {
                     VStack {
-                        ForEach(0..<15) { document in
-                            DocumentCell(document: Document(title: "", imageURL: "", mimeType: "", dateString: ""))
+                        ForEach(self.filesViewModel.documents) { document in
+                            DocumentCell(document: document, showAccessories: true)
                         }
                     }
                 }
                 
             }
+            .onAppear {
+                self.filesViewModel.readDocuments()
+            }
         }
-        
     }
 }
 
