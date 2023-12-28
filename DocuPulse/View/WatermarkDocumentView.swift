@@ -13,13 +13,15 @@ struct WatermarkDocumentView: View {
     @ObservedObject var watermarkDocumentViewModel = WatermarkDocumentViewModel()
     @State private var watermarkedImage: Image?
     @State private var watermarkedUIImage: UIImage?
+    @State private var userDidWatermarkDocument: Bool = false
     @State private var watermarkText = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var document: Document
-    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
+            
             HStack {
                 Image(systemName: "arrow.left")
                     .resizable()
@@ -34,32 +36,71 @@ struct WatermarkDocumentView: View {
             .padding(.vertical)
             Spacer()
             
-            if let watermarkedImage = watermarkedImage {
-                watermarkedImage
+            if let originalImage = watermarkDocumentViewModel.originalImage {
+                ZStack {
+                    let image = Image(uiImage: originalImage)
+                    
+                    image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
                     .frame(width: 350, height: 500)
-            } else {
-                AsyncImage(url: URL(string: document.fileURL)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
+                    .aspectRatio(contentMode: .fit)
+                    
+                    VStack(spacing: 50) {
+                        Text(watermarkText)
+                        Text(watermarkText)
+                        Text(watermarkText)
+                        Text(watermarkText)
+                        Text(watermarkText)
+                        Text(watermarkText)
+                        Text(watermarkText)
+                    }
+                    .rotationEffect(Angle(degrees: 40))
+                    .foregroundColor(.black.opacity(0.8))
+                    .bold()
                 }
-                .frame(width: 350, height: 500)
             }
             
             Spacer()
             
             UnderlinedTextField(text: $watermarkText, placeholder: "Enter watermark text here")
             
-            if let watermarkedImage = watermarkedImage {
+            if userDidWatermarkDocument {
                 CustomRoundButton(text: "Save") {
+                    let renderer = ImageRenderer(content:
+                        ZStack {
+                        let image = Image(uiImage: self.watermarkDocumentViewModel.originalImage!)
+                            
+                            image
+                            .resizable()
+                            .frame(width: 1080, height: 1920)
+                            .aspectRatio(contentMode: .fit)
+                            
+                            VStack(spacing: 50) {
+                                Text(watermarkText)
+                                Text(watermarkText)
+                                Text(watermarkText)
+                                Text(watermarkText)
+                                Text(watermarkText)
+                                Text(watermarkText)
+                                Text(watermarkText)
+                            }
+                            .rotationEffect(Angle(degrees: 40))
+                            .foregroundColor(.black.opacity(0.8))
+                            .font(.system(size: 50))
+                            .bold()
+                        }
+                    )
+                    
+                    let image = renderer.uiImage
+                    
                     //save to db and storage
-                    self.watermarkDocumentViewModel.updateDocument(document: document, watermarkedImage: self.watermarkedUIImage!)
+                    self.watermarkDocumentViewModel.updateDocument(document: document, watermarkedImage: image!)
+                    presentationMode.wrappedValue.dismiss()
                 }
             } else {
                 CustomRoundButton(text: "Watermark Document") {
                     self.applyWaterMark()
+                    self.userDidWatermarkDocument = true
                 }
             }
         }
@@ -69,30 +110,24 @@ struct WatermarkDocumentView: View {
     }
     
     func applyWaterMark() {
-        if let image = self.watermarkDocumentViewModel.originalImage {
-            let renderer = UIGraphicsImageRenderer(size: image.size)
-            let watermarkedImage = renderer.image { context in
-                        image.draw(at: CGPoint.zero)
-                        
-                        let attributes: [NSAttributedString.Key: Any] = [
-                            .font: UIFont.boldSystemFont(ofSize: 150),
-                            .foregroundColor: UIColor.black
-                        ]
-                        
-                        let string = NSAttributedString(string: "yooooooooooooooooo", attributes: attributes)
-                
-                
-                //underlying coregraphics context
-                let context = context.cgContext
-                context.translateBy(x: 0, y: image.size.height)
-                context.rotate(by: -CGFloat.pi / 4) // Rotate context for diagonal text
-                
-                string.draw(at: CGPoint(x: -200, y: -500))
-                //string.draw(in: CGRect(x: 0, y: 0, width: 350, height: 500))
-            }
-            
-            self.watermarkedUIImage = watermarkedImage
-            self.watermarkedImage = Image(uiImage: watermarkedImage)
-        }
+//        if let image = self.watermarkDocumentViewModel.originalImage {
+//            let renderer = ImageRenderer(content: body)
+//            let image = renderer.uiImage
+//            self.watermarkedImage = Image(uiImage: image!)
+//            self.watermarkedUIImage = image
+//        }
     }
 }
+
+
+
+//
+//VStack(spacing: 50) {
+//    Text(watermarkText)
+//    Text(watermarkText)
+//    Text(watermarkText)
+//    Text(watermarkText)
+//    Text(watermarkText)
+//}
+//.rotationEffect(Angle(degrees: 40))
+//.foregroundColor(.gray.opacity(5.0))

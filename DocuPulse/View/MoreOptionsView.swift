@@ -11,6 +11,7 @@ struct MoreOptionsView: View {
     
     @State var showWatermarkScreen = false
     @ObservedObject var moreOptionsViewModel = MoreOptionsViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var document: Document
     
@@ -59,6 +60,9 @@ struct MoreOptionsView: View {
             }
             .fullScreenCover(isPresented: $showWatermarkScreen) {
                 WatermarkDocumentView(document: document)
+                    .onDisappear {
+                        presentationMode.wrappedValue.dismiss()
+                    }
             }
         }
     }

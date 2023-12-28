@@ -18,6 +18,8 @@ struct HomeView: View {
     @State private var showPremiumSubscriptionView: Bool = false
     @State var showDocumentMetatDataView = false
     
+    @State var moreOptionsViewDismissed = false
+    
     var body: some View {
         
         NavigationView {
@@ -120,12 +122,21 @@ struct HomeView: View {
             })
             .sheet(isPresented: $showPremiumSubscriptionView) {PayWallView()}
         }
+        .onDisappear(perform: {
+            self.moreOptionsViewDismissed = true
+        })
         .fullScreenCover(isPresented: $adCoordinator.openDocumentScanner, content: {
             DocumentScannerView(showDocumentMetadataView: $showDocumentMetatDataView)
                 .edgesIgnoringSafeArea(.all)
+                .onDisappear {
+                    self.homeViewModel.readAllDocuments()
+                }
         })
         .fullScreenCover(isPresented: $showDocumentMetatDataView, content: {
             DocumentMetadataView(document: self.documentScannerViewModel.scannedDocument)
+                .onDisappear {
+                    self.homeViewModel.readAllDocuments()
+                }
         })
         .background {
             // Add the adViewControllerRepresentable to the background so it
