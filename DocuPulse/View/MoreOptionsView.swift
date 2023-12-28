@@ -50,7 +50,11 @@ struct MoreOptionsView: View {
                     DocumentOptionsCell(imageName: "Move to Folder", title: "Move to Folder", buttonAction: {})
                     DocumentOptionsCell(imageName: "Print", title: "Print", buttonAction: {})
                     DocumentOptionsCell(imageName: "Delete", title: "Delete", buttonAction: {
-                        self.moreOptionsViewModel.deleteDocument(document: document)
+                        self.moreOptionsViewModel.deleteDocument(document: document) { success in
+                            if success {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
                     })
                     Divider()
                 }

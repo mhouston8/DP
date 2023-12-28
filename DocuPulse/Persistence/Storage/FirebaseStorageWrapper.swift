@@ -51,7 +51,7 @@ class FirebaseStorageWrapper {
                 
                 let currentDate = Date()
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss"
+                dateFormatter.dateFormat = "MM-dd-yyyy h:mm a"
                 let dateString = dateFormatter.string(from: currentDate)
                 
                 //save file path in database

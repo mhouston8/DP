@@ -35,7 +35,7 @@ struct DocumentCell: View {
                 Text("Letter")
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .bold()
-                Text("10/12/23 12:34pm")
+                Text(document.date)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 12, weight: .light))
             }

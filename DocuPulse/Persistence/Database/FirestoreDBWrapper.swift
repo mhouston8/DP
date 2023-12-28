@@ -32,7 +32,7 @@ class FirebaseDBWrapper {
             return
         }
         
-        let allUserDocumentsReference = databaseReference.collection("users").document(userID).collection("documents")
+        let allUserDocumentsReference = databaseReference.collection("users").document(userID).collection("documents").order(by: "date", descending: true)
         
         allUserDocumentsReference.getDocuments { snapshot, error in
             if let error = error {
