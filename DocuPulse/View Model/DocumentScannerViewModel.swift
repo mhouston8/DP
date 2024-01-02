@@ -18,9 +18,14 @@ class DocumentScannerViewModel: ObservableObject {
     private var firebaseDBWrapper = FirebaseDBWrapper()
     @Published var documentScannerViewDismissed = false
     @Published var scannedDocument = UIImage()
+    @Published var batchScanDocuments = [UIImage]()
     
     func updateScannedDocument(document: UIImage) {
         self.scannedDocument = document
+    }
+    
+    func updateBatchScanDocuments(documents: [UIImage]) {
+        self.batchScanDocuments = documents
     }
     
 }

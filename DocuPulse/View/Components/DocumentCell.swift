@@ -39,6 +39,7 @@ struct DocumentCell: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 12, weight: .light))
             }
+            .foregroundColor(.black)
             .padding()
             .padding(.leading)
             Spacer()
@@ -76,6 +77,5 @@ struct DocumentCell: View {
         .sheet(isPresented: $showMoreOptionsSheet, content: {
             MoreOptionsView(document: document)
         })
-        .onTapGesture {}
     }
 }

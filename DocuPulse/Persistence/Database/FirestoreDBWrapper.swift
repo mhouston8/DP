@@ -19,7 +19,7 @@ class FirebaseDBWrapper {
     func saveUser(user: User) {
         databaseReference.collection("users").document(Auth.auth().currentUser!.uid).setData([:]) { error in
             if let error = error {
-                print("")
+                print("\(error.localizedDescription)")
             } else {
                 print("")
             }

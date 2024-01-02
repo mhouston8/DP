@@ -16,9 +16,11 @@ struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel()
     
     @State private var showPremiumSubscriptionView: Bool = false
-    @State var showDocumentMetatDataView = false
-    
-    @State var moreOptionsViewDismissed = false
+    @State private var moreOptionsViewDismissed = false
+    @State private var showPDFViewerView: Bool = false
+    @State private var showDocumentMetatDataView = false
+    @State private var showMergeDocumentsView = false
+    @State private var showDocumentScannerView = false
     
     var body: some View {
         
@@ -51,7 +53,9 @@ struct HomeView: View {
                         .padding(.top)
                         
                         HStack(spacing: 40) {
-                            HomeViewCell(imageName: "Merge PDF", title: "Merge PDF") {}
+                            HomeViewCell(imageName: "Merge PDF", title: "Merge PDF") {
+                                self.showDocumentScannerView = true
+                            }
                             HomeViewCell(imageName: "Protect PDF", title: "Protect PDF") {}
                             HomeViewCell(imageName: "Compress PDF", title: "Compress PDF") {}
                             HomeViewCell(imageName: "All Tools", title: "All Tools") {}
@@ -87,7 +91,11 @@ struct HomeView: View {
                                     .padding(.top, 100)
                             } else {
                                 ForEach(self.homeViewModel.documents) { document in
+                                    NavigationLink {
+                                        PDFViewer(document: document)
+                                    } label: {
                                     DocumentCell(document: document, showAccessories: true)
+                                    }
                                 }
                             }
                         }
@@ -138,6 +146,16 @@ struct HomeView: View {
                     self.homeViewModel.readAllDocuments()
                 }
         })
+        .fullScreenCover(isPresented: $showDocumentScannerView, content: {
+            DocumentScannerView(caller: Caller.MergeDocuments)
+                .edgesIgnoringSafeArea(.all)
+                .onDisappear {
+                    self.showMergeDocumentsView = true
+                }
+        })
+        .fullScreenCover(isPresented: $showMergeDocumentsView, content: {
+            MergePDFsView(documents: self.documentScannerViewModel.batchScanDocuments)
+        })
         .background {
             // Add the adViewControllerRepresentable to the background so it
             // doesn't influence the placement of other views in the view hierarchy.
@@ -151,4 +169,10 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
+}
+
+struct Caller {
+    
+    static public let MergeDocuments = "MergeDocument"
+    
 }

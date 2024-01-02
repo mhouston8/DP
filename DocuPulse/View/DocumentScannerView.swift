@@ -11,8 +11,15 @@ import VisionKit
 struct DocumentScannerView: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode
-    
     @Binding var showDocumentMetadataView: Bool
+    @Binding var showMergeDocumentsView: Bool
+    var caller: String
+    
+    init(showDocumentMetadataView: Binding<Bool> = .constant(false), showMergeDocumentsView: Binding<Bool> = .constant(false), caller: String = "") {
+        _showDocumentMetadataView = showDocumentMetadataView
+        _showMergeDocumentsView = showMergeDocumentsView
+        self.caller = caller
+    }
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         var parent: DocumentScannerView
@@ -28,17 +35,30 @@ struct DocumentScannerView: UIViewControllerRepresentable {
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             
-            var scannedImage = UIImage()
-            
             //grab the documents
-            for pageIndex in 0..<scan.pageCount {
-                let image = scan.imageOfPage(at: pageIndex)
-                scannedImage = image
-            }
             
-            self.documentScannerViewModel.updateScannedDocument(document: scannedImage)
-            parent.presentationMode.wrappedValue.dismiss()
-            self.parent.showDocumentMetadataView = true
+            if self.parent.caller == Caller.MergeDocuments {
+                var documents = [UIImage]()
+                for pageIndex in 0..<scan.pageCount {
+                    let document = scan.imageOfPage(at: pageIndex)
+                    documents.append(document)
+                }
+                
+                self.documentScannerViewModel.updateBatchScanDocuments(documents: documents)
+                self.parent.presentationMode.wrappedValue.dismiss()
+                self.parent.showMergeDocumentsView = true
+                
+            } else {
+                var scannedImage = UIImage()
+                for pageIndex in 0..<scan.pageCount {
+                    let image = scan.imageOfPage(at: pageIndex)
+                    scannedImage = image
+                }
+                
+                self.documentScannerViewModel.updateScannedDocument(document: scannedImage)
+                parent.presentationMode.wrappedValue.dismiss()
+                self.parent.showDocumentMetadataView = true
+            }
         }
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {

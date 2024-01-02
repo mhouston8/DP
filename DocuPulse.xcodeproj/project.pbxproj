@@ -54,6 +54,11 @@
 		BB7E76AB2B1A9A1800344190 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */; };
 		BB7E76AE2B21040300344190 /* DocumentMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76AD2B21040200344190 /* DocumentMetadataView.swift */; };
 		BB7E76B02B2143C300344190 /* DocumentMetadataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E76AF2B2143C300344190 /* DocumentMetadataViewModel.swift */; };
+		BBB29CD42B4255FA0030B4D9 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD32B4255FA0030B4D9 /* PDFViewer.swift */; };
+		BBB29CD62B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */; };
+		BBB29CD82B427E650030B4D9 /* DocumentStorageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD72B427E650030B4D9 /* DocumentStorageFetcher.swift */; };
+		BBB29CDA2B4281D80030B4D9 /* PDFViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */; };
+		BBB29CDC2B4365840030B4D9 /* MergePDFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */; };
 		BBCA3C1B2B01A14C00044F95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1A2B01A14C00044F95 /* FirebaseAnalytics */; };
 		BBCA3C1D2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1C2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion */; };
 		BBCA3C1F2B01A14C00044F95 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1E2B01A14C00044F95 /* FirebaseAnalyticsSwift */; };
@@ -83,7 +88,6 @@
 		BBCA3C4F2B01A14C00044F95 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C4E2B01A14C00044F95 /* FirebaseStorageCombine-Community */; };
 		BBCA3C522B058B1900044F95 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C512B058B1900044F95 /* Realm */; };
 		BBCA3C542B058B1900044F95 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C532B058B1900044F95 /* RealmSwift */; };
-		BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */; };
 		BBCA3C592B058F3D00044F95 /* FirestoreDBWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */; };
 		BBCA3C5D2B0AD51C00044F95 /* FirebaseStorageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */; };
 		BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */; };
@@ -151,7 +155,11 @@
 		BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		BB7E76AD2B21040200344190 /* DocumentMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMetadataView.swift; sourceTree = "<group>"; };
 		BB7E76AF2B2143C300344190 /* DocumentMetadataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMetadataViewModel.swift; sourceTree = "<group>"; };
-		BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWrapper.swift; sourceTree = "<group>"; };
+		BBB29CD32B4255FA0030B4D9 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
+		BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerUIViewRepresentable.swift; sourceTree = "<group>"; };
+		BBB29CD72B427E650030B4D9 /* DocumentStorageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStorageFetcher.swift; sourceTree = "<group>"; };
+		BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerViewModel.swift; sourceTree = "<group>"; };
+		BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergePDFsView.swift; sourceTree = "<group>"; };
 		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -323,6 +331,9 @@
 				32980A9B2A70405E006F3EAF /* Components */,
 				BB7E76AC2B1A9A3D00344190 /* Storyboards */,
 				BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */,
+				BBB29CD32B4255FA0030B4D9 /* PDFViewer.swift */,
+				BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */,
+				BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +396,7 @@
 				BBE7FC6C2B3228A700893FFC /* WatermarkDocumentViewModel.swift */,
 				BBE7FC6F2B36345E00893FFC /* FilesViewModel.swift */,
 				BBE7FC712B368D9800893FFC /* MoreOptionsViewModel.swift */,
+				BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -411,7 +423,6 @@
 		BBCA3C552B058EB700044F95 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				BBCA3C562B058EC800044F95 /* RealmDBWrapper.swift */,
 				BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */,
 			);
 			path = Database;
@@ -454,6 +465,7 @@
 		BBE7FC6E2B336E5700893FFC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				BBB29CD72B427E650030B4D9 /* DocumentStorageFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -652,6 +664,7 @@
 				3212FA0D2A73966B00289ECD /* FilesView.swift in Sources */,
 				3263D3792A724CBB0045C857 /* HomeViewCell.swift in Sources */,
 				BB7E76B02B2143C300344190 /* DocumentMetadataViewModel.swift in Sources */,
+				BBB29CDA2B4281D80030B4D9 /* PDFViewerViewModel.swift in Sources */,
 				32FD8D802A6F894E004A1618 /* ShareView.swift in Sources */,
 				3245C7322AA4579700479CD8 /* AdBannerView.swift in Sources */,
 				BBCA3C5D2B0AD51C00044F95 /* FirebaseStorageWrapper.swift in Sources */,
@@ -665,8 +678,8 @@
 				324E84762B10577B00F365C6 /* CurrentUser.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
+				BBB29CDC2B4365840030B4D9 /* MergePDFsView.swift in Sources */,
 				BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */,
-				BBCA3C572B058EC800044F95 /* RealmDBWrapper.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
 				BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */,
@@ -678,17 +691,20 @@
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
 				329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */,
 				BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */,
+				BBB29CD62B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift in Sources */,
 				3212FA152A76F5F400289ECD /* SubscriptionCardViewModel.swift in Sources */,
 				3212FA112A739F6200289ECD /* SubscriptionCard.swift in Sources */,
 				BBE7FC6D2B3228A700893FFC /* WatermarkDocumentViewModel.swift in Sources */,
 				BBE7FC722B368D9800893FFC /* MoreOptionsViewModel.swift in Sources */,
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
+				BBB29CD82B427E650030B4D9 /* DocumentStorageFetcher.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				BBE7FC702B36346500893FFC /* FilesViewModel.swift in Sources */,
 				BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
 				32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */,
 				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,
+				BBB29CD42B4255FA0030B4D9 /* PDFViewer.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
