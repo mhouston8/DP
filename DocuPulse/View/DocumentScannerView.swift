@@ -44,7 +44,7 @@ struct DocumentScannerView: UIViewControllerRepresentable {
                     documents.append(document)
                 }
                 
-                self.documentScannerViewModel.updateBatchScanDocuments(documents: documents)
+                documentScannerViewModel.saveBatchDocuments(documents: documents)
                 self.parent.presentationMode.wrappedValue.dismiss()
                 self.parent.showMergeDocumentsView = true
                 

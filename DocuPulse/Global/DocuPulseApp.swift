@@ -38,6 +38,7 @@ struct DocuPulseApp: App {
             //PayWallView()
             //SignUpView()
             //OnboardingPageViewController()
+            //MergeDocumentsView(documents: [])
             MainView()
                   .preferredColorScheme(.light)
         }

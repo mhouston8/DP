@@ -19,6 +19,8 @@ struct Document: Codable, Identifiable {
     var fileURL: String
     var mimeType: String
     var date: String
+    var mediaCount: Int?
+    var batchFiles: [String]?
     
     //convert to date property from string on demand
     var dateString: Date? {
@@ -33,24 +35,7 @@ struct Document: Codable, Identifiable {
         case fileURL
         case mimeType
         case date
-    } 
-    
-    //decodable init
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.title = try container.decode(String.self, forKey: .title)
-//        self.imageURL = try container.decode(String.self, forKey: .imageURL)
-//        self.mimeType = try container.decode(String.self, forKey: .mimeType)
-//        
-//        
-//        //convert this string date to a date
-//        var dateString = try container.decode(String.self, forKey: .date)
-//        
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        guard let date = formatter.date(from: dateString) else {
-//            throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription:"Date string does not match format.")
-//            }
-//        self.date = date
-//    }
+        case mediaCount
+        case batchFiles
+    }
 }

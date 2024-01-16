@@ -147,25 +147,6 @@ struct SignInView: View {
     }
 }
 
-struct CustomRoundButton: View {
-    
-    var text: String
-    var action: () -> Void
-    
-    var body: some View {
-        Button {
-            action()
-        } label: {
-            Text(text)
-                .padding()
-                .frame(width: 300)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-        }
-    }
-}
-
 struct CheckboxStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         return HStack {

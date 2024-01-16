@@ -154,7 +154,7 @@ struct HomeView: View {
                 }
         })
         .fullScreenCover(isPresented: $showMergeDocumentsView, content: {
-            MergePDFsView(documents: self.documentScannerViewModel.batchScanDocuments)
+            MergeDocumentsView()
         })
         .background {
             // Add the adViewControllerRepresentable to the background so it
@@ -176,3 +176,4 @@ struct Caller {
     static public let MergeDocuments = "MergeDocument"
     
 }
+

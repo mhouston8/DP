@@ -15,17 +15,29 @@ class DocumentScannerViewModel: ObservableObject {
     private init() {}
     
     private var fileManager = DocumentSaver()
+    private var storage = FirebaseStorageWrapper()
+    private var database = FirebaseDBWrapper()
     private var firebaseDBWrapper = FirebaseDBWrapper()
     @Published var documentScannerViewDismissed = false
     @Published var scannedDocument = UIImage()
-    @Published var batchScanDocuments = [UIImage]()
+    @Published var batchScanImages = [UIImage]()
     
     func updateScannedDocument(document: UIImage) {
         self.scannedDocument = document
     }
     
     func updateBatchScanDocuments(documents: [UIImage]) {
-        self.batchScanDocuments = documents
     }
     
+    func saveDocument(document: UIImage) {
+        self.storage.saveDocument(document: document, title: "Sample", mimeType: "jpeg") { result in
+            if case .success(let data) = result {
+                
+            }
+        }
+    }
+    
+    func saveBatchDocuments(documents: [UIImage]) {
+        self.batchScanImages = documents
+    }
 }

@@ -44,6 +44,7 @@
 		BB0CE4132ACA3EB6002CE6E6 /* DocuPulse.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */; };
 		BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */; };
 		BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4866B32B2A820400FFE121 /* HomeViewModel.swift */; };
+		BB4D19F02B51E1FA005690AE /* CustomRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
@@ -58,7 +59,9 @@
 		BBB29CD62B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */; };
 		BBB29CD82B427E650030B4D9 /* DocumentStorageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD72B427E650030B4D9 /* DocumentStorageFetcher.swift */; };
 		BBB29CDA2B4281D80030B4D9 /* PDFViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */; };
-		BBB29CDC2B4365840030B4D9 /* MergePDFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */; };
+		BBB29CDC2B4365840030B4D9 /* MergeDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CDB2B4365840030B4D9 /* MergeDocumentsView.swift */; };
+		BBB29CDE2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CDD2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift */; };
+		BBB29CE02B4B1F800030B4D9 /* MergeDocumentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB29CDF2B4B1F800030B4D9 /* MergeDocumentsCell.swift */; };
 		BBCA3C1B2B01A14C00044F95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1A2B01A14C00044F95 /* FirebaseAnalytics */; };
 		BBCA3C1D2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1C2B01A14C00044F95 /* FirebaseAnalyticsOnDeviceConversion */; };
 		BBCA3C1F2B01A14C00044F95 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA3C1E2B01A14C00044F95 /* FirebaseAnalyticsSwift */; };
@@ -145,6 +148,7 @@
 		BB0CE4122ACA3EB6002CE6E6 /* DocuPulse.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DocuPulse.storekit; sourceTree = "<group>"; };
 		BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BB4866B32B2A820400FFE121 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundButton.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +163,9 @@
 		BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerUIViewRepresentable.swift; sourceTree = "<group>"; };
 		BBB29CD72B427E650030B4D9 /* DocumentStorageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStorageFetcher.swift; sourceTree = "<group>"; };
 		BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerViewModel.swift; sourceTree = "<group>"; };
-		BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergePDFsView.swift; sourceTree = "<group>"; };
+		BBB29CDB2B4365840030B4D9 /* MergeDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeDocumentsView.swift; sourceTree = "<group>"; };
+		BBB29CDD2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeDocumentsViewModel.swift; sourceTree = "<group>"; };
+		BBB29CDF2B4B1F800030B4D9 /* MergeDocumentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeDocumentsCell.swift; sourceTree = "<group>"; };
 		BBCA3C582B058F3D00044F95 /* FirestoreDBWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDBWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5C2B0AD51C00044F95 /* FirebaseStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageWrapper.swift; sourceTree = "<group>"; };
 		BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -333,7 +339,7 @@
 				BBE7FC6A2B2F76B300893FFC /* WatermarkDocumentView.swift */,
 				BBB29CD32B4255FA0030B4D9 /* PDFViewer.swift */,
 				BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */,
-				BBB29CDB2B4365840030B4D9 /* MergePDFsView.swift */,
+				BBB29CDB2B4365840030B4D9 /* MergeDocumentsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +354,8 @@
 				3212FA122A758B1500289ECD /* SubscriptionFeatureItem.swift */,
 				BBCA3C602B0D403C00044F95 /* UnderlinedTextView.swift */,
 				BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */,
+				BBB29CDF2B4B1F800030B4D9 /* MergeDocumentsCell.swift */,
+				BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 				BBE7FC6F2B36345E00893FFC /* FilesViewModel.swift */,
 				BBE7FC712B368D9800893FFC /* MoreOptionsViewModel.swift */,
 				BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */,
+				BBB29CDD2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -678,7 +687,7 @@
 				324E84762B10577B00F365C6 /* CurrentUser.swift in Sources */,
 				BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */,
 				3212FA172A76F98600289ECD /* Subscription.swift in Sources */,
-				BBB29CDC2B4365840030B4D9 /* MergePDFsView.swift in Sources */,
+				BBB29CDC2B4365840030B4D9 /* MergeDocumentsView.swift in Sources */,
 				BBCA3C612B0D403C00044F95 /* UnderlinedTextView.swift in Sources */,
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
@@ -688,7 +697,9 @@
 				BB7E76AB2B1A9A1800344190 /* ForgotPasswordView.swift in Sources */,
 				32FD8D7E2A6F8199004A1618 /* RecentFilesViewModel.swift in Sources */,
 				BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */,
+				BB4D19F02B51E1FA005690AE /* CustomRoundButton.swift in Sources */,
 				32980A9F2A704122006F3EAF /* Document.swift in Sources */,
+				BBB29CDE2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift in Sources */,
 				329809A22A64DDF1008736BB /* DocuPulseApp.swift in Sources */,
 				BBE7FC6B2B2F76B300893FFC /* WatermarkDocumentView.swift in Sources */,
 				BBB29CD62B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift in Sources */,
@@ -701,6 +712,7 @@
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
 				BBE7FC702B36346500893FFC /* FilesViewModel.swift in Sources */,
 				BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */,
+				BBB29CE02B4B1F800030B4D9 /* MergeDocumentsCell.swift in Sources */,
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
 				32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */,
 				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,

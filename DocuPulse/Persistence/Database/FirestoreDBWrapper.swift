@@ -79,8 +79,58 @@ class FirebaseDBWrapper {
         return data
     }
     
-    func readDocument(documentID: String) {
+    func encode(document: Document) {
+//        let jsonDecoder = JSONDecoder()
+//        do {
+//            let document = try jsonDecoder.decode(Document.self, from: <#T##Data#>)
+//        } catch let error {
+//            
+//        }
+    }
+    
+    func decodeDocuments(documents: [Document]) {
         
+    }
+    
+    func readBatchDocuments(byID documentID: String, completion: @escaping ([Document]) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            completion([])
+            return
+        }
+        
+        let documentsRef = self.databaseReference.collection("users").document(currentUser.uid).collection("documents").whereField(FieldPath.documentID(), isEqualTo: documentID)
+        
+        documentsRef.getDocuments { snapshot, error in
+            if let error = error {
+                print("")
+                completion([])
+                return
+            }
+            
+            guard let unwrappedSnapshot = snapshot else {
+                completion([])
+                return
+            }
+            
+            var docs = [Document]()
+            
+            for document in unwrappedSnapshot.documents {
+                guard let dataJSONRepresentation = try? JSONSerialization.data(withJSONObject: document.data()) else {
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                do {
+                    let doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
+                    docs.append(doc)
+                } catch let jsonError {
+                    print(jsonError)
+                    completion(docs)
+                }
+            }
+            
+            completion(docs)
+        }
     }
     
     func updateDocument(documentID: String, with image: UIImage) {
