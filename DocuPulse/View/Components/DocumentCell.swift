@@ -16,14 +16,22 @@ struct DocumentCell: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: document.fileURL), content: { image in
-                image
+            
+            if document.mimeType == "pdf" {
+                Image("Document")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 80)
-            }, placeholder: {
-                ProgressView()
-            })
+                    .frame(width: 80, height: 80)
+            } else {
+                AsyncImage(url: URL(string: document.fileURL), content: { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
+                }, placeholder: {
+                    ProgressView()
+                })
+            }
             Spacer()
             
             

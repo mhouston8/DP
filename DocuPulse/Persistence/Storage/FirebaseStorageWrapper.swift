@@ -51,7 +51,7 @@ class FirebaseStorageWrapper {
                     "fileURL": downloadURL.absoluteString,
                     "date": dateString,
                     "title": "Merged Document",
-                    "mimeType": "jpeg",
+                    "mimeType": "pdf",
                     "mediaCount": 1
                 ]
                 

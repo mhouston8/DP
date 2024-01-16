@@ -20,8 +20,11 @@ struct DocumentStorageFetcher {
             
             if let data = data {
                 DispatchQueue.main.async {
-                    let image = UIImage(data: data)
-                    completion(data)
+                    if let image = UIImage(data: data) {
+                        completion(data)
+                    } else {
+                        completion(data)
+                    }
                 }
             }
         }

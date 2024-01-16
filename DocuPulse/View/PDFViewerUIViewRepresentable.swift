@@ -21,10 +21,15 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        let documentImage = UIImage(data: documentData)
-        let document = PDFDocument(data: documentData)
-        let pdfDocument = self.createPDFDocument(from: documentImage!)
-        uiView.document = pdfDocument
+        if let documentImage = UIImage(data: documentData) {
+            //image data
+            let pdfDocument = self.createPDFDocument(from: documentImage)
+            uiView.document = pdfDocument
+        } else {
+            //pdf data
+            let document = PDFDocument(data: documentData)
+            uiView.document = document!
+        }
     }
     
     private func createPDFDocument(from image: UIImage) -> PDFDocument {
