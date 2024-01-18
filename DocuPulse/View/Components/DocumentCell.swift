@@ -12,28 +12,31 @@ struct DocumentCell: View {
     @State private var showMoreOptionsSheet = false
     @State private var showShareSheet = false
     var document: Document
+    let documentCellViewModel = DocumentCellViewModel()
     var showAccessories = false
     
     var body: some View {
         HStack {
-            
-            if document.mimeType == "pdf" {
-                Image("Document")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80)
-            } else {
-                AsyncImage(url: URL(string: document.fileURL), content: { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                }, placeholder: {
-                    ProgressView()
-                })
-            }
+            Image(uiImage: document.documentThumbnail!)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 80, height: 80)
+//            if document.mimeType == "pdf" {
+//                Image("Document")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 80, height: 80)
+//            } else {
+//                AsyncImage(url: URL(string: document.fileURL), content: { image in
+//                    image
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 80, height: 80)
+//                }, placeholder: {
+//                    ProgressView()
+//                })
+//            }
             Spacer()
-            
             
             VStack(alignment: .leading, spacing: 10) {
                 Text(document.title)
@@ -73,6 +76,9 @@ struct DocumentCell: View {
                 }
             }
         }
+        .onAppear(perform: {
+            print("")
+        })
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color(.systemGroupedBackground))

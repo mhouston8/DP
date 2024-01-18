@@ -12,9 +12,10 @@ import PDFKit
 
 class MergeDocumentsViewModel: ObservableObject {
     
-    @Published var batchScanImages = [UIImage]()
     let storage = FirebaseStorageWrapper()
     let database = FirebaseDBWrapper()
+    @Published var didFinishMergingDocuments = false
+    @Published var batchScanImages = [UIImage]()
 
     
     func readDocuments() {
@@ -37,7 +38,7 @@ class MergeDocumentsViewModel: ObservableObject {
         return pdfData as Data
     }
     
-    func saveBatchDocuments(images: [UIImage]) {
+    func saveBatchDocuments(images: [UIImage], completion: @escaping (Bool) -> Void) {
         let mergedDocumentData = self.createPDF(from: images)
         
         //save to db storage and db
@@ -45,6 +46,7 @@ class MergeDocumentsViewModel: ObservableObject {
             switch result {
             case .success(let a):
                 print("success")
+                self.didFinishMergingDocuments = true
             case .failure(let error):
                 print("failure")
             }

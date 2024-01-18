@@ -11,11 +11,14 @@ import UIKit
 struct MergeDocumentsView: View {
 
     @ObservedObject var mergeDocumentsViewModel = MergeDocumentsViewModel()
+    @Environment(\.presentationMode) var presentationMode
     var images = [UIImage]()
     
     var body: some View {
         VStack {
-            ScrollView{
+
+            
+            ScrollView {
                 ForEach(self.mergeDocumentsViewModel.batchScanImages, id: \.self) { image in
                     NavigationLink {
                         PDFViewer(document: Document(title: "", fileURL: "", mimeType: "", date: "", mediaCount: 0))
@@ -30,7 +33,11 @@ struct MergeDocumentsView: View {
             
             CustomRoundButton(text: "Merge Documents") {
                 //action
-                self.mergeDocumentsViewModel.saveBatchDocuments(images: self.mergeDocumentsViewModel.batchScanImages)
+                self.mergeDocumentsViewModel.saveBatchDocuments(images: self.mergeDocumentsViewModel.batchScanImages, completion: { success in
+                    if success {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                })
             }
         }
         .navigationTitle("Merge")

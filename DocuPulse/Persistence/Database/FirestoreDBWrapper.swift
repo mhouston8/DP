@@ -44,6 +44,9 @@ class FirebaseDBWrapper {
             
             if snapshot!.documents.count > 0 {
                 var docs = [Document]()
+                
+                let dispatchGroup = DispatchGroup()
+                
                 for document in snapshot!.documents {
                     let dataDictionaryRepresentation = self.prepareDataForDecoding(document: document)
                     guard let dataJSONRepresentation = try? JSONSerialization.data(withJSONObject: dataDictionaryRepresentation) else {
@@ -52,14 +55,25 @@ class FirebaseDBWrapper {
                     
                     let decoder = JSONDecoder()
                     do {
-                        let doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
-                        docs.append(doc)
+                        var doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
+                        let imageFetcher = DocumentStorageFetcher()
+                        dispatchGroup.enter()
+                        imageFetcher.fetchDocumentFromStorage(fromURL: URL(string: doc.fileURL)!) { data in
+                            defer { dispatchGroup.leave() }
+                            if doc.mimeType == "pdf" {
+                                doc.documentThumbnail = self.convertPDFDataToUIImage(pdfData: data!)
+                            } else {
+                                doc.documentThumbnail = UIImage(data: data!)
+                            }
+                            docs.append(doc)
+                        }
                     } catch let jsonError {
                         print(jsonError)
                     }
                 }
-                
-                completion(docs)
+                dispatchGroup.notify(queue: .main) {
+                    completion(docs)
+                }
             } else {
                 completion([])
             }
@@ -79,17 +93,31 @@ class FirebaseDBWrapper {
         return data
     }
     
-    func encode(document: Document) {
-//        let jsonDecoder = JSONDecoder()
-//        do {
-//            let document = try jsonDecoder.decode(Document.self, from: <#T##Data#>)
-//        } catch let error {
-//            
-//        }
-    }
-    
-    func decodeDocuments(documents: [Document]) {
-        
+    func convertPDFDataToUIImage(pdfData: Data) -> UIImage? {
+        // Step 1: Create a CGPDFDocument
+        guard let provider = CGDataProvider(data: pdfData as CFData),
+              let pdfDocument = CGPDFDocument(provider),
+              let page = pdfDocument.page(at: 1) else {
+            print("Oops! Something went wrong with the PDF.")
+            return nil
+        }
+
+        // Step 2: Draw the PDF page into a CGContext
+        let pageRect = page.getBoxRect(.mediaBox)
+        UIGraphicsBeginImageContext(pageRect.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+
+        context.saveGState()
+        context.translateBy(x: 0.0, y: pageRect.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.drawPDFPage(page)
+        context.restoreGState()
+
+        // Step 3: Create UIImage from the context
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image
     }
     
     func readBatchDocuments(byID documentID: String, completion: @escaping ([Document]) -> Void) {

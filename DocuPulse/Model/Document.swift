@@ -29,6 +29,8 @@ struct Document: Codable, Identifiable {
         return dateFormatter.date(from: date)
     }
     
+    var documentThumbnail: UIImage?
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title

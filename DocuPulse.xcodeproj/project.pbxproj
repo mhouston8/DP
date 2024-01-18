@@ -45,6 +45,7 @@
 		BB0CE4152ACBB133002CE6E6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */; };
 		BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4866B32B2A820400FFE121 /* HomeViewModel.swift */; };
 		BB4D19F02B51E1FA005690AE /* CustomRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */; };
+		BB4D19F22B56E054005690AE /* DocumentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
@@ -149,6 +150,7 @@
 		BB0CE4142ACBB133002CE6E6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BB4866B32B2A820400FFE121 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundButton.swift; sourceTree = "<group>"; };
+		BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCellViewModel.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				BBB29CD32B4255FA0030B4D9 /* PDFViewer.swift */,
 				BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */,
 				BBB29CDB2B4365840030B4D9 /* MergeDocumentsView.swift */,
+				BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				32FD8D7A2A6F8130004A1618 /* RecentFilesView.swift in Sources */,
 				32EC0C622AB65BD100BCBE6F /* PurchasesViewModel.swift in Sources */,
 				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,
+				BB4D19F22B56E054005690AE /* DocumentCellViewModel.swift in Sources */,
 				BBB29CD42B4255FA0030B4D9 /* PDFViewer.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
 			);
