@@ -42,7 +42,7 @@ class MergeDocumentsViewModel: ObservableObject {
         let mergedDocumentData = self.createPDF(from: images)
         
         //save to db storage and db
-        self.storage.saveMergedDocument(mergedDocumentData: mergedDocumentData!) { result in
+        self.storage.saveMergedDocument(mergedDocumentData: mergedDocumentData!, thumbnail: images[0]) { result in
             switch result {
             case .success(let a):
                 print("success")

@@ -12,30 +12,19 @@ struct DocumentCell: View {
     @State private var showMoreOptionsSheet = false
     @State private var showShareSheet = false
     var document: Document
-    let documentCellViewModel = DocumentCellViewModel()
+    @ObservedObject var documentCellViewModel = DocumentCellViewModel()
     var showAccessories = false
     
     var body: some View {
         HStack {
-            Image(uiImage: document.documentThumbnail!)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 80, height: 80)
-//            if document.mimeType == "pdf" {
-//                Image("Document")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 80, height: 80)
-//            } else {
-//                AsyncImage(url: URL(string: document.fileURL), content: { image in
-//                    image
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 80, height: 80)
-//                }, placeholder: {
-//                    ProgressView()
-//                })
-//            }
+            if let image = documentCellViewModel.documentImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80, height: 80)
+            } else {
+                ProgressView()
+            }
             Spacer()
             
             VStack(alignment: .leading, spacing: 10) {
@@ -77,7 +66,7 @@ struct DocumentCell: View {
             }
         }
         .onAppear(perform: {
-            print("")
+            documentCellViewModel.readDocumentImage(document: document)
         })
         .padding()
         .frame(maxWidth: .infinity)

@@ -36,8 +36,7 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
         let pdfPage = PDFPage(image: image)
         let pdfDocument = PDFDocument()
         pdfDocument.insert(pdfPage!, at: 0)
-        let p = self.watermarkPDF(originalDocument: pdfDocument, watermarkText: "This is watermarked")
-        return p
+        return pdfDocument
     }
     
     func watermarkPDF(originalDocument: PDFDocument, watermarkText: String) -> PDFDocument {

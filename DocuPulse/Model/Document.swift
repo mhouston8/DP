@@ -21,6 +21,7 @@ struct Document: Codable, Identifiable {
     var date: String
     var mediaCount: Int?
     var batchFiles: [String]?
+    //var documentThumbnail: Data?
     
     //convert to date property from string on demand
     var dateString: Date? {
@@ -28,8 +29,6 @@ struct Document: Codable, Identifiable {
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
         return dateFormatter.date(from: date)
     }
-    
-    var documentThumbnail: UIImage?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,5 +38,16 @@ struct Document: Codable, Identifiable {
         case date
         case mediaCount
         case batchFiles
+    }
+    
+    var dictionary: [String:Any] {
+        return [
+            "fileURL": fileURL,
+            "date": dateString,
+            "title": "Merged Document",
+            "mimeType": "pdf",
+            "mediaCount": 1,
+            //"documentThumbnail": documentThumbnail
+        ]
     }
 }

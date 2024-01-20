@@ -15,15 +15,18 @@ class DocumentCellViewModel: ObservableObject {
     @Published var documentImage: UIImage?
     
     func readDocumentImage(document: Document) {
-        imageFetcher.fetchDocumentFromStorage(fromURL: URL(string: document.fileURL)!) { data in
-            
-            guard let unwrappedData = data else { return }
-            if document.mimeType == "pdf" {
-                self.documentImage = self.convertPDFDataToUIImage(pdfData: unwrappedData)
-            } else {
-                self.documentImage = UIImage(data: unwrappedData)
+        let task = URLSession.shared.dataTask(with: URL(string: document.fileURL)!) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error downloading image: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.documentImage = image
             }
         }
+        task.resume()
     }
     
     func convertPDFDataToUIImage(pdfData: Data) -> UIImage? {

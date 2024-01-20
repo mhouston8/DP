@@ -57,23 +57,21 @@ class FirebaseDBWrapper {
                     do {
                         var doc = try decoder.decode(Document.self, from: dataJSONRepresentation)
                         let imageFetcher = DocumentStorageFetcher()
-                        dispatchGroup.enter()
-                        imageFetcher.fetchDocumentFromStorage(fromURL: URL(string: doc.fileURL)!) { data in
-                            defer { dispatchGroup.leave() }
-                            if doc.mimeType == "pdf" {
-                                doc.documentThumbnail = self.convertPDFDataToUIImage(pdfData: data!)
-                            } else {
-                                doc.documentThumbnail = UIImage(data: data!)
-                            }
-                            docs.append(doc)
-                        }
+//                        imageFetcher.fetchDocumentFromStorage(fromURL: URL(string: doc.fileURL)!) { data in
+//
+//                            if doc.mimeType == "pdf" {
+//                                doc.documentThumbnail = self.convertPDFDataToUIImage(pdfData: data!)
+//                            } else {
+//                                doc.documentThumbnail = UIImage(data: data!)
+//                            }
+//                            docs.append(doc)
+//                        }
+                        docs.append(doc)
                     } catch let jsonError {
                         print(jsonError)
                     }
                 }
-                dispatchGroup.notify(queue: .main) {
-                    completion(docs)
-                }
+                completion(docs)
             } else {
                 completion([])
             }

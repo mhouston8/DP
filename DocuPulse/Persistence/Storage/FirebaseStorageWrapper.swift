@@ -21,12 +21,17 @@ class FirebaseStorageWrapper {
     var database = FirebaseDBWrapper()
     let storage = Storage.storage().reference()
     
-    func saveMergedDocument(mergedDocumentData: Data, completion: @escaping (Result<Void, Error>) -> Void) {
+    func saveMergedDocument(mergedDocumentData: Data, thumbnail: UIImage, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUser = Auth.auth().currentUser else { return }
         
         let date = Date()
         let currentDateInMilliSeconds = Int64(date.timeIntervalSince1970 * 1000)
         let documentsStoragePathReference = self.storage.child("documents/\(currentDateInMilliSeconds).pdf")
+        
+        guard let imageData = thumbnail.jpegData(compressionQuality: 1.00) else {
+            completion(.failure(DocumentError.imageDataUnavailable))
+            return
+        }
         
         documentsStoragePathReference.putData(mergedDocumentData, metadata: nil) { metadata, error in
             guard let _ = metadata else {
@@ -73,7 +78,7 @@ class FirebaseStorageWrapper {
         
         guard let currentUser = Auth.auth().currentUser else { return }
         
-        guard let imageData = document.jpegData(compressionQuality: 1.00) else {
+        guard let imageData = document.jpegData(compressionQuality: 0.5) else {
             completion(.failure(DocumentError.imageDataUnavailable))
             return
         }
