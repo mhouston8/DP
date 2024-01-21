@@ -15,6 +15,12 @@ class DocumentCellViewModel: ObservableObject {
     @Published var documentImage: UIImage?
     
     func readDocumentImage(document: Document) {
+        if let cachedImage = ImageCache.shared.image(forKey: document.fileURL) {
+            documentImage = cachedImage
+            return
+        }
+        
+        //image is not in cache, fetch from network
         let task = URLSession.shared.dataTask(with: URL(string: document.fileURL)!) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error downloading image: \(error?.localizedDescription ?? "Unknown error")")
@@ -22,8 +28,10 @@ class DocumentCellViewModel: ObservableObject {
             }
 
             DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                self.documentImage = image
+                if let image = UIImage(data: data) {
+                    ImageCache.shared.setImage(image, forKey: document.fileURL)
+                    self.documentImage = image
+                }
             }
         }
         task.resume()

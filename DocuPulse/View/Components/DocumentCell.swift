@@ -12,7 +12,7 @@ struct DocumentCell: View {
     @State private var showMoreOptionsSheet = false
     @State private var showShareSheet = false
     var document: Document
-    @ObservedObject var documentCellViewModel = DocumentCellViewModel()
+    @StateObject var documentCellViewModel = DocumentCellViewModel()
     var showAccessories = false
     
     var body: some View {
