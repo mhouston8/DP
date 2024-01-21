@@ -47,6 +47,9 @@
 		BB4D19F02B51E1FA005690AE /* CustomRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */; };
 		BB4D19F22B56E054005690AE /* DocumentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */; };
 		BB4F7A542B5CA1E3006629F8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A532B5CA1E3006629F8 /* ImageCache.swift */; };
+		BB4F7A562B5CDAA6006629F8 /* ProtectPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A552B5CDAA6006629F8 /* ProtectPDFView.swift */; };
+		BB4F7A582B5CDAB7006629F8 /* ProtectPDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A572B5CDAB7006629F8 /* ProtectPDFViewModel.swift */; };
+		BB4F7A5A2B5D9775006629F8 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A592B5D9775006629F8 /* BackButton.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
 		BB7E4EDD2A67282C0087BA91 /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */; };
@@ -153,6 +156,9 @@
 		BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundButton.swift; sourceTree = "<group>"; };
 		BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCellViewModel.swift; sourceTree = "<group>"; };
 		BB4F7A532B5CA1E3006629F8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		BB4F7A552B5CDAA6006629F8 /* ProtectPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectPDFView.swift; sourceTree = "<group>"; };
+		BB4F7A572B5CDAB7006629F8 /* ProtectPDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectPDFViewModel.swift; sourceTree = "<group>"; };
+		BB4F7A592B5D9775006629F8 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		BB7E4EDC2A67282C0087BA91 /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
@@ -345,6 +351,7 @@
 				BBB29CD52B426B820030B4D9 /* PDFViewerUIViewRepresentable.swift */,
 				BBB29CDB2B4365840030B4D9 /* MergeDocumentsView.swift */,
 				BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */,
+				BB4F7A552B5CDAA6006629F8 /* ProtectPDFView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 				BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */,
 				BBB29CDF2B4B1F800030B4D9 /* MergeDocumentsCell.swift */,
 				BB4D19EF2B51E1FA005690AE /* CustomRoundButton.swift */,
+				BB4F7A592B5D9775006629F8 /* BackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -419,6 +427,7 @@
 				BBE7FC712B368D9800893FFC /* MoreOptionsViewModel.swift */,
 				BBB29CD92B4281D80030B4D9 /* PDFViewerViewModel.swift */,
 				BBB29CDD2B44D4C30030B4D9 /* MergeDocumentsViewModel.swift */,
+				BB4F7A572B5CDAB7006629F8 /* ProtectPDFViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -679,6 +688,7 @@
 				BB7E76A92B1682CD00344190 /* MainView.swift in Sources */,
 				BBCA3C692B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift in Sources */,
 				3245C73B2AA658EB00479CD8 /* FullScreenAd.swift in Sources */,
+				BB4F7A582B5CDAB7006629F8 /* ProtectPDFViewModel.swift in Sources */,
 				BB7E76AE2B21040300344190 /* DocumentMetadataView.swift in Sources */,
 				BB7E76A72B140AAA00344190 /* AccountView.swift in Sources */,
 				3212FA0F2A739EE500289ECD /* SubscriptionsView.swift in Sources */,
@@ -725,6 +735,7 @@
 				32045C922AAE3D0B00C433DF /* Purchases.swift in Sources */,
 				BBB29CD82B427E650030B4D9 /* DocumentStorageFetcher.swift in Sources */,
 				32980A9D2A70406D006F3EAF /* DocumentCell.swift in Sources */,
+				BB4F7A5A2B5D9775006629F8 /* BackButton.swift in Sources */,
 				BBE7FC702B36346500893FFC /* FilesViewModel.swift in Sources */,
 				BBCA3C5F2B0AEC7F00044F95 /* SignUpView.swift in Sources */,
 				BBB29CE02B4B1F800030B4D9 /* MergeDocumentsCell.swift in Sources */,
@@ -734,6 +745,7 @@
 				BB4D19F22B56E054005690AE /* DocumentCellViewModel.swift in Sources */,
 				BBB29CD42B4255FA0030B4D9 /* PDFViewer.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
+				BB4F7A562B5CDAA6006629F8 /* ProtectPDFView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ struct DocumentMetadataView: View {
     var mimeTypes = ["Image","PDF","JPEG", "PNG"]
     @ObservedObject var documentMetadataViewModel = DocumentMetadataViewModel()
     var document: UIImage
-    
+    @Environment(\.presentationMode) var presentationMode
     init(document: UIImage) {
         self.document = document
     }
@@ -21,6 +21,9 @@ struct DocumentMetadataView: View {
     var body: some View {
         if documentMetadataViewModel.didSaveDocument {
             MainTabView()
+                .onAppear {
+                    presentationMode.wrappedValue.dismiss()
+                }
         } else {
             VStack {
                 Spacer()

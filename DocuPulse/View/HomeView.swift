@@ -21,6 +21,7 @@ struct HomeView: View {
     @State private var showDocumentMetatDataView = false
     @State private var showMergeDocumentsView = false
     @State private var showDocumentScannerView = false
+    @State private var showProtectPDFView = false
     
     var body: some View {
         
@@ -56,7 +57,9 @@ struct HomeView: View {
                             HomeViewCell(imageName: "Merge PDF", title: "Merge PDF") {
                                 self.showDocumentScannerView = true
                             }
-                            HomeViewCell(imageName: "Protect PDF", title: "Protect PDF") {}
+                            HomeViewCell(imageName: "Protect PDF", title: "Protect PDF") {
+                                self.showProtectPDFView = true
+                            }
                             HomeViewCell(imageName: "Compress PDF", title: "Compress PDF") {}
                             HomeViewCell(imageName: "All Tools", title: "All Tools") {}
                         }
@@ -155,6 +158,9 @@ struct HomeView: View {
         })
         .fullScreenCover(isPresented: $showMergeDocumentsView, content: {
             MergeDocumentsView()
+        })
+        .fullScreenCover(isPresented: $showProtectPDFView, content: {
+            ProtectPDFView()
         })
         .background {
             // Add the adViewControllerRepresentable to the background so it
