@@ -40,14 +40,14 @@ struct Document: Codable, Identifiable {
         case batchFiles
     }
     
-    var dictionary: [String:Any] {
+    var documentFirebaseSchema: [String:Any] {
         return [
             "fileURL": fileURL,
             "date": dateString,
             "title": "Merged Document",
             "mimeType": "pdf",
-            "mediaCount": 1,
-            //"documentThumbnail": documentThumbnail
+            "isProtected": false,
+            "filePassword": ""
         ]
     }
 }
