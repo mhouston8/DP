@@ -138,66 +138,66 @@ class FirebaseStorageWrapper {
         return dateString
     }
     
-    func saveBatchDocuments(documents: [UIImage], completion: @escaping ([Document]) -> Void) {
-        //save to storage
-        guard let currentUser = Auth.auth().currentUser else { return }
-        
-        var documentPaths = [String]()
-        
-        let dispatchGroup = DispatchGroup()
-        
-        for (index, document) in documents.enumerated() {
-            guard let imageData = document.jpegData(compressionQuality: 1.00) else {
-                return
-            }
-            
-            let date = Date()
-            let currentDateInMilliSeconds = Int64(date.timeIntervalSince1970 * 1000)
-            let documentsStoragePathReference = self.storage.child("documents/\(currentDateInMilliSeconds).jpeg")
-            
-            dispatchGroup.enter()
-            documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in
-                guard let _ = metadata else {
-                    return
-                }
-                
-
-                // Document uploaded successfully // save to database
-                documentsStoragePathReference.downloadURL { (url, error) in
-                    guard let downloadURL = url else {
-                        return
-                    }
-                    documentPaths.append(downloadURL.absoluteString)
-                    dispatchGroup.leave()
-                }
-            }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            let currentDateString = self.getCurrentDateString()
-            
-            //save file path in database
-            let documentData: [String: Any] = [
-                "fileURL": "",
-                "date": currentDateString,
-                "title": "",
-                "mimeType": "jpeg",
-                "batchFiles": documentPaths,
-            ]
-            
-            let userDocumentsPathRef = self.database.databaseReference.collection("users").document(currentUser.uid).collection("documents").document()
-            userDocumentsPathRef.setData(documentData) { error in
-                if let error = error {
-                    print("Error writing document path to database: \(error)")
-                } else {
-                    print("Document path successfully written to database")
-                    self.database.readBatchDocuments(byID: userDocumentsPathRef.documentID) { documents in
-                        completion(documents)
-                    }
-                }
-            }
-        }
-    }
+//    func saveBatchDocuments(documents: [UIImage], completion: @escaping ([Document]) -> Void) {
+//        //save to storage
+//        guard let currentUser = Auth.auth().currentUser else { return }
+//        
+//        var documentPaths = [String]()
+//        
+//        let dispatchGroup = DispatchGroup()
+//        
+//        for (index, document) in documents.enumerated() {
+//            guard let imageData = document.jpegData(compressionQuality: 1.00) else {
+//                return
+//            }
+//            
+//            let date = Date()
+//            let currentDateInMilliSeconds = Int64(date.timeIntervalSince1970 * 1000)
+//            let documentsStoragePathReference = self.storage.child("documents/\(currentDateInMilliSeconds).jpeg")
+//            
+//            dispatchGroup.enter()
+//            documentsStoragePathReference.putData(imageData, metadata: nil) { metadata, error in
+//                guard let _ = metadata else {
+//                    return
+//                }
+//                
+//
+//                // Document uploaded successfully // save to database
+//                documentsStoragePathReference.downloadURL { (url, error) in
+//                    guard let downloadURL = url else {
+//                        return
+//                    }
+//                    documentPaths.append(downloadURL.absoluteString)
+//                    dispatchGroup.leave()
+//                }
+//            }
+//        }
+//        
+//        dispatchGroup.notify(queue: .main) {
+//            let currentDateString = self.getCurrentDateString()
+//            
+//            //save file path in database
+//            let documentData: [String: Any] = [
+//                "fileURL": "",
+//                "date": currentDateString,
+//                "title": "",
+//                "mimeType": "jpeg",
+//                "batchFiles": documentPaths,
+//            ]
+//            
+//            let userDocumentsPathRef = self.database.databaseReference.collection("users").document(currentUser.uid).collection("documents").document()
+//            userDocumentsPathRef.setData(documentData) { error in
+//                if let error = error {
+//                    print("Error writing document path to database: \(error)")
+//                } else {
+//                    print("Document path successfully written to database")
+//                    self.database.readBatchDocuments(byID: userDocumentsPathRef.documentID) { documents in
+//                        completion(documents)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func updateDocument(document: Document, with image: UIImage, completion: @escaping (Bool) -> Void) {
         guard let currentUser = Auth.auth().currentUser else {

@@ -10,6 +10,7 @@ import SwiftUI
 struct ProtectPDFView: View {
     
     @StateObject var protectPDFViewModel = ProtectPDFViewModel()
+    @State private var showPasswordAlert = false
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -32,6 +33,9 @@ struct ProtectPDFView: View {
             ScrollView {
                 ForEach(self.protectPDFViewModel.documents) { document in
                     DocumentCell(document: document)
+                        .onTapGesture {
+                            self.showPasswordAlert = true
+                        }
                 }
             }
         }

@@ -150,11 +150,8 @@ struct HomeView: View {
                 }
         })
         .fullScreenCover(isPresented: $showDocumentScannerView, content: {
-            DocumentScannerView(caller: Caller.MergeDocuments)
+            DocumentScannerView(showMergeDocumentsView: $showMergeDocumentsView, caller: Caller.MergeDocuments)
                 .edgesIgnoringSafeArea(.all)
-                .onDisappear {
-                    self.showMergeDocumentsView = true
-                }
         })
         .fullScreenCover(isPresented: $showMergeDocumentsView, content: {
             MergeDocumentsView()

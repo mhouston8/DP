@@ -45,5 +45,10 @@ struct MergeDocumentsView: View {
         .onAppear {
             self.mergeDocumentsViewModel.readDocuments()
         }
+        .onReceive(mergeDocumentsViewModel.$didFinishMergingDocuments, perform: { didFinish in
+            if didFinish {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        })
     }
 }

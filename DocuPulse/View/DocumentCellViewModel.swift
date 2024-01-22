@@ -28,9 +28,17 @@ class DocumentCellViewModel: ObservableObject {
             }
 
             DispatchQueue.main.async {
-                if let image = UIImage(data: data) {
-                    ImageCache.shared.setImage(image, forKey: document.fileURL)
-                    self.documentImage = image
+                
+                if document.mimeType == "pdf" {
+                    if let image = self.convertPDFDataToUIImage(pdfData: data) {
+                        ImageCache.shared.setImage(image, forKey: document.fileURL)
+                        self.documentImage = image
+                    }
+                } else {
+                    if let image = UIImage(data: data) {
+                        ImageCache.shared.setImage(image, forKey: document.fileURL)
+                        self.documentImage = image
+                    }
                 }
             }
         }
