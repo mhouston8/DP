@@ -194,4 +194,8 @@ class FirebaseDBWrapper {
             }
         } 
     }
+    
+    func unlockDocument(document: Document, with password: String, completion: @escaping (Bool) -> Void) {
+        completion(true)
+    }
 }

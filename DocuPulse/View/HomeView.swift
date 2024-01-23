@@ -22,10 +22,13 @@ struct HomeView: View {
     @State private var showMergeDocumentsView = false
     @State private var showDocumentScannerView = false
     @State private var showProtectPDFView = false
+    @State private var showDocumentProtectedAlert = false
+    @State private var documentPassword = ""
+    @State private var currentDocument: Document?
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     HStack {
@@ -94,13 +97,26 @@ struct HomeView: View {
                                     .padding(.top, 100)
                             } else {
                                 ForEach(self.homeViewModel.documents) { document in
-                                    NavigationLink {
-                                        PDFViewer(document: document)
-                                    } label: {
-                                    DocumentCell(document: document, showAccessories: true)
+                                    if document.isProtected {
+                                        DocumentCell(document: document, showAccessories: true)
+                                            .onTapGesture {
+                                                self.currentDocument = document
+                                                self.showDocumentProtectedAlert = true
+                                            }
+                                    } else {
+                                        NavigationLink {
+                                            PDFViewer(document: document)
+                                        } label: {
+                                            DocumentCell(document: document, showAccessories: true)
+                                        }
                                     }
                                 }
-                            }
+                                .navigationDestination(isPresented: $showPDFViewerView) {
+                                    if let document = self.homeViewModel.unlockedDocument {
+                                        PDFViewer(document: document)
+                                    }
+                                }
+                            }  
                         }
                     }
                     
@@ -159,11 +175,26 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $showProtectPDFView, content: {
             ProtectPDFView()
         })
+        .alert("Document Protected", isPresented: $showDocumentProtectedAlert) {
+            TextField("Password", text: $documentPassword)
+            Button("Confirm", action: {
+                if let document = currentDocument {
+                    self.homeViewModel.unlockDocument(document: document, with: documentPassword)
+                }
+            })
+        } message: {
+            Text("This document is protected with a password")
+        }
         .background {
             // Add the adViewControllerRepresentable to the background so it
             // doesn't influence the placement of other views in the view hierarchy.
             adViewControllerRepresentable
               .frame(width: .zero, height: .zero)
+        }
+        .onReceive(self.homeViewModel.$documentUnlocked) { documentUnlocked in
+            if documentUnlocked {
+                self.showPDFViewerView = true
+            }
         }
     }
 }
