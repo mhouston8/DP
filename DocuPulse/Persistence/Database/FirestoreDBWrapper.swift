@@ -159,8 +159,22 @@ class FirebaseDBWrapper {
         }
     }
     
-    func updateDocument(documentID: String, with image: UIImage) {
+    func updateDocument(document: Document, with password: String, completion: @escaping (Bool) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
         
+        let documentSchema = ["isProtected": true, "documentPassword" : password] as [String : Any]
+        
+        let documentReference  = self.databaseReference.collection("users").document(currentUser.uid).collection("documents").document(document.id!).updateData(documentSchema) { error in
+            if let error = error {
+                print("")
+                completion(false)
+            } else {
+                completion(true)
+                print("success")
+            }
+        }
     }
     
     func deleteDocument(document: Document, completion: @escaping (Bool) -> Void) {

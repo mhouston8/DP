@@ -13,10 +13,10 @@ struct ProtectPDFView: View {
     @State private var showPasswordAlert = false
     @State private var passwordText = ""
     @Environment(\.presentationMode) var presentationMode
+    @State var document: Document?
     
     var body: some View {
         VStack {
-            
             HStack {
                 BackButton {
                     presentationMode.wrappedValue.dismiss()
@@ -35,6 +35,7 @@ struct ProtectPDFView: View {
                 ForEach(self.protectPDFViewModel.documents) { document in
                     DocumentCell(document: document)
                         .onTapGesture {
+                            self.document = document
                             self.showPasswordAlert = true
                         }
                 }
@@ -45,15 +46,19 @@ struct ProtectPDFView: View {
         }
         .alert("Enter a password", isPresented: $showPasswordAlert) {
             TextField("Password", text: $passwordText)
-            Button("Protect PDF", action: {})
+            Button("Protect PDF", action: {
+                self.protectPDFViewModel.protectDocument(document: document!, with: passwordText)
+            })
         } message: {
             Text("Protect your PDF dcoument with a password for enhanced security.")
         }
         .preferredColorScheme(.light)
         .colorScheme(.light)
+        .onReceive(self.protectPDFViewModel.$dismissPDFView) { dismiss in
+            if dismiss {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 
-#Preview {
-    ProtectPDFView()
-}
