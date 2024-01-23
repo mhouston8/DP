@@ -18,10 +18,21 @@ struct DocumentCell: View {
     var body: some View {
         HStack {
             if let image = documentCellViewModel.documentImage {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80)
+                ZStack {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
+                        .blur(radius: document.isProtected ? 2 : 0)
+                    
+                    if document.isProtected {
+                        Image(systemName: "lock")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.black)
+                    }
+                }
             } else {
                 ProgressView()
             }

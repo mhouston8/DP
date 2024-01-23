@@ -19,9 +19,9 @@ struct Document: Codable, Identifiable {
     var fileURL: String
     var mimeType: String
     var date: String
-    var mediaCount: Int?
-    var batchFiles: [String]?
-    //var documentThumbnail: Data?
+    var isProtected: Bool = false
+    var documentPassword: String = ""
+    
     
     //convert to date property from string on demand
     var dateString: Date? {
@@ -36,8 +36,8 @@ struct Document: Codable, Identifiable {
         case fileURL
         case mimeType
         case date
-        case mediaCount
-        case batchFiles
+        case isProtected
+        case documentPassword
     }
     
     var documentFirebaseSchema: [String:Any] {
@@ -47,7 +47,7 @@ struct Document: Codable, Identifiable {
             "title": "Merged Document",
             "mimeType": "pdf",
             "isProtected": false,
-            "filePassword": ""
+            "documentPassword": ""
         ]
     }
 }

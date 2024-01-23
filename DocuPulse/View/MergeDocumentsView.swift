@@ -16,12 +16,11 @@ struct MergeDocumentsView: View {
     
     var body: some View {
         VStack {
-
             
             ScrollView {
                 ForEach(self.mergeDocumentsViewModel.batchScanImages, id: \.self) { image in
                     NavigationLink {
-                        PDFViewer(document: Document(title: "", fileURL: "", mimeType: "", date: "", mediaCount: 0))
+                        PDFViewer(document: Document(title: "", fileURL: "", mimeType: "", date: ""))
                     } label: {
                         MergeDocumentsCell(image: image)
                     }
