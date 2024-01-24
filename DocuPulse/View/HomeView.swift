@@ -116,7 +116,7 @@ struct HomeView: View {
                                         PDFViewer(document: document)
                                     }
                                 }
-                            }  
+                            }
                         }
                     }
                     

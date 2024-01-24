@@ -10,7 +10,7 @@ import SwiftUI
 struct PDFViewer: View {
     
     var document: Document
-    @ObservedObject var pdfViewerViewModel = PDFViewerViewModel()
+    @StateObject var pdfViewerViewModel = PDFViewerViewModel()
     
     var body: some View {
         VStack {

@@ -187,7 +187,7 @@ class FirebaseDBWrapper {
         
         documentReference.delete { error in
             if let error = error {
-                print("error")
+                print(error.localizedDescription)
                 completion(false)
             } else {
                 completion(true)
@@ -196,6 +196,30 @@ class FirebaseDBWrapper {
     }
     
     func unlockDocument(document: Document, with password: String, completion: @escaping (Bool) -> Void) {
-        completion(true)
+        guard let currentUser = Auth.auth().currentUser else {
+            completion(false)
+            return
+        }
+        
+        self.databaseReference.collection("users").document(currentUser.uid).collection("documents").document(document.id!).getDocument { snapshot, error in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                completion(false)
+                return
+            }
+            
+            if let snapshot = snapshot {
+                if let dataDictionary = snapshot.data() {
+                    let documentPassowrd = dataDictionary["documentPassword"] as? String ?? ""
+                    
+                    if documentPassowrd.elementsEqual(password) {
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                }
+            }
+        }
     }
 }
