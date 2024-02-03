@@ -25,11 +25,48 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
             //image data
             let pdfDocument = self.createPDFDocument(from: documentImage)
             uiView.document = pdfDocument
+            
+            //conver uikit point to pdfkit point.. different coordinate systems.
+            guard let page = pdfDocument.page(at: 0) else { return }
+            let point = CGPoint(x: 100, y: 400)
+            let convertedPoint = uiView.convert(point, to: page)
+            
+            //add annotation
+            let annotation = ImageStampAnnotation(with: UIImage(named: "signature")!, forBounds: CGRect(x: convertedPoint.x, y: convertedPoint.y, width: 400, height: 400), withProperties: nil)
+            
+            page.addAnnotation(annotation)
+            
         } else {
             //pdf data
             let document = PDFDocument(data: documentData)
             uiView.document = document!
+            
+            //add annotation
+            let annotation = ImageStampAnnotation(with: UIImage(named: "signature")!, forBounds: CGRect(x: 100, y: 100, width: 400, height: 400), withProperties: nil)
+            annotation.contents = "This is a note"
+
+            if let firstpage = document?.page(at: 0) {
+                firstpage.addAnnotation(annotation)
+            }
         }
+    }
+    
+    //this coordinator will interact with the delegate
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
+    class Coordinator: NSObject {
+        var parent: PDFViewerUIViewRepresentable
+        
+        init(parent: PDFViewerUIViewRepresentable) {
+            self.parent = parent
+        }
+        
+//        func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+//            guard let signatureImage = UIImage(named: "signature") else {
+//                return []
+//            }
+//        }
     }
     
     private func createPDFDocument(from image: UIImage) -> PDFDocument {
@@ -50,6 +87,27 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
 
         return watermarkedDocument
     }
+    
+}
+
+class ImageStampAnnotation: PDFAnnotation {
+    
+    var image: UIImage?
+    
+    init(with image: UIImage?, forBounds bounds: CGRect, withProperties properties: [AnyHashable : Any]?) {
+        self.image = image
+        super.init(bounds: bounds, forType: PDFAnnotationSubtype.stamp, withProperties: properties)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(with box: PDFDisplayBox, in context: CGContext) {
+        guard let cgImage = image?.cgImage else { return }
+        context.draw(cgImage, in: bounds)
+    }
+    
     
 }
 

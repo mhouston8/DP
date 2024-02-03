@@ -10,6 +10,7 @@ import SwiftUI
 struct MoreOptionsView: View {
     
     @State var showWatermarkScreen = false
+    @State var showElectronicSignatureView = false
     @ObservedObject var moreOptionsViewModel = MoreOptionsViewModel()
     @Environment(\.presentationMode) var presentationMode
     
@@ -36,7 +37,9 @@ struct MoreOptionsView: View {
                     DocumentOptionsCell(imageName: "Add Watermark", title: "Add Watermark", buttonAction: {
                         self.showWatermarkScreen = true
                     })
-                    DocumentOptionsCell(imageName: "Add Digital Signature", title: "Add Digital Signature", buttonAction: {})
+                    DocumentOptionsCell(imageName: "Add Digital Signature", title: "Add Digital Signature", buttonAction: {
+                        self.showElectronicSignatureView = true
+                    })
                     DocumentOptionsCell(imageName: "Split PDF Black", title: "Split PDF", buttonAction: {})
                     DocumentOptionsCell(imageName: "Merge PDF Black", title: "Merge PDF", buttonAction: {})
                     DocumentOptionsCell(imageName: "Protect PDF Black", title: "Protect PDF", buttonAction: {})
@@ -64,6 +67,12 @@ struct MoreOptionsView: View {
             }
             .fullScreenCover(isPresented: $showWatermarkScreen) {
                 WatermarkDocumentView(document: document)
+                    .onDisappear {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            }
+            .fullScreenCover(isPresented: $showElectronicSignatureView) {
+                ElectronicSignatureView(document: document)
                     .onDisappear {
                         presentationMode.wrappedValue.dismiss()
                     }

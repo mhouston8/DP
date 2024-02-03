@@ -21,8 +21,6 @@ struct BackButton: View {
                 .onTapGesture {
                     action()
                 }
-            Spacer()
         }
-        .padding(.bottom)
     }
 }
