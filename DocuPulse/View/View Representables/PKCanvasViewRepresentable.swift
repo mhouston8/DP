@@ -27,6 +27,11 @@ struct PKCanvasViewRepresentable: UIViewRepresentable {
         //update UI here
     }
     
+    func saveSignature() {
+        let image = canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
+        onSaved(image)
+    }
+    
     //you can create a coordinator which will interact with the delegate.
     
 }

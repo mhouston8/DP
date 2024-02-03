@@ -14,6 +14,7 @@ struct SignatureView: View {
     @State private var canvasView = PKCanvasView()
     @State private var isDrawing = true
     
+    
     init() {
         self.setupNavigationView()
     }
@@ -54,7 +55,8 @@ struct SignatureView: View {
                     }
                     Spacer()
                     Button {
-    
+                        let image = canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
+                        print("")
                     } label: {
                         Text("Continue")
                             .padding()
