@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ElectronicSignatureView: View {
+struct ConfirmSignatureView: View {
 
     @Environment(\.presentationMode) var presentationMode
     var document: Document
@@ -31,7 +31,7 @@ struct ElectronicSignatureView: View {
                 HStack(spacing: 10) {
                     Spacer()
                     Button {
-    
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Cancel")
                             .padding()
@@ -60,17 +60,6 @@ struct ElectronicSignatureView: View {
             .navigationTitle("Add Digital Signature")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        //
-                    } label: {
-                        BackButton(action: {
-                            
-                        })
-                        .foregroundColor(.white)
-                    }
-                }
-                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         //

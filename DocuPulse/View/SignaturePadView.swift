@@ -9,12 +9,12 @@ import SwiftUI
 import UIKit
 import PencilKit
 
-struct SignatureView: View {
+struct SignaturePadView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State private var canvasView = PKCanvasView()
     @State private var isDrawing = true
     var document: Document
-    
     
     init(document: Document) {
         self.document = document
@@ -46,7 +46,7 @@ struct SignatureView: View {
                 HStack(spacing: 10) {
                     Spacer()
                     Button {
-    
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Cancel")
                             .padding()
@@ -57,7 +57,7 @@ struct SignatureView: View {
                     }
                     Spacer()
                     NavigationLink {
-                        ElectronicSignatureView(document: document)
+                        ConfirmSignatureView(document: document)
                     } label: {
                         //let image = canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
                         Text("Continue")
@@ -75,17 +75,6 @@ struct SignatureView: View {
             .navigationTitle("Add Digital Signature")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        //
-                    } label: {
-                        BackButton(action: {
-                            
-                        })
-                        .foregroundColor(.white)
-                    }
-                }
-                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         //
@@ -96,6 +85,7 @@ struct SignatureView: View {
                 }
             }
         }
+        .tint(.white)
     }
     
     

@@ -79,7 +79,7 @@ struct MoreOptionsView: View {
 //                    }
             }
             .fullScreenCover(isPresented: $showSignatureView) {
-                SignatureView(document: document)
+                SignaturePadView(document: document)
             }
         }
     }

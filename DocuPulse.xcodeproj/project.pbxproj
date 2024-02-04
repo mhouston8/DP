@@ -50,7 +50,7 @@
 		BB4F7A562B5CDAA6006629F8 /* ProtectPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A552B5CDAA6006629F8 /* ProtectPDFView.swift */; };
 		BB4F7A582B5CDAB7006629F8 /* ProtectPDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A572B5CDAB7006629F8 /* ProtectPDFViewModel.swift */; };
 		BB4F7A5A2B5D9775006629F8 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A592B5D9775006629F8 /* BackButton.swift */; };
-		BB4F7A5C2B60CA07006629F8 /* ElectronicSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A5B2B60CA07006629F8 /* ElectronicSignatureView.swift */; };
+		BB4F7A5C2B60CA07006629F8 /* ConfirmSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A5B2B60CA07006629F8 /* ConfirmSignatureView.swift */; };
 		BB4F7A5E2B60CA21006629F8 /* ElectronicSignatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7A5D2B60CA21006629F8 /* ElectronicSignatureViewModel.swift */; };
 		BB7E4ED52A67139C0087BA91 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */; };
 		BB7E4EDB2A67254A0087BA91 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */; };
@@ -106,7 +106,7 @@
 		BBCA3C672B129A3000044F95 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C662B129A2F00044F95 /* WelcomeView.swift */; };
 		BBCA3C692B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */; };
 		BBCA3C6D2B12F76A00044F95 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA3C6C2B12F76900044F95 /* SignInView.swift */; };
-		BBD17C0E2B686D4B00182AAA /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17C0D2B686D4B00182AAA /* SignatureView.swift */; };
+		BBD17C0E2B686D4B00182AAA /* SignaturePadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17C0D2B686D4B00182AAA /* SignaturePadView.swift */; };
 		BBD17C102B686D6000182AAA /* SignatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17C0F2B686D6000182AAA /* SignatureViewModel.swift */; };
 		BBD17C132B699D0900182AAA /* PKCanvasViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17C122B699D0900182AAA /* PKCanvasViewRepresentable.swift */; };
 		BBD5AA112A8031BC00BBF85D /* SelectPaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */; };
@@ -164,7 +164,7 @@
 		BB4F7A552B5CDAA6006629F8 /* ProtectPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectPDFView.swift; sourceTree = "<group>"; };
 		BB4F7A572B5CDAB7006629F8 /* ProtectPDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectPDFViewModel.swift; sourceTree = "<group>"; };
 		BB4F7A592B5D9775006629F8 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		BB4F7A5B2B60CA07006629F8 /* ElectronicSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectronicSignatureView.swift; sourceTree = "<group>"; };
+		BB4F7A5B2B60CA07006629F8 /* ConfirmSignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignatureView.swift; sourceTree = "<group>"; };
 		BB4F7A5D2B60CA21006629F8 /* ElectronicSignatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectronicSignatureViewModel.swift; sourceTree = "<group>"; };
 		BB7E4ED42A67139C0087BA91 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		BB7E4EDA2A67254A0087BA91 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		BBCA3C662B129A2F00044F95 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BBCA3C682B12A0CE00044F95 /* AuthenticationThirdPartyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationThirdPartyButton.swift; sourceTree = "<group>"; };
 		BBCA3C6C2B12F76900044F95 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		BBD17C0D2B686D4B00182AAA /* SignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		BBD17C0D2B686D4B00182AAA /* SignaturePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePadView.swift; sourceTree = "<group>"; };
 		BBD17C0F2B686D6000182AAA /* SignatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureViewModel.swift; sourceTree = "<group>"; };
 		BBD17C122B699D0900182AAA /* PKCanvasViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCanvasViewRepresentable.swift; sourceTree = "<group>"; };
 		BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodView.swift; sourceTree = "<group>"; };
@@ -334,12 +334,11 @@
 		329809B22A65EDCC008736BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BBD17C112B699C5700182AAA /* View Representables */,
 				BB7E76A62B140AAA00344190 /* AccountView.swift */,
+				BB4F7A5B2B60CA07006629F8 /* ConfirmSignatureView.swift */,
 				BB4D19F12B56E054005690AE /* DocumentCellViewModel.swift */,
 				BB7E76AD2B21040200344190 /* DocumentMetadataView.swift */,
 				3263D37A2A724F6B0045C857 /* DocumentScannerView.swift */,
-				BB4F7A5B2B60CA07006629F8 /* ElectronicSignatureView.swift */,
 				3212FA0C2A73966B00289ECD /* FilesView.swift */,
 				BB7E76AA2B1A9A1800344190 /* ForgotPasswordView.swift */,
 				BB7E4EE42A674FB80087BA91 /* HomeView.swift */,
@@ -355,7 +354,7 @@
 				32FD8D792A6F8130004A1618 /* RecentFilesView.swift */,
 				BBD5AA102A8031BC00BBF85D /* SelectPaymentMethodView.swift */,
 				32FD8D7F2A6F894E004A1618 /* ShareView.swift */,
-				BBD17C0D2B686D4B00182AAA /* SignatureView.swift */,
+				BBD17C0D2B686D4B00182AAA /* SignaturePadView.swift */,
 				BBCA3C6C2B12F76900044F95 /* SignInView.swift */,
 				BBCA3C5E2B0AEC7F00044F95 /* SignUpView.swift */,
 				3212FA0E2A739EE500289ECD /* SubscriptionsView.swift */,
@@ -364,6 +363,7 @@
 				3245C7392AA658B100479CD8 /* AdMob */,
 				32980A9B2A70405E006F3EAF /* Components */,
 				BB7E76AC2B1A9A3D00344190 /* Storyboards */,
+				BBD17C112B699C5700182AAA /* View Representables */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -740,7 +740,7 @@
 				3263D37B2A724F6B0045C857 /* DocumentScannerView.swift in Sources */,
 				BB4F7A542B5CA1E3006629F8 /* ImageCache.swift in Sources */,
 				3263D3772A70E3360045C857 /* DocumentOptionsCell.swift in Sources */,
-				BBD17C0E2B686D4B00182AAA /* SignatureView.swift in Sources */,
+				BBD17C0E2B686D4B00182AAA /* SignaturePadView.swift in Sources */,
 				BB4866B42B2A820400FFE121 /* HomeViewModel.swift in Sources */,
 				BBD17C132B699D0900182AAA /* PKCanvasViewRepresentable.swift in Sources */,
 				325D8E422A7EB8010048C867 /* Colors.swift in Sources */,
@@ -771,7 +771,7 @@
 				32045C942AAEBB0600C433DF /* PayWallView.swift in Sources */,
 				BB4D19F22B56E054005690AE /* DocumentCellViewModel.swift in Sources */,
 				BBB29CD42B4255FA0030B4D9 /* PDFViewer.swift in Sources */,
-				BB4F7A5C2B60CA07006629F8 /* ElectronicSignatureView.swift in Sources */,
+				BB4F7A5C2B60CA07006629F8 /* ConfirmSignatureView.swift in Sources */,
 				3211211C2A8D279000320669 /* PaymentMethod.swift in Sources */,
 				BB4F7A562B5CDAA6006629F8 /* ProtectPDFView.swift in Sources */,
 			);
