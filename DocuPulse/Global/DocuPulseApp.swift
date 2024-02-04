@@ -39,8 +39,9 @@ struct DocuPulseApp: App {
             //SignUpView()
             //OnboardingPageViewController()
             //MergeDocumentsView(documents: [])
-            //MainView()
-            SignatureView()
+            MainView()
+            //SignatureView()
+            //ElectronicSignatureView()
                   .preferredColorScheme(.light)
         }
     }

@@ -13,9 +13,11 @@ struct SignatureView: View {
     
     @State private var canvasView = PKCanvasView()
     @State private var isDrawing = true
+    var document: Document
     
     
-    init() {
+    init(document: Document) {
+        self.document = document
         self.setupNavigationView()
     }
     
@@ -54,10 +56,10 @@ struct SignatureView: View {
                             .cornerRadius(30)
                     }
                     Spacer()
-                    Button {
-                        let image = canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
-                        print("")
+                    NavigationLink {
+                        ElectronicSignatureView(document: document)
                     } label: {
+                        //let image = canvasView.drawing.image(from: canvasView.bounds, scale: UIScreen.main.scale)
                         Text("Continue")
                             .padding()
                             .frame(maxWidth: .infinity)

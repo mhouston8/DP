@@ -14,8 +14,6 @@ struct PDFViewer: View {
     
     var body: some View {
         VStack {
-            Text("\(document.date)")
-            
             if let documentData = pdfViewerViewModel.documentData {
                 PDFViewerUIViewRepresentable(documentData: documentData)
             }

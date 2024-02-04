@@ -11,6 +11,7 @@ struct MoreOptionsView: View {
     
     @State var showWatermarkScreen = false
     @State var showElectronicSignatureView = false
+    @State var showSignatureView = false
     @ObservedObject var moreOptionsViewModel = MoreOptionsViewModel()
     @Environment(\.presentationMode) var presentationMode
     
@@ -38,7 +39,7 @@ struct MoreOptionsView: View {
                         self.showWatermarkScreen = true
                     })
                     DocumentOptionsCell(imageName: "Add Digital Signature", title: "Add Digital Signature", buttonAction: {
-                        self.showElectronicSignatureView = true
+                        self.showSignatureView = true
                     })
                     DocumentOptionsCell(imageName: "Split PDF Black", title: "Split PDF", buttonAction: {})
                     DocumentOptionsCell(imageName: "Merge PDF Black", title: "Merge PDF", buttonAction: {})
@@ -72,10 +73,13 @@ struct MoreOptionsView: View {
                     }
             }
             .fullScreenCover(isPresented: $showElectronicSignatureView) {
-                ElectronicSignatureView(document: document)
-                    .onDisappear {
-                        presentationMode.wrappedValue.dismiss()
-                    }
+//                ElectronicSignatureView(document: document)
+//                    .onDisappear {
+//                        presentationMode.wrappedValue.dismiss()
+//                    }
+            }
+            .fullScreenCover(isPresented: $showSignatureView) {
+                SignatureView(document: document)
             }
         }
     }

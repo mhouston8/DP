@@ -8,17 +8,95 @@
 import SwiftUI
 
 struct ElectronicSignatureView: View {
-    
-    var document: Document
+
     @Environment(\.presentationMode) var presentationMode
+    var document: Document
+    
+    init(document: Document) {
+        self.document = document
+        self.setupNavigationView()
+    }
     
     var body: some View {
-        VStack {
-            BackButton {
-                presentationMode.wrappedValue.dismiss()
+        NavigationStack {
+            VStack {
+                
+                Spacer()
+                PDFViewer(document: document)
+                    .padding(50)
+                Spacer()
+                
+                
+                Spacer()
+                HStack(spacing: 10) {
+                    Spacer()
+                    Button {
+    
+                    } label: {
+                        Text("Cancel")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.gray.brightness(-0.2))
+                            .cornerRadius(30)
+                    }
+                    Spacer()
+                    Button {
+                        print("")
+                    } label: {
+                        Text("Save")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.purple)
+                            .cornerRadius(30)
+                    }
+                    Spacer()
+                }
+                .padding(.top)
+                .background(.black)
             }
-            PDFViewer(document: document)
+            .background(Color.black.opacity(0.9))
+            .navigationTitle("Add Digital Signature")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        //
+                    } label: {
+                        BackButton(action: {
+                            
+                        })
+                        .foregroundColor(.white)
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        //
+                    } label: {
+                        Image(systemName: "folder")
+                            .foregroundColor(.white)
+                    }
+                }
+            }
         }
+    }
+    
+    func setupNavigationView() {
+        // Customize navigation bar appearance using UIKit
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .black // Black background
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // White title
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 20)]
+
+        // Apply the appearance to all navigation bar instances
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
+        // To make the back button white
+        UINavigationBar.appearance().tintColor = .white
     }
 }
 

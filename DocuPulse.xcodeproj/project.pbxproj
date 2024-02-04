@@ -439,9 +439,9 @@
 				32EC0C612AB65BD100BCBE6F /* PurchasesViewModel.swift */,
 				32FD8D7D2A6F8199004A1618 /* RecentFilesViewModel.swift */,
 				BBD5AA142A8AD10A00BBF85D /* SelectPaymentMethodViewModel.swift */,
+				BBD17C0F2B686D6000182AAA /* SignatureViewModel.swift */,
 				3212FA142A76F5F400289ECD /* SubscriptionCardViewModel.swift */,
 				BBE7FC6C2B3228A700893FFC /* WatermarkDocumentViewModel.swift */,
-				BBD17C0F2B686D6000182AAA /* SignatureViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
