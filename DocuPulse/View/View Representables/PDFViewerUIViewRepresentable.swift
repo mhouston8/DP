@@ -15,7 +15,12 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
     
     func makeUIView(context: Context) -> some PDFView {
         let pdfView = PDFView()
-        pdfView.autoScales = true
+//        pdfView.autoScales = true
+        pdfView.backgroundColor = .black
+        //pdfView.translatesAutoresizingMaskIntoConstraints = false
+        //pdfView.scaleFactor = pdfView.scaleFactorForSizeToFit
+        //pdfView.minScaleFactor = 0.2
+        //pdfView.maxScaleFactor = 0.2
         
         return pdfView
     }
@@ -25,30 +30,22 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
             //image data
             let pdfDocument = self.createPDFDocument(from: documentImage)
             uiView.document = pdfDocument
-            
-            //conver uikit point to pdfkit point.. different coordinate systems.
-            guard let page = pdfDocument.page(at: 0) else { return }
-            let point = CGPoint(x: 100, y: 400)
-            let convertedPoint = uiView.convert(point, to: page)
-            
-            //add annotation
-            let annotation = ImageStampAnnotation(with: UIImage(named: "signature")!, forBounds: CGRect(x: convertedPoint.x, y: convertedPoint.y, width: 400, height: 400), withProperties: nil)
-            
-            page.addAnnotation(annotation)
-            
         } else {
             //pdf data
             let document = PDFDocument(data: documentData)
             uiView.document = document!
-            
-            //add annotation
-            let annotation = ImageStampAnnotation(with: UIImage(named: "signature")!, forBounds: CGRect(x: 100, y: 100, width: 400, height: 400), withProperties: nil)
-            annotation.contents = "This is a note"
-
-            if let firstpage = document?.page(at: 0) {
-                firstpage.addAnnotation(annotation)
-            }
         }
+        
+        uiView.autoScales = true
+        uiView.minScaleFactor = 0.2
+        uiView.maxScaleFactor = 0.2
+    }
+    
+    private func createPDFDocument(from image: UIImage) -> PDFDocument {
+        let pdfPage = PDFPage(image: image)
+        let pdfDocument = PDFDocument()
+        pdfDocument.insert(pdfPage!, at: 0)
+        return pdfDocument
     }
     
     //this coordinator will interact with the delegate
@@ -61,19 +58,6 @@ struct PDFViewerUIViewRepresentable: UIViewRepresentable {
         init(parent: PDFViewerUIViewRepresentable) {
             self.parent = parent
         }
-        
-//        func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-//            guard let signatureImage = UIImage(named: "signature") else {
-//                return []
-//            }
-//        }
-    }
-    
-    private func createPDFDocument(from image: UIImage) -> PDFDocument {
-        let pdfPage = PDFPage(image: image)
-        let pdfDocument = PDFDocument()
-        pdfDocument.insert(pdfPage!, at: 0)
-        return pdfDocument
     }
     
     func watermarkPDF(originalDocument: PDFDocument, watermarkText: String) -> PDFDocument {

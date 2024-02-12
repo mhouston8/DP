@@ -19,53 +19,53 @@ struct ConfirmSignatureView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                
-                Spacer()
-                PDFViewer(document: document)
-                    .padding(50)
-                Spacer()
-                
-                
-                Spacer()
-                HStack(spacing: 10) {
+            GeometryReader { geometry in
+                VStack {
+                    
                     Spacer()
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Cancel")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                            .background(Color.gray.brightness(-0.2))
-                            .cornerRadius(30)
+                    PDFViewer(document: document)
+                    Spacer()
+                    
+                    Spacer()
+                    HStack(spacing: 10) {
+                        Spacer()
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Cancel")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)
+                                .background(Color.gray.brightness(-0.2))
+                                .cornerRadius(30)
+                        }
+                        Spacer()
+                        Button {
+                            print("")
+                        } label: {
+                            Text("Save")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)
+                                .background(Color.purple)
+                                .cornerRadius(30)
+                        }
+                        Spacer()
                     }
-                    Spacer()
-                    Button {
-                        print("")
-                    } label: {
-                        Text("Save")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                            .background(Color.purple)
-                            .cornerRadius(30)
-                    }
-                    Spacer()
+                    .padding(.top)
+                    .background(.black)
                 }
-                .padding(.top)
-                .background(.black)
-            }
-            .background(Color.black.opacity(0.9))
-            .navigationTitle("Add Digital Signature")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        //
-                    } label: {
-                        Image(systemName: "folder")
-                            .foregroundColor(.white)
+                .background(Color.black.opacity(0.9))
+                .navigationTitle("Add Digital Signature")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            //
+                        } label: {
+                            Image(systemName: "folder")
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }
